@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design - Douwe van Druenen</title>
+    <link rel="icon" type="image/x-icon" href="img/white-icon.svg">
+    <link rel="stylesheet" href="https://use.typekit.net/fik0wyy.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-backdrop"></div>
+      <img src="img/signature.svg" alt="logo" class="nav-logo" onclick="goToHome()"/>
+    </nav>
+    <img src="img/side-assets.svg" class="side side-left"></img>
+    <img src="img/side-assets.svg" class="side side-right"></img>
+    <header id="design-header">
+      <div class="header-text rellax" data-rellax-speed="2">
+        <h1>Graphic Design</h1>
+      </div>
+      <button class="scrolldown" onclick="scrollToBottom()"></button>
+      <div class="gradient"></div>
+    </header>
+    <main>
+      <section class="text-box">
+        <p>I really enjoy visual design, so I spend some of my spare time 
+        designing a bunch of things. I make visuals of my own logo and 
+        brand and make album covers for my playlists. Nothing too serious, 
+        but I thought it'd be fun to show it here anyway.
+
+        <br><br> I've also done work for a few clients as a freelancer.
+        </p>
+      </section>
+      <div class="parallax parallax-knip"><div class="art-info right">
+        <h2>Knip Musical</h2>
+        <p>The high school I used to go to has its own musical group that performs a 
+          musical every year in the biggest theatre in Helmond. I personally know the 
+          producer, and he approached me for the design of the poster for their musical, 
+          Ik hou van jou. The following year I also designed the poster for their new 
+          musical, Pinokkio. On top of that I designed the new logo for Knip Musical.
+        </p></div>
+      </div>
+      <div class="parallax parallax-album"><div class="art-info right">
+        <h2>Album covers</h2>
+        <p>This is nothing serious, but I'm still proud of it. Music is a very important part of my life, and sometimes I make some myself. I constantly update and create new playlists.
+          Sometimes, I combine my love for music and graphic design and make album covers for my playlists.
+        </p></div>
+      </div>
+      <div class="parallax parallax-squares"><div class="art-info right">
+        <h2>Personal brand</h2>
+        <p>In recent years, I've created my own logo and style, as seen on this website. 
+          I've also created a few other things, like these visuals, to practise my 
+          graphic design. 
+        </p></div>
+      </div>
+    </main>
+    <footer>
+      <button
+        id="art-ig"
+        onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')"
+      >
+        @dvdruenen.art
+      </button>
+
+      <img src="img/logo-footer.svg" alt="logo" class="footer-logo" onclick="scrollToTop()"/>
+
+      <button
+        id="personal-ig"
+        onclick="window.open('https://www.instagram.com/douwevdruenen/', '_blank')"
+      >
+        @douwevdruenen
+      </button>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+      var rellax = new Rellax(".rellax");
+    </script>
+  </body>
+</html>

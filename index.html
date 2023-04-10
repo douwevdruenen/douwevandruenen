@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Douwe van Druenen</title>
+    <link rel="icon" type="image/x-icon" href="img/white-icon.svg">
+    <link rel="stylesheet" href="https://use.typekit.net/fik0wyy.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-backdrop"></div>
+      <img src="img/signature.svg" alt="logo" class="nav-logo" />
+    </nav>
+    <img src="img/side-assets.svg" class="side side-left"></img>
+    <img src="img/side-assets.svg" class="side side-right"></img>
+    <header id="home-header">
+      
+      <button class="scrolldown" onclick="scrollToBottom()"></button>
+      <div class="gradient"></div>
+    </header>
+    <main>
+      <section class="gallery">
+        <div class="img1 rellax" data-rellax-speed="2" onclick="goToArt()"></div>
+        <div class="img2 rellax" data-rellax-speed="0" onclick="goToDesign()"></div>
+        <div class="img3 rellax" data-rellax-speed="-2" onclick="goToCmd()"></div>
+        <div class="img4 rellax" data-rellax-speed="4" onclick="goToDesign()"></div>
+        <div class="img5 rellax" data-rellax-speed="-2" onclick="goToDesign()"></div>
+        <div class="img6 rellax" data-rellax-speed="0" onclick="goToDesign()"></div>
+        <div class="img7 rellax" data-rellax-speed="4" onclick="goToArt()"></div>
+        <div class="img8 rellax" data-rellax-speed="2" onclick="goToArt()"></div>
+        <div class="img9 rellax" data-rellax-speed="-2" onclick="goToCmd()"></div>
+        <div class="img10 rellax" data-rellax-speed="4" onclick="goToCmd()"></div>
+        <div class="img11 rellax" data-rellax-speed="2" onclick="goToArt()"></div>
+        <img id="home-circle" src="img/circle-asset.svg" alt="circles">
+        <img id="home-cross" src="img/cross-asset.svg" alt="cross">
+        <img id="home-rect" src="img/rect-asset.svg" alt="rectangle">
+      </section>
+    </main>
+    <footer>
+      <button
+        id="art-ig"
+        onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')"
+      >
+        @dvdruenen.art
+      </button>
+
+      <img src="img/logo-footer.svg" alt="logo" class="footer-logo" onclick="scrollToTop()"/>
+
+      <button
+        id="personal-ig"
+        onclick="window.open('https://www.instagram.com/douwevdruenen/', '_blank')"
+      >
+        @douwevdruenen
+      </button>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+      var rellax = new Rellax(".rellax");
+    </script>
+  </body>
+</html>
