@@ -58,22 +58,23 @@ nav {
 }
 
 .scrolldown {
+    animation: MoveUpDown 2s ease-in-out infinite;
     position: absolute;
     background: url(../img/scrolldown.svg) no-repeat center center;
     border: none;
-    bottom: 50px;
+    /* bottom: 50px; */
     left: 50%;
     width: 30px;
     height: 30px;
     translate: -50% 0;
     cursor: pointer;
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
     z-index: 100;
 }
 
-.scrolldown:hover {
+/* .scrolldown:hover {
     translate: -50% 5px;
-}
+} */
 
 .side {
     position: fixed;
@@ -188,8 +189,27 @@ header {
     z-index: 1;
 }
 
+.home-text {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    translate: 0 -50%;
+    z-index: 1;
+    color: #000;
+    text-align: left;
+    max-width: 30vw;
+}
+
+.home-text p {
+    margin-top: 1.5em;
+}
+
+.home-text h1 {
+    font-size: 4em;
+}
+
 #home-header {
-    background: url(../img/header-img.png) no-repeat center center;
+    background: url(../img/home-bg.png) no-repeat;
     background-size: cover;
 }
 
@@ -498,4 +518,14 @@ footer button:hover, header button:hover {
 .grdnt-left {
     left: 0;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 50px;
+    }
+
+    50% {
+        bottom: 30px;
+    }
 }
