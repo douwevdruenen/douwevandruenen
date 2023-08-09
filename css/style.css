@@ -115,14 +115,14 @@ nav {
 }
 
 h1 {
-    font-family: futura-pt, sans-serif;
+    font-family: "futura-pt", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 5em;
 }
 
 h2 {
-    font-family: futura-pt, sans-serif;
+    font-family: "futura-pt", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 2em;
@@ -179,7 +179,7 @@ h2 {
 }
 
 p {
-    font-family: futura-pt, sans-serif;
+    font-family: "futura-pt", sans-serif;
     font-weight: 500;
     font-size: 1.2em;
     letter-spacing: 0.05em;
@@ -435,7 +435,7 @@ footer {
 footer button, header button {
     border: none;
     background: none;
-    font-family: futura-pt, sans-serif;
+    font-family: "futura-pt", sans-serif;
     font-weight: 400;
     font-size: 1em;
     text-transform: uppercase;
