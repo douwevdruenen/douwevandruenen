@@ -27,3 +27,14 @@ function goToDesign() {
 function goToCmd() {
   window.location.href = "cmd.html";
 }
+
+var lastScrollTop = 0;
+$(window).scroll(function () {
+  var currentScrollTop = $(this).scrollTop();
+  if (currentScrollTop > lastScrollTop) {
+    $("nav").addClass("scroll-up");
+  } else {
+    $("nav").removeClass("scroll-up");
+  }
+  lastScrollTop = currentScrollTop;
+});

@@ -5,65 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Douwe van Druenen</title>
-    <link rel="icon" type="image/x-icon" href="img/white-icon.svg">
+    <link rel="icon" type="image/x-icon" href="img/white-icon.svg" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <nav class="rellax" data-rellax-speed="3">
+    <nav>
       <div class="nav-backdrop"></div>
-      <img src="img/signature.svg" alt="logo" class="nav-logo" />
+      <img
+        src="img/logo-met-naam.svg"
+        alt="logo"
+        class="nav-logo"
+        onclick="goToHome()"
+      />
+      <div class="nav-menu">
+        <button class="nav-button" onclick="goToDesign()">
+          Graphic Design
+        </button>
+        <button class="nav-button" onclick="goToCmd()">CMD</button>
+        <button class="nav-button" onclick="goToArt()">Digital Art</button>
+      </div>
     </nav>
-    <img src="img/side-assets.svg" class="side side-left"></img>
-    <img src="img/side-assets.svg" class="side side-right"></img>
     <header id="home-header">
+      <img
+        src="img/foto-home.svg"
+        alt=""
+        class="rellax"
+        data-rellax-speed="3"
+      />
       <div class="home-text rellax" data-rellax-speed="3">
-        <h1>Douwe van Druenen</h1>
-        <p>Hi, I'm Douwe van Druenen and this is my portfolio.
-          I'm a student, visual designer, (digital) artist, programmer, UX designer located in Maastricht. Scroll down and click on whatever looks interesting to you to learn more about me and my work.</p>
+        <h1>Hi, I'm Douwe</h1>
+        <p>
+          Welcome to my portfolio. I'm a student, visual designer, (digital)
+          artist, programmer and UX designer located in Maastricht. This website
+          is dedicated to my work, so feel free to look around.
+        </p>
       </div>
       <button class="scrolldown" onclick="scrollToBottom()"></button>
-      <div class="gradient"></div>
+      <!-- <div class="gradient"></div> -->
     </header>
     <main>
       <section class="gallery">
         <div class="img1 rellax" data-rellax-speed="2" onclick="goToArt()">
-          <p>Digital Art</p>
+          <div class="overlay">
+            <p>Digital Art</p>
+          </div>
         </div>
         <div class="img2 rellax" data-rellax-speed="0" onclick="goToDesign()">
-          <p>Graphic Design</p>
+          <div class="overlay">
+            <p>Graphic Design</p>
+          </div>
         </div>
         <div class="img3 rellax" data-rellax-speed="-2" onclick="goToCmd()">
-          <p>CMD</p>
+          <div class="overlay">
+            <p>CMD</p>
+          </div>
         </div>
         <div class="img4 rellax" data-rellax-speed="4" onclick="goToDesign()">
-          <p>Graphic Design</p>
+          <div class="overlay">
+            <p>Graphic Design</p>
+          </div>
         </div>
         <div class="img5 rellax" data-rellax-speed="-2" onclick="goToDesign()">
-          <p>Graphic Design</p>
+          <div class="overlay">
+            <p>Graphic Design</p>
+          </div>
         </div>
         <div class="img6 rellax" data-rellax-speed="0" onclick="goToDesign()">
-          <p>Graphic Design</p>
+          <div class="overlay">
+            <p>Graphic Design</p>
+          </div>
         </div>
         <div class="img7 rellax" data-rellax-speed="4" onclick="goToArt()">
-          <p>Digital Art</p>
+          <div class="overlay">
+            <p>Digital Art</p>
+          </div>
         </div>
         <div class="img8 rellax" data-rellax-speed="2" onclick="goToArt()">
-          <p>Digital Art</p>
+          <div class="overlay">
+            <p>Digital Art</p>
+          </div>
         </div>
         <div class="img9 rellax" data-rellax-speed="-2" onclick="goToCmd()">
-          <p>CMD</p>
+          <div class="overlay">
+            <p>CMD</p>
+          </div>
         </div>
         <div class="img10 rellax" data-rellax-speed="4" onclick="goToCmd()">
-          <p>CMD</p>
+          <div class="overlay">
+            <p>CMD</p>
+          </div>
         </div>
         <div class="img11 rellax" data-rellax-speed="2" onclick="goToArt()">
-          <p>Digital Art</p>
+          <div class="overlay">
+            <p>Digital Art</p>
+          </div>
         </div>
-        <img id="home-circle" src="img/circle-asset.svg" alt="circles">
+        <!-- <img id="home-circle" src="img/circle-asset.svg" alt="circles">
         <img id="home-cross" src="img/cross-asset.svg" alt="cross">
-        <img id="home-rect" src="img/rect-asset.svg" alt="rectangle">
+        <img id="home-rect" src="img/rect-asset.svg" alt="rectangle"> -->
       </section>
     </main>
     <footer>
@@ -74,7 +115,12 @@
         instagram
       </button>
 
-      <img src="img/logo-footer.svg" alt="logo" class="footer-logo" onclick="scrollToTop()"/>
+      <img
+        src="img/logo-footer.svg"
+        alt="logo"
+        class="footer-logo"
+        onclick="scrollToTop()"
+      />
 
       <button
         id="personal-ig"

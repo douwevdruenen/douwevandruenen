@@ -5,75 +5,143 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Art - Douwe van Druenen</title>
-    <link rel="icon" type="image/x-icon" href="img/white-icon.svg">
+    <link rel="icon" type="image/x-icon" href="img/white-icon.svg" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <nav class="rellax" data-rellax-speed="3">
+    <nav>
       <div class="nav-backdrop"></div>
-      <img src="img/signature.svg" alt="logo" class="nav-logo" onclick="goToHome()"/>
+      <img
+        src="img/logo-met-naam.svg"
+        alt="logo"
+        class="nav-logo"
+        onclick="goToHome()"
+      />
+      <div class="nav-menu">
+        <button class="nav-button" onclick="goToDesign()">
+          Graphic Design
+        </button>
+        <button class="nav-button" onclick="goToCmd()">CMD</button>
+        <button class="nav-button" onclick="goToArt()">Digital Art</button>
+      </div>
     </nav>
-    <img src="img/side-assets.svg" class="side side-left"></img>
-    <img src="img/side-assets.svg" class="side side-right"></img>
     <header id="art-header">
-        <div class="header-text rellax" data-rellax-speed="2">
-      <h1>Digital Art</h1>
-      <button onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">@dvdruenen.art</button></div>
+      <div class="header-text rellax" data-rellax-speed="2">
+        <h1>Digital Art</h1>
+        <button
+          onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')"
+        >
+          @dvdruenen.art
+        </button>
+      </div>
       <button class="scrolldown" onclick="scrollToBottom()"></button>
       <div class="gradient"></div>
     </header>
     <main>
-      
       <section class="text-box">
-      <p>For as long as I can remember, I've loved to draw. 
-        Recently, I've started drawing digitally. My art mostly 
-        revolves around character design, with one of my most unique characters being Tsumi, seen in the artwork above. I mostly work
-        with Adobe Illustrator and Adobe Fresco, and some backgrounds are AI generated.
-        Below are artworks of a few of my original characters.
-      </p></section>
-      <div class="parallax parallax-one"><div class="art-info right">
-        <h2>Serena</h2>
-        <p>This character is part of a world-building project I'm working on. I'm not sure if I'll ever share it with the world, but I'm still working on it for fun. This is one of my favourite characters.
-        </p></div>
+        <p>
+          For as long as I can remember I've loved to draw. A few years ago I
+          started drawing digitally as well. My art mostly revolves around
+          character design, as I love world-building and creating characters to
+          inhabit those worlds. I mostly work with Adobe Illustrator and Adobe
+          Fresco, and some backgrounds are AI generated. Below are some of my
+          best artworks so far.
+        </p>
+      </section>
+      <div class="parallax parallax-one">
+        <div class="art-info left">
+          <h2>Serena</h2>
+          <p>
+            This character is part of a world-building project I'm working on.
+            I'm not sure if I'll ever share it with the world, but I'm still
+            working on it for fun. This is one of my favourite characters.
+          </p>
+        </div>
       </div>
-        <div class="parallax parallax-two"><div class="art-info left">
+      <div class="parallax parallax-five">
+        <div class="black-gradient grdnt-left"></div>
+        <div class="art-info right info-bottom">
+          <h2>Jun and Kaede</h2>
+          <p>
+            Jun started out as a stand-alone character, but I developed a new
+            project around her, including a new character named Kaede. They hunt
+            yokai in a future version of Tokyo, which I found to be an
+            interesting setting for a story. This drawing is made in a style I
+            adapted most recently.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-two">
+        <div class="art-info left">
           <h2>Navi</h2>
-          <p>This is the main character of my project, he is a soldier who figures out he is 
-            the god of lightning. This drawing is actually a second attempt. I took the Illustrator file
-            of the original drawing and redid some of the effects and details from what I've 
-            learned since I originally drew it.
-          </p></div></div>
-        <div class="parallax parallax-three"><div class="art-info right info-bottom">
+          <p>
+            This is the main character of one of my projects, he is an elven
+            soldier who finds out he is the god of lightning. This drawing is
+            actually a second attempt. I took the Illustrator file of the
+            original drawing and redid some of the effects and details from what
+            I'd learned since I originally drew it.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-three">
+        <div class="art-info left info-bottom">
           <h2>Tempestia</h2>
-          <p>The goddess of time. The twelve 
-            chains represent the hours on a clock. With this drawing I used AI to generate
-            the background. I then matched the lighting to blend everything together.
-          </p></div></div>
-          <div class="parallax parallax-four"><div class="art-info left">
-            <h2>Akira</h2>
-            <p>This character lives in a dystopian future. I just wanted to experiment with different settings, but I liked this character so much, 
-              that I worked her into my project.
-            </p></div></div>
-          <div class="parallax parallax-five"><div class="black-gradient grdnt-left"></div><div class="art-info right">
-            <h2>Jun</h2>
-            <p>Jun is not part of any project. I drew her for the first time a long time ago in the back of my math notebook,
-              and I wanted to see how I'd draw her now. I also liked drawing something more modern and artistic. 
-              I also experimented with new details like blush and a more abstract background.
-            </p></div></div>
-          <div class="parallax parallax-six"><div class="black-gradient grdnt-left"></div><div class="art-info right">
-            <h2>White Queen</h2>
-            <p>This character is based on the chess piece. I first made this character for my animation elective. I
-              liked her design so much, I decided to draw her in a full artwork. I drew her in Adobe Illustrator and made the background 
-              and some of the effects in Adobe Fresco.
-            </p></div></div>
-            <section class="text-box">
-              <p>That's all for now. However, if you want to see more, you can follow me on Instagram
-                at <a href="https://www.instagram.com/dvdruenen.art/" target="_blank">@dvdruenen.art</a>, where I try to
-                post regularly. For some drawings you can also check out a timelapse of my drawing process.
-              </p></section>
-          
+          <p>
+            The goddess of time. The twelve chains represent the hours on a
+            clock. I like to challenge myselfd, so I decided to put the primary
+            light scource beneath the character. With this drawing I used AI to
+            generate the background. I then matched the lighting to blend the
+            character and the background together.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-four">
+        <div class="art-info right">
+          <h2>Jinx</h2>
+          <p>
+            Jinx is a character from the Netflix series Arcane. I really liked
+            her design, so I decided to draw her. It was interesting to see how
+            the character looked in my own artstyle, and eventhough this style
+            is partly inspired by Arcane's artstyle, the artwork still looks
+            unique.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-vesana">
+        <div class="art-info left">
+          <h2>King Vesana</h2>
+          <p>
+            This character is a female pirate King. With this drawing I combined
+            a few different styles to create a new look. I liked drawing this
+            character, as she seems pretty unhinged.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-six">
+        <div class="black-gradient grdnt-left"></div>
+        <div class="art-info right">
+          <h2>White Queen</h2>
+          <p>
+            This character is based on the chess piece. I first made this
+            character for my animation elective. I liked her design so much, I
+            decided to draw her in a full artwork. I drew her in Adobe
+            Illustrator and made the background and some of the effects in Adobe
+            Fresco.
+          </p>
+        </div>
+      </div>
+      <section class="text-box">
+        <p>
+          That's all for now. However, if you want to see more, you can follow
+          me on Instagram at
+          <a href="https://www.instagram.com/dvdruenen.art/" target="_blank"
+            >@dvdruenen.art</a
+          >, where I try to post regularly. For some drawings you can also check
+          out a timelapse of my drawing process.
+        </p>
+      </section>
     </main>
     <footer>
       <button
@@ -83,7 +151,12 @@
         instagram
       </button>
 
-      <img src="img/logo-footer.svg" alt="logo" class="footer-logo" onclick="scrollToTop()"/>
+      <img
+        src="img/logo-footer.svg"
+        alt="logo"
+        class="footer-logo"
+        onclick="scrollToTop()"
+      />
 
       <button
         id="personal-ig"
