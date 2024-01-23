@@ -25,6 +25,35 @@
     font-stretch: normal;
 } */
 
+body.dark-mode, body.dark-mode footer, body.dark-mode .text-box {
+    background-color: rgb(16, 16, 16);
+    color: white;
+}
+
+body.dark-mode .nav-backdrop {
+    background-color: #1616167e;
+}
+
+body.dark-mode p, body.dark-mode h1, body.dark-mode h2, body.dark-mode .text-box a {
+    color: white;
+}
+
+body.dark-mode .nav-button, body.dark-mode footer button {
+    color: white;
+}
+
+body.dark-mode .gallery .rellax .overlay {
+    background-color: rgba(16, 16, 16, 0.8);
+}
+
+body.dark-mode .gradient {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(16, 16, 16, 1));
+}
+
+body.dark-mode .nav-logo, body.dark-mode .footer-logo, body.dark-mode .scrolldown {
+    filter: invert(1);
+}
+
 body {
     position: relative;
     background-color: white;
@@ -51,6 +80,63 @@ body {
     background: #00000060;
 }
 
+.darkmode-button {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    translate: 0 -50%;
+    cursor: pointer;
+}
+
+.darkmode-checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.darkmode-label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 40px;
+    height: 24px;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    transition: 0.3s;
+    background-color: black;
+}
+
+.darkmode-label::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 90px;
+    transition: 0.3s;
+    background-image: url(../img/light-icon.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.darkmode-checkbox:checked+.darkmode-label {
+    background: white;
+
+}
+
+.darkmode-checkbox:checked+.darkmode-label::after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+    background-color: black;
+    background-image: url(../img/dark-icon.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 nav {
     height: 80px;
     width: 100%;
@@ -71,7 +157,6 @@ nav.scroll-up {
     height: 100%;
     width: 100%;
     background-color: #ffffff7e;
-
 }
 
 .nav-logo {
@@ -231,6 +316,10 @@ p a {
     cursor: pointer;
     transition: all 0.5s ease;
     text-decoration: underline;
+}
+
+.text-box a {
+    color: black;
 }
 
 header {

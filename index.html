@@ -19,18 +19,26 @@
         class="nav-logo"
         onclick="goToHome()"
       />
+
       <div class="nav-menu">
         <button class="nav-button" onclick="goToDesign()">
           Graphic Design
         </button>
         <button class="nav-button" onclick="goToCmd()">CMD</button>
         <button class="nav-button" onclick="goToArt()">Digital Art</button>
+        <input
+          type="checkbox"
+          id="dark-mode-toggle"
+          class="darkmode-checkbox"
+        />
+        <label for="dark-mode-toggle" class="darkmode-label"></label>
       </div>
     </nav>
     <header id="home-header">
       <img
         src="img/foto-home.svg"
         alt=""
+        id="home-foto"
         class="rellax"
         data-rellax-speed="3"
       />
