@@ -333,6 +333,7 @@ header {
 }
 
 .header-text {
+    width: 70vw;
     position: absolute;
     bottom: 12vh;
     left: 50%;
@@ -361,9 +362,9 @@ header {
     /* text-align-last: left; */
 }
 
-#home-header img {
+#home-foto {
     position: absolute;
-    width: 40vw;
+    max-width: 40vw;
     height: auto;
     left: 10vw;
     top: 50%;
@@ -420,7 +421,6 @@ header {
     box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
     background-size: cover;
     background-position: center;
-
 }
 
 .gallery .rellax:hover {
@@ -454,6 +454,7 @@ header {
     color: black;
     font-size: 1.5em;
     text-align: center;
+    padding: 20px;
 }
 
 .img1 {
@@ -578,6 +579,10 @@ header {
     height: auto;
 }
 
+body.dark-mode #home-circle, body.dark-mode #home-cross, body.dark-mode #home-rect {
+    filter: invert(1);
+}
+
 footer {
     height: 175px;
     width: 100%;
@@ -687,7 +692,7 @@ footer button:hover, header button:hover {
 }
 
 .parallax-mms {
-    background-image: url(../img/Varkensboerderij.jpg);
+    background-image: url(../img/zonneberg.png);
 }
 
 .parallax-animation {
