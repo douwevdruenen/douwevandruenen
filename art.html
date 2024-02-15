@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art - Douwe van Druenen</title>
+    <link rel="icon" type="image/x-icon" href="img/white-icon.svg" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-backdrop"></div>
+      <img
+        src="img/logo-met-naam.svg"
+        alt="logo"
+        id="nav-logo"
+        onclick="goToHome()"
+      />
+      <div class="nav-menu">
+        <button class="nav-button" onclick="goToDesign()">
+          Graphic Design
+        </button>
+        <button class="nav-button" onclick="goToCmd()">CMD</button>
+        <button class="nav-button" onclick="goToArt()">Digital Art</button>
+        <input
+          type="checkbox"
+          id="dark-mode-toggle"
+          class="darkmode-checkbox"
+        />
+        <label for="dark-mode-toggle" class="darkmode-label"></label>
+      </div>
+    </nav>
+    <header id="art-header">
+      <div class="header-text rellax" data-rellax-speed="2">
+        <h1>Digital Art</h1>
+        <button
+          onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')"
+        >
+          @dvdruenen.art
+        </button>
+      </div>
+      <button class="scrolldown" onclick="scrollToBottom()">
+        <img id="scrolldown" src="img/scrolldown.svg" alt="" />
+      </button>
+      <div class="gradient"></div>
+    </header>
+    <main>
+      <section class="text-box">
+        <p>
+          For as long as I can remember I've loved to draw. A few years ago I
+          started drawing digitally as well. My art mostly revolves around
+          character design, as I love world-building and creating characters to
+          inhabit those worlds. I mostly work with Adobe Illustrator and Adobe
+          Fresco, and some backgrounds are AI generated. Below are some of my
+          best artworks so far.
+        </p>
+      </section>
+      <div class="parallax parallax-one">
+        <div class="art-info left">
+          <h2>Serena</h2>
+          <p>
+            This character is part of a world-building project I'm working on.
+            I'm not sure if I'll ever share it with the world, but I'm still
+            working on it for fun. This is one of my favourite characters.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-five">
+        <div class="black-gradient grdnt-left"></div>
+        <div class="art-info right info-bottom">
+          <h2>Jun and Kaede</h2>
+          <p>
+            Jun started out as a stand-alone character, but I developed a new
+            project around her, including a new character named Kaede. They hunt
+            yokai in a future version of Tokyo, which I found to be an
+            interesting setting for a story. This drawing is made in a style I
+            adapted most recently.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-two">
+        <div class="art-info left">
+          <h2>Navi</h2>
+          <p>
+            This is the main character of one of my projects, he is an elven
+            soldier who finds out he is the god of lightning. This drawing is
+            actually a second attempt. I took the Illustrator file of the
+            original drawing and redid some of the effects and details from what
+            I'd learned since I originally drew it.
+          </p>
+        </div>
+      </div>
+      <div class="parallax">
+        <div class="art-info right info-bottom">
+          <h2>Danji</h2>
+          <p>
+            Danji is the character I play as in a Dungeons & Dragons campaign.
+            He is a changeling, meaning that he can shapeshift. I really like
+            this character, as he has a very rich backstory.
+          </p>
+        </div>
+      </div>
+      <div id="danji-video">
+        <video autoplay muted loop src="img/Danji morph.mp4"></video>
+      </div>
+      <div class="parallax parallax-three">
+        <div class="art-info left info-bottom">
+          <h2>Tempestia</h2>
+          <p>
+            The goddess of time. The twelve chains represent the hours on a
+            clock. I like to challenge myselfd, so I decided to put the primary
+            light scource beneath the character. With this drawing I used AI to
+            generate the background. I then matched the lighting to blend the
+            character and the background together.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-four">
+        <div class="art-info right">
+          <h2>Jinx</h2>
+          <p>
+            Jinx is a character from the Netflix series Arcane. I really liked
+            her design, so I decided to draw her. It was interesting to see how
+            the character looked in my own artstyle, and eventhough this style
+            is partly inspired by Arcane's artstyle, the artwork still looks
+            unique.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-vesana">
+        <div class="art-info left">
+          <h2>King Vesana</h2>
+          <p>
+            This character is a female pirate King. With this drawing I combined
+            a few different styles to create a new look. I liked drawing this
+            character, as she seems pretty unhinged.
+          </p>
+        </div>
+      </div>
+      <div class="parallax parallax-six">
+        <div class="black-gradient grdnt-left"></div>
+        <div class="art-info right">
+          <h2>White Queen</h2>
+          <p>
+            This character is based on the chess piece. I first made this
+            character for my animation elective. I liked her design so much, I
+            decided to draw her in a full artwork. I drew her in Adobe
+            Illustrator and made the background and some of the effects in Adobe
+            Fresco.
+          </p>
+        </div>
+      </div>
+      <section class="text-box">
+        <p>
+          That's all for now. However, if you want to see more, you can follow
+          me on Instagram at
+          <a href="https://www.instagram.com/dvdruenen.art/" target="_blank"
+            >@dvdruenen.art</a
+          >, where I try to post regularly. For some drawings you can also check
+          out a timelapse of my drawing process.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <button
+        id="art-ig"
+        onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')"
+      >
+        Instagram
+      </button>
+
+      <img
+        src="img/logo-footer.svg"
+        alt="logo"
+        id="footer-logo"
+        onclick="scrollToTop()"
+      />
+      <button
+        id="personal-ig"
+        onclick="window.open('www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')"
+      >
+        LinkedIn
+      </button>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+      var rellax = new Rellax(".rellax");
+    </script>
+  </body>
+</html>

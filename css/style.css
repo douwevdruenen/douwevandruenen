@@ -1,0 +1,733 @@
+@import url("https://use.typekit.net/xoz3bxj.css");
+
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --douwe-beige: #f2dfd7;
+}
+
+body.dark-mode, body.dark-mode footer, body.dark-mode .text-box {
+    background-color: rgb(16, 16, 16);
+    color: var(--douwe-beige);
+}
+
+body.dark-mode .nav-backdrop {
+    background-color: #1616167e;
+}
+
+body.dark-mode p, body.dark-mode h1, body.dark-mode h2, body.dark-mode .text-box a {
+    color: var(--douwe-beige);
+}
+
+body.dark-mode .nav-button, body.dark-mode footer button {
+    color: var(--douwe-beige);
+}
+
+body.dark-mode .gallery .rellax .overlay {
+    background-color: rgba(16, 16, 16, 0.8);
+}
+
+body.dark-mode .gradient {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(16, 16, 16, 1));
+}
+
+body {
+    position: relative;
+    background-color: var(--douwe-beige);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--douwe-beige);
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #161616;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00000040;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #00000060;
+}
+
+.darkmode-button {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    translate: 0 -50%;
+    cursor: pointer;
+}
+
+.darkmode-checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.darkmode-label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 40px;
+    height: 24px;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    transition: 0.3s;
+    background-color: black;
+}
+
+.darkmode-label::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: var(--douwe-beige);
+    border-radius: 90px;
+    transition: 0.3s;
+    background-image: url(../img/light-icon.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.darkmode-checkbox:checked+.darkmode-label {
+    background: var(--douwe-beige);
+
+}
+
+.darkmode-checkbox:checked+.darkmode-label::after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+    background-color: black;
+    background-image: url(../img/dark-icon.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: top 0.2s;
+}
+
+nav.scroll-up {
+    top: -80px;
+}
+
+.nav-backdrop {
+    height: 100%;
+    width: 100%;
+    background-color: #f2dfd780;
+}
+
+#nav-logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: auto;
+    height: 50%;
+    translate: 0 -50%;
+    cursor: pointer;
+}
+
+.nav-menu {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: auto;
+    height: 50%;
+    translate: 0 -50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-button {
+    font-family: "dystopian", sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: #000;
+    border: none;
+    background-color: transparent;
+    padding: 0 20px;
+}
+
+.nav-button:hover {
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
+
+.scrolldown {
+    animation: MoveUpDown 2s ease-in-out infinite;
+    position: absolute;
+    /* background: url(../img/scrolldown.svg) no-repeat center center; */
+    border: none;
+    left: 50%;
+    width: 50px;
+    height: auto;
+    translate: -50% 0;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.side {
+    position: fixed;
+    top: 50%;
+    translate: 0 -50%;
+    height: 50vh;
+    width: auto;
+    background-size: cover;
+    z-index: 1;
+    display: none;
+}
+
+.side-right {
+    right: 2vw;
+}
+
+.side-left {
+    left: 2vw;
+}
+
+h1 {
+    font-family: "dystopian", sans-serif;
+    font-weight: 700;
+    font-size: 5em;
+    /* margin-bottom: 20px; */
+    line-height: 1.15em;
+    text-align: center;
+    /* text-align-last: justify; */
+}
+
+h2 {
+    font-family: "dystopian", sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    line-height: 1.15em;
+}
+
+.art-info h2 {
+    margin-bottom: 10px;
+}
+
+.info-bottom {
+    bottom: 5vh;
+}
+
+.text-box {
+    width: 100%;
+    z-index: 3;
+    padding: 150px 25vw 150px 25vw;
+    background-color: var(--douwe-beige);
+}
+
+.text-box h2 {
+    margin-bottom: 10px;
+}
+
+.art-info {
+    position: absolute;
+    margin-top: 5vh;
+    width: 25%;
+    z-index: 3;
+    padding: 5%;
+    background-color: none;
+    color: var(--douwe-beige);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.right {
+    left: 5vw;
+}
+
+.left {
+    right: 5vw;
+}
+
+.art-img {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+}
+
+#art-img2 {
+    top: -100vh;
+    position: sticky;
+}
+
+p {
+    font-family: "tt-commons-pro", sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    width: auto;
+    text-align: justify;
+}
+
+p a {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-decoration: underline;
+}
+
+.text-box a {
+    color: black;
+}
+
+header {
+    color: var(--douwe-beige);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    top: -80px;
+    margin-bottom: -80px;
+}
+
+.header-text {
+    width: 70vw;
+    position: absolute;
+    bottom: 12vh;
+    left: 50%;
+    translate: -50% 0;
+    z-index: 1;
+}
+
+.home-text {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    translate: 0 -50%;
+    z-index: 1;
+    color: #000;
+    text-align: left;
+    max-width: 30vw;
+}
+
+#home-foto {
+    position: absolute;
+    max-width: 80vw;
+    height: auto;
+    left: 10vw;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+#home-header {
+    /* background: url(../img/home-bg.png) no-repeat; */
+    background-size: cover;
+}
+
+#art-header {
+    background: url(../img/yuki.png) no-repeat center center;
+    background-size: cover;
+}
+
+#art-header button {
+    margin-top: 10px;
+}
+
+#design-header {
+    background: url(../img/header-img.png) no-repeat center center;
+    background-size: cover;
+    color: black;
+}
+
+#cmd-header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.gradient {
+    height: 20vh;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0), var(--douwe-beige));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.gallery {
+    height: calc(20vw + 2400px);
+    margin: 0;
+    padding-top: 200px;
+    width: 100%;
+    position: relative;
+
+}
+
+.gallery div {
+    position: absolute;
+    background-color: var(--douwe-beige);
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery .rellax:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.gallery .rellax .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f2dfd79f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* This will show the overlay when you hover over the image */
+.gallery .rellax:hover .overlay {
+    opacity: 1;
+    letter-spacing: 0.05em;
+}
+
+.gallery p {
+    font-family: "dystopian", sans-serif;
+    font-weight: 400;
+    position: absolute;
+    color: black;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.img1 {
+    left: 20%;
+    z-index: 3;
+    background-image: url(../img/White\ Queen\ Final.png);
+    width: 25vw;
+    height: 25vw;
+}
+
+.img2 {
+    top: 200px;
+    right: 20%;
+    z-index: 2;
+    background-image: url(../img/pinokkio.png);
+    width: 22vw;
+    height: 32vw;
+}
+
+.img3 {
+    top: 250px;
+    left: 40%;
+    z-index: 1;
+    background-image: url(../img/white-queen.gif);
+    width: 20vw;
+    height: 13vw;
+}
+
+.img4 {
+    top: 1000px;
+    left: 15%;
+    z-index: 3;
+    background-image: url(../img/001.png);
+    width: 23vw;
+    height: 23vw;
+}
+
+.img5 {
+    top: 700px;
+    left: 35%;
+    z-index: 2;
+    background-image: url(../img/japanese\ mix\ 1\ cover.png);
+    width: 13vw;
+    height: 13vw;
+}
+
+.img6 {
+    top: 1300px;
+    left: 20%;
+    z-index: 2;
+    background-image: url(../img/ihvj_knip_poster.png);
+    width: 22vw;
+    height: 32vw;
+}
+
+.img7 {
+    top: 1700px;
+    left: 50%;
+    z-index: 3;
+    background-image: url(../img/Danji.jpg);
+    width: 22vw;
+    height: 22vw;
+}
+
+.img8 {
+    top: 2000px;
+    right: 20%;
+    z-index: 2;
+    background-image: url(../img/Akira2.png);
+    width: 23vw;
+    height: 26vw;
+}
+
+.img9 {
+    top: 1300px;
+    left: 40%;
+    z-index: 1;
+    background-image: url(../img/codingcat-thumb.png);
+    width: 16vw;
+    height: 16vw;
+}
+
+.img10 {
+    top: 3000px;
+    left: 20%;
+    z-index: 3;
+    background-image: url(../img/Rotterdam.jpg);
+    width: 30vw;
+    height: 20vw;
+}
+
+.img11 {
+    top: 2700px;
+    right: 25%;
+    z-index: 2;
+    background-image: url(../img/cat-sunset.gif);
+    width: 20vw;
+    height: 20vw;
+}
+
+#home-circle {
+    position: absolute;
+    right: 25vw;
+    top: 900px;
+    width: 10vw;
+    height: auto;
+}
+
+#home-cross {
+    position: absolute;
+    right: 35vw;
+    top: 1500px;
+    width: 2vw;
+    height: auto;
+}
+
+#home-rect {
+    position: absolute;
+    left: 30vw;
+    top: 2400px;
+    width: 4vw;
+    height: auto;
+}
+
+body.dark-mode #home-circle, body.dark-mode #home-cross, body.dark-mode #home-rect {
+    filter: invert(1);
+}
+
+footer {
+    height: 175px;
+    width: 100%;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--douwe-beige);
+    bottom: 0;
+}
+
+#footer-logo {
+    width: auto;
+    height: 60%;
+    margin: 0 auto;
+    transition: all 0.4s ease;
+}
+
+#footer-logo:hover {
+    margin-bottom: 20px;
+    cursor: pointer;
+
+}
+
+footer button, header button {
+    border: none;
+    background: none;
+    font-family: "dystopian", sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+    transition: all 0.3s ease;
+
+}
+
+header button {
+    color: var(--douwe-beige);
+}
+
+footer button:hover, header button:hover {
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
+
+#personal-ig {
+    position: absolute;
+    right: 20%;
+}
+
+#art-ig {
+    position: absolute;
+    left: 20%;
+}
+
+.parallax {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax-one {
+    background-image: url(../img/serena-wide.png);
+}
+
+.parallax-two {
+    background-image: url(../img/navi.png);
+}
+
+.parallax-three {
+    background-image: url(../img/tempestia\ wide.png);
+}
+
+.parallax-four {
+    background-image: url(../img/jinx.png);
+    background-position: top;
+}
+
+.parallax-vesana {
+    background-image: url(../img/vesana.png);
+    background-position: top;
+}
+
+.parallax-five {
+    background-image: url(../img/jun-kaede.png);
+}
+
+.parallax-six {
+    background-image: url(../img/white-queen-wide.png);
+}
+
+.parallax-knip {
+    background-image: url(../img/knip-posters.png);
+}
+
+.parallax-album {
+    background-image: url(../img/vinyl-mockup.png);
+}
+
+.parallax-squares {
+    background-image: url(../img/square\ mockup.png);
+}
+
+.parallax-codingcat {
+    background-image: url(../img/codingcat-bord.png);
+}
+
+.parallax-mms {
+    background-image: url(../img/zonneberg.png);
+}
+
+.parallax-animation {
+    background-image: url(../img/sitting-at-lake.gif);
+}
+
+#blender-video, #danji-video {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: -2;
+}
+
+#blender-video video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#danji-video video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center 10%;
+
+}
+
+.black-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+}
+
+.grdnt-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.grdnt-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 50px;
+    }
+
+    50% {
+        bottom: 30px;
+    }
+}
