@@ -77,13 +77,16 @@ body {
 .darkmode-label {
     cursor: pointer;
     text-indent: -9999px;
-    width: 40px;
+    /* width: 40px; */
     height: 24px;
     display: block;
     border-radius: 100px;
     position: relative;
     transition: 0.3s;
     background-color: black;
+    /* to temporarily hide the toggle */
+    visibility: hidden;
+    width: 10px;
 }
 
 .darkmode-label::after {
