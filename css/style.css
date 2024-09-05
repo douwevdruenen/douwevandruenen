@@ -235,7 +235,7 @@ h2 {
 }
 
 .info-bottom {
-    bottom: 5vh;
+    bottom: 10vh;
 }
 
 .text-box {
@@ -251,13 +251,14 @@ h2 {
 
 .art-info {
     position: absolute;
-    margin-top: 5vh;
-    width: 30%;
+    margin-top: 10vh;
+    width: 27%;
     z-index: 3;
-    padding: 5%;
-    background-color: none;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.2);
     color: var(--douwe-beige);
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    /* text-shadow: 0 0 20px rgba(0, 0, 0, 0.8); */
+    backdrop-filter: blur(10px);
 }
 
 .right {
@@ -398,6 +399,7 @@ header {
 .gallery .rellax:hover {
     cursor: pointer;
     scale: 1.05;
+    z-index: 10;
 }
 
 .gallery .rellax .overlay {
@@ -406,12 +408,13 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #f2dfd79f;
+    background: #f2dfd78e;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease-in;
+    backdrop-filter: blur(4px);
 }
 
 /* This will show the overlay when you hover over the image */
@@ -530,34 +533,6 @@ header {
     height: 20vw;
 }
 
-#home-circle {
-    position: absolute;
-    right: 25vw;
-    top: 900px;
-    width: 10vw;
-    height: auto;
-}
-
-#home-cross {
-    position: absolute;
-    right: 35vw;
-    top: 1500px;
-    width: 2vw;
-    height: auto;
-}
-
-#home-rect {
-    position: absolute;
-    left: 30vw;
-    top: 2400px;
-    width: 4vw;
-    height: auto;
-}
-
-body.dark-mode #home-circle, body.dark-mode #home-cross, body.dark-mode #home-rect {
-    filter: invert(1);
-}
-
 footer {
     height: 175px;
     width: 100%;
@@ -620,6 +595,17 @@ footer button:hover, header button:hover {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+}
+
+.parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--douwe-beige);
+    mix-blend-mode: color;
+    transition: all 0.4s ease;
 }
 
 .parallax-one {

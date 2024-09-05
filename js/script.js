@@ -133,3 +133,34 @@ document
       localStorage.setItem("darkMode", "false");
     }
   });
+
+// opacity on scroll
+function adjustOverlayOpacity() {
+  var parallaxElements = document.querySelectorAll(".parallax");
+  parallaxElements.forEach(function (element) {
+    var rect = element.getBoundingClientRect();
+    var windowHeight = window.innerHeight;
+    var overlay = element.querySelector(".parallax-overlay");
+
+    if (rect.top >= 0 && rect.bottom <= windowHeight) {
+      // Element is completely in the viewport
+      overlay.style.opacity = 0;
+    } else if (rect.bottom < 0 || rect.top > windowHeight) {
+      // Element is completely out of the viewport
+      overlay.style.opacity = 1;
+    } else {
+      // Element is partially in the viewport
+      var visibleHeight =
+        Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+      if (visibleHeight >= rect.height / 2) {
+        overlay.style.opacity = 0;
+      } else {
+        overlay.style.opacity = 1;
+      }
+    }
+  });
+}
+
+window.addEventListener("scroll", adjustOverlayOpacity);
+window.addEventListener("resize", adjustOverlayOpacity);
+document.addEventListener("DOMContentLoaded", adjustOverlayOpacity);
