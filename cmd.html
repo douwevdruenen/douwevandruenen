@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CMD - Douwe van Druenen</title>
+    <title>Multimedia Design - Douwe van Druenen</title>
     <link rel="icon" type="image/x-icon" href="img/white-icon.svg" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -20,11 +20,11 @@
         onclick="goToHome()"
       />
       <div class="nav-menu">
-        <button class="nav-button" onclick="goToDesign()">
-          Graphic Design
+        <button class="nav-button" onclick="goToCmd()">
+          Multimedia Design
         </button>
-        <button class="nav-button" onclick="goToCmd()">CMD</button>
         <button class="nav-button" onclick="goToArt()">Digital Art</button>
+        <button class="nav-button" onclick="goToAnimation()">Animation</button>
         <input
           type="checkbox"
           id="dark-mode-toggle"
@@ -33,10 +33,9 @@
         <label for="dark-mode-toggle" class="darkmode-label"></label>
       </div>
     </nav>
-    <header id="cmd-header">
-      <video autoplay muted loop src="img/1-3-video.mp4"></video>
+    <header id="design-header">
       <div class="header-text rellax" data-rellax-speed="2">
-        <h1>Communication & Multimedia Design</h1>
+        <h1>Multimedia Design</h1>
       </div>
       <button class="scrolldown" onclick="scrollToBottom()">
         <img id="scrolldown" src="img/scrolldown.svg" alt="" />
@@ -46,14 +45,13 @@
     <main>
       <section class="text-box">
         <p>
-          I study Communication & Multimedia Design (CMD) at Zuyd Hogeschool
-          Maastricht, where I've picked up skills like visual design, UX-design,
-          animation and many more. I also study coding and programming, a skill
-          I use often. This website is an example of that. A good example of a
-          project where a lot of my skills came together, is the video playing
-          above. This is a project where I programmed randomly generated art to
-          accompany a live jazz band. Below are a few more projects I've worked
-          on as a CMD student.
+          I am, above all, a designer. I study Communication & Multimedia Design
+          (CMD) at Zuyd Hogeschool Maastricht, where I've picked up skills like
+          visual design, UX-design, animation and many more. I also study coding
+          and programming, a skill I use often. This website is an example of
+          that. Besides my studies, I've also done projects for other
+          organisations. Below are a few projects I've worked on as a multimedia
+          designer.
         </p>
       </section>
       <div class="parallax parallax-codingcat">
@@ -83,43 +81,50 @@
               onclick="window.open('https://www.figma.com/proto/TsGYTDZYNzQuxuWYM31qsS/prototype?page-id=118%3A14074&type=design&node-id=278-2599&viewport=-11803%2C9993%2C0.86&t=Xmq51FXYnBMeD83u-1&scaling=scale-down-width&starting-point-node-id=278%3A2599', '_blank')"
               >this link</a
             >
-            to view the story yourself.
+            to view the story yourself. <br /><br />
+            During my internship, I also designed posters for a presentation at
+            the Dutch Ministry of Foreign Affairs, where they even asked to keep
+            the posters. After my internship, I was asked to make a new batch of
+            posters for a convention, a project I gladly took on.
           </p>
         </div>
       </div>
-      <div class="parallax parallax-animation">
+      <div class="parallax parallax-genart">
         <div class="art-info right">
-          <h2>2D Animation</h2>
+          <h2>Generative Art</h2>
           <p>
-            In my second year, I followed an elective where I learned to make 2D
-            animations. I experimented with a lot of different animation styles
-            and I made a short animation about a girl and a dragon who live by a
-            waterfall. You can watch it
+            In my first year at CMD, I did a project where I programmed
+            generative art, that randomly makes a moving art piece within a
+            strict ruleset. It was very fun to work on, and I even got to use my
+            visuals to accompany a live jazz band.
             <a
-              onclick="window.open('https://www.youtube.com/watch?v=Yq0xxq5xz28&ab_channel=DouwevanDruenen', '_blank')"
+              onclick="window.open('https://www.youtube.com/watch?v=J9Z9J9Z9J9Z&ab_channel=DouwevanDruenen', '_blank')"
               >here</a
             >.
           </p>
         </div>
       </div>
-      <div class="parallax">
-        <div class="black-gradient grdnt-right"></div>
-        <div class="art-info left">
-          <h2>3D Animation</h2>
+      <div class="parallax parallax-knip">
+        <div class="black-gradient grdnt-left"></div>
+        <div class="art-info right">
+          <h2>Knip Musical</h2>
           <p>
-            In my second year, I also followed an elective where I learned to
-            use Blender to make 3D animations. I wanted to make satisfying
-            renders, an example of which you can see here. You can check out
-            <a
-              onclick="window.open('https://www.youtube.com/playlist?list=PL4qNP_BrULqICGbYTuilZepkyRGEkmeTS', '_blank')"
-              >this playlist</a
-            >
-            on my YouTube channel to see more of my 3D animations.
+            The high school I used to go to has its own musical group that
+            performs a musical every year in the biggest theatre in Helmond. I
+            personally know the producer, who approached me in 2022 for the
+            design of the poster for their musical, Ik hou van jou. The
+            following year I not only designed the poster for their new musical,
+            Pinokkio, but I also designed their new logo. <br /><br />In 2024 I
+            continued my work for Knip Musical with the musical "Tranen van
+            Smaragd", where I made designs for the poster, flyers, banners for
+            in the theatre and a digital billboard next to a busy road in
+            Helmond. The design I made were also featured on projections during
+            the musical itself.
           </p>
         </div>
       </div>
-      <div id="blender-video">
-        <video autoplay muted loop src="img/waveboat.mp4"></video>
+      <div id="genart-video">
+        <video autoplay muted loop src="img/1-3-video.mp4"></video>
       </div>
     </main>
     <footer>
@@ -138,7 +143,7 @@
       />
       <button
         id="personal-ig"
-        onclick="window.open('www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')"
+        onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')"
       >
         LinkedIn
       </button>

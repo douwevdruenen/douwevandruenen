@@ -21,11 +21,11 @@
       />
 
       <div class="nav-menu">
-        <button class="nav-button" onclick="goToDesign()">
-          Graphic Design
+        <button class="nav-button" onclick="goToCmd()">
+          Multimedia Design
         </button>
-        <button class="nav-button" onclick="goToCmd()">CMD</button>
         <button class="nav-button" onclick="goToArt()">Digital Art</button>
+        <button class="nav-button" onclick="goToAnimation()">Animation</button>
         <input
           type="checkbox"
           id="dark-mode-toggle"
@@ -35,11 +35,10 @@
       </div>
     </nav>
     <header id="home-header">
-      <img src="img/foto-home.svg" alt="" id="home-foto" />
-
       <button class="scrolldown" onclick="scrollToBottom()">
         <img id="scrolldown" src="img/scrolldown.svg" alt="" />
       </button>
+      <div class="gradient"></div>
     </header>
     <main>
       <section class="text-box">
@@ -60,29 +59,33 @@
             <p>Digital Art</p>
           </div>
         </div>
-        <div class="img2 rellax" data-rellax-speed="0" onclick="goToDesign()">
+        <div class="img2 rellax" data-rellax-speed="0" onclick="goToCmd()">
           <div class="overlay">
-            <p>Graphic Design</p>
+            <p>Multimedia Design</p>
           </div>
         </div>
-        <div class="img3 rellax" data-rellax-speed="-2" onclick="goToCmd()">
+        <div
+          class="img3 rellax"
+          data-rellax-speed="-2"
+          onclick="goToAnimation()"
+        >
           <div class="overlay">
-            <p>CMD</p>
+            <p>Animation</p>
           </div>
         </div>
-        <div class="img4 rellax" data-rellax-speed="4" onclick="goToDesign()">
+        <div class="img4 rellax" data-rellax-speed="4" onclick="goToDCmd()">
           <div class="overlay">
-            <p>Graphic Design</p>
+            <p>Multimedia Design</p>
           </div>
         </div>
-        <div class="img5 rellax" data-rellax-speed="-2" onclick="goToDesign()">
+        <div class="img5 rellax" data-rellax-speed="-2" onclick="goToCmd()">
           <div class="overlay">
-            <p>Graphic Design</p>
+            <p>Multimedia Design</p>
           </div>
         </div>
-        <div class="img6 rellax" data-rellax-speed="0" onclick="goToDesign()">
+        <div class="img6 rellax" data-rellax-speed="0" onclick="goToCmd()">
           <div class="overlay">
-            <p>Graphic Design</p>
+            <p>Multimedia Design</p>
           </div>
         </div>
         <div class="img7 rellax" data-rellax-speed="4" onclick="goToArt()">
@@ -95,19 +98,23 @@
             <p>Digital Art</p>
           </div>
         </div>
-        <div class="img9 rellax" data-rellax-speed="-2" onclick="goToCmd()">
+        <div
+          class="img9 rellax"
+          data-rellax-speed="-2"
+          onclick="goToAnimation()"
+        >
           <div class="overlay">
-            <p>CMD</p>
+            <p>Animation</p>
           </div>
         </div>
         <div class="img10 rellax" data-rellax-speed="4" onclick="goToCmd()">
           <div class="overlay">
-            <p>CMD</p>
+            <p>Multimedia Design</p>
           </div>
         </div>
         <div class="img11 rellax" data-rellax-speed="2" onclick="goToArt()">
           <div class="overlay">
-            <p>Digital Art</p>
+            <p>Animation</p>
           </div>
         </div>
         <!-- <img
@@ -149,7 +156,7 @@
       />
       <button
         id="personal-ig"
-        onclick="window.open('www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')"
+        onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')"
       >
         LinkedIn
       </button>
