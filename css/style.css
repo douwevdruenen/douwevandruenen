@@ -350,7 +350,7 @@ header {
 }
 
 #art-header {
-    background: url(../img/yuki.png) no-repeat center center;
+    background: url(../img/yuki.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -359,9 +359,29 @@ header {
 }
 
 #design-header {
-    background: url(../img/design-header.jpg) no-repeat center center;
+    background: url(../img/design-header.png) no-repeat center center;
     background-size: cover;
+}
+
+.design-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-color {
     background-color: var(--douwe-beige);
+    mix-blend-mode: color;
+    z-index: -1;
+}
+
+.overlay-darker {
+    background-color: #56392e;
+    mix-blend-mode: color-burn;
+    opacity: 0.5;
+    z-index: -1;
 }
 
 #animation-header {
@@ -609,16 +629,16 @@ footer button:hover, header button:hover {
 }
 
 .parallax-one {
-    background-image: url(../img/serena-wide.png);
+    background-image: url(../img/serena-wide.jpg);
     background-position: top;
 }
 
 .parallax-two {
-    background-image: url(../img/navi.png);
+    background-image: url(../img/navi.jpg);
 }
 
 .parallax-four {
-    background-image: url(../img/desideria.png);
+    background-image: url(../img/desideria.jpg);
     background-position: top;
 }
 
@@ -627,20 +647,22 @@ footer button:hover, header button:hover {
     background-position: top;
 }
 
+.parallax-axelia {
+    background-image: url(../img/axelia.jpg);
+    background-position: top;
+}
+
+.parallax-lyra {
+    background-image: url(../img/lyra.jpg);
+    background-position: top;
+}
+
 .parallax-five {
-    background-image: url(../img/jun-kaede.png);
+    background-image: url(../img/jun-kaede.jpg);
 }
 
 .parallax-knip {
     background-image: url(../img/knip-posters.jpg);
-}
-
-.parallax-album {
-    background-image: url(../img/vinyl-mockup.png);
-}
-
-.parallax-squares {
-    background-image: url(../img/square\ mockup.png);
 }
 
 .parallax-codingcat {
