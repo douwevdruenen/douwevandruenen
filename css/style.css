@@ -9,6 +9,10 @@
     --douwe-beige: #f2dfd7;
 }
 
+::selection {
+    background-color: #B37257;
+}
+
 body.dark-mode, body.dark-mode footer, body.dark-mode .text-box {
     background-color: rgb(16, 16, 16);
     color: var(--douwe-beige);
