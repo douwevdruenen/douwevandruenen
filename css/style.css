@@ -612,7 +612,18 @@ footer button:hover, header button:hover {
     z-index: -2;
 }
 
-#blender-video, #danji-video, #genart-video, #royal-home {
+.dark-bg2 {
+    background: linear-gradient(rgb(33, 33, 33), rgb(105, 105, 105));
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+#danji-video, #genart-video, #royal-home {
     top: 0;
     left: 0;
     position: fixed;
@@ -621,18 +632,18 @@ footer button:hover, header button:hover {
     z-index: -2;
 }
 
-.parallax-royal {
+.parallax-royal, .parallax-blender {
     mask-image: linear-gradient(to bottom, black 0%, black 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);
 }
 
-#royal-video {
+#royal-video, #blender-video {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
-    z-index: -1;
+    z-index: -2;
     object-fit: cover;
 }
 
@@ -832,7 +843,17 @@ footer button:hover, header button:hover {
         translate: -50% -50%;
     }
 
+    .parallax-hjm {
+        background-position: 80%;
+        background-size: 200%;
+        background-repeat: no-repeat;
+    }
+
     .left {
         float: left;
+    }
+
+    .parallax-knip {
+        background-position: 75%;
     }
 }
