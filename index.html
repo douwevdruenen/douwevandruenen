@@ -33,6 +33,12 @@
         />
         <label for="dark-mode-toggle" class="darkmode-label"></label>
       </div>
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-backdrop"></div>
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+      </div>
     </nav>
     <header id="home-header">
       <button class="scrolldown" onclick="scrollToBottom()">
@@ -62,7 +68,8 @@
         <div class="img7 rellax" data-rellax-speed="2"></div>
       </section> -->
       <section id="home-main">
-        <div class="parallax">
+        <div class="dark-bg"></div>
+        <div class="parallax parallax-home-cmd">
           <div class="art-info right">
             <h2>Multimedia Design</h2>
             <p>
@@ -172,7 +179,7 @@
         </div>
       </section> -->
 
-      <div id="genart-video">
+      <div id="royal-home">
         <video autoplay muted loop src="video/royal.mp4"></video>
       </div>
     </main>

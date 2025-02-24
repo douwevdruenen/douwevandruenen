@@ -234,3 +234,14 @@ homeButtons.forEach(function (homeButton) {
 window.addEventListener("scroll", adjustOverlayOpacity);
 window.addEventListener("resize", adjustOverlayOpacity);
 document.addEventListener("DOMContentLoaded", adjustOverlayOpacity);
+
+function toggleMenu() {
+  var navMenu = document.querySelector(".nav-menu");
+  navMenu.classList.toggle("active");
+  var hamMenu = document.querySelector(".hamburger-menu");
+  hamMenu.classList.toggle("active");
+  var navBackdrop = document.querySelector(".nav-backdrop");
+  navBackdrop.classList.toggle("active");
+  var navControl = document.querySelector("nav");
+  navControl.classList.toggle("active");
+}

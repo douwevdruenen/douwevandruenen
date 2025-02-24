@@ -36,6 +36,10 @@ body.dark-mode .gradient {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(38, 38, 38, 1));
 }
 
+body.dark-mode .bar {
+    background-color: var(--douwe-beige);
+}
+
 body {
     position: relative;
     background-color: var(--douwe-beige);
@@ -134,7 +138,7 @@ nav {
     left: 0;
     z-index: 999;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(15px);
+    /* backdrop-filter: blur(15px); */
     transition: top 0.2s;
 }
 
@@ -146,6 +150,7 @@ nav.scroll-up {
     height: 100%;
     width: 100%;
     background-color: #f2dfd780;
+    backdrop-filter: blur(15px);
 }
 
 #nav-logo {
@@ -275,8 +280,9 @@ h2 {
 }
 
 .art-info {
-    position: absolute;
-    margin-top: 10vh;
+    position: relative;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
     width: 27%;
     z-index: 3;
     padding: 2%;
@@ -310,6 +316,7 @@ h2 {
 
 .left {
     right: 5vw;
+    float: right;
 }
 
 .art-img {
@@ -387,7 +394,7 @@ header {
 }
 
 #home-header {
-    background: url(../img/home-header.jpg) no-repeat center left 6vw;
+    background: url(../img/home-header.jpg) no-repeat center;
     background-size: cover;
     background-color: var(--douwe-beige);
 }
@@ -442,23 +449,6 @@ header {
     z-index: 0;
 }
 
-.gallery {
-    height: calc(20vw + 2400px);
-    margin: 0;
-    padding-top: 200px;
-    width: 100%;
-    position: relative;
-
-}
-
-.gallery div {
-    position: absolute;
-    background-color: var(--douwe-beige);
-    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
-    background-size: cover;
-    background-position: center;
-}
-
 .home-img-overlay {
     position: relative;
 }
@@ -469,144 +459,6 @@ header {
     box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
     background-size: cover;
     background-position: center;
-}
-
-.gallery .rellax:hover {
-    cursor: pointer;
-    scale: 1.05;
-    z-index: 10;
-}
-
-.gallery .rellax .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #f2dfd78e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-    backdrop-filter: blur(4px);
-}
-
-/* This will show the overlay when you hover over the image */
-.gallery .rellax:hover .overlay {
-    opacity: 1;
-    letter-spacing: 0.05em;
-}
-
-.gallery p {
-    font-family: "dystopian", sans-serif;
-    font-weight: 400;
-    position: absolute;
-    color: black;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.img1 {
-    top: 130vh;
-    left: 10vw;
-    z-index: 3;
-    background-image: url(../img/caelum-home.jpg);
-    width: 20vw;
-    height: 22vw;
-}
-
-.img2 {
-    top: 20vh;
-    right: 10vw;
-    z-index: 2;
-    background-image: url(../img/TranenVanSmaragd-poster.jpg);
-    width: 18vw;
-    height: 25.5vw;
-}
-
-.img3 {
-    top: 280vh;
-    right: 10vw;
-    z-index: 1;
-    background-image: url(../img/white-queen.gif);
-    width: 20vw;
-    height: 13vw;
-}
-
-.img4 {
-    top: 50vh;
-    right: 25vw;
-    z-index: 3;
-    background-image: url(../img/001.jpg);
-    width: 15vw;
-    height: 15vw;
-}
-
-.img5 {
-    top: 700px;
-    left: 35%;
-    z-index: 2;
-    background-image: url(../img/winter.jpg);
-    width: 13vw;
-    height: 13vw;
-}
-
-.img6 {
-    top: 1300px;
-    left: 20%;
-    z-index: 2;
-    background-image: url(../img/ihvj_knip_poster.png);
-    width: 22.5vw;
-    height: 32vw;
-}
-
-.img7 {
-    top: 1700px;
-    left: 50%;
-    z-index: 3;
-    background-image: url(../img/Danji.jpg);
-    width: 22vw;
-    height: 22vw;
-}
-
-.img8 {
-    top: 2000px;
-    right: 20%;
-    z-index: 2;
-    background-image: url(../img/muzami.png);
-    width: 24vw;
-    height: 26vw;
-}
-
-.img9 {
-    top: 1200px;
-    left: 40%;
-    z-index: 1;
-    background-image: url(../img/hjm.gif);
-    width: 20vw;
-    height: 16vw;
-    background-position: right !important;
-}
-
-.img10 {
-    top: 3000px;
-    left: 20%;
-    z-index: 3;
-    background-image: url(../img/Rotterdam.jpg);
-    width: 30vw;
-    height: 20vw;
-}
-
-.img11 {
-    top: 2700px;
-    right: 25%;
-    z-index: 2;
-    background-image: url(../img/cat-sunset.gif);
-    width: 20vw;
-    height: 20vw;
 }
 
 footer {
@@ -664,7 +516,8 @@ footer button:hover, header button:hover {
 }
 
 .parallax {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -749,7 +602,17 @@ footer button:hover, header button:hover {
     background-image: url(../video/schaduw.gif);
 }
 
-#blender-video, #danji-video, #genart-video {
+.dark-bg {
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+#blender-video, #danji-video, #genart-video, #royal-home {
     top: 0;
     left: 0;
     position: fixed;
@@ -759,10 +622,6 @@ footer button:hover, header button:hover {
 }
 
 .parallax-royal {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
     mask-image: linear-gradient(to bottom, black 0%, black 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);
 }
@@ -791,18 +650,11 @@ footer button:hover, header button:hover {
 
 }
 
-#genart-video video {
-    width: 100vw;
-    height: 100vh;
+#genart-video video, #royal-video video, #royal-home video {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
-
-#royal-video video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-}
-
 
 .black-gradient {
     position: absolute;
@@ -831,6 +683,20 @@ footer button:hover, header button:hover {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
+/* Styles for the hamburger menu */
+.hamburger-menu {
+    display: none;
+    /* flex-direction: column; */
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 5px 0;
+    transition: 0.4s;
+}
 
 @keyframes MoveUpDown {
     0%, 100% {
@@ -839,5 +705,134 @@ footer button:hover, header button:hover {
 
     50% {
         bottom: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* body.dark-mode .nav-menu.active .nav-button {
+        background-color: #2626267e;
+    } */
+
+    .text-box {
+        padding: 100px 10vw 100px 10vw;
+    }
+
+    .header-text {
+        width: 90vw;
+    }
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    /* 
+    .parallax {
+        position: relative;
+        height: auto;
+    } */
+
+    .art-info {
+        /* position: relative; */
+        width: calc(100vw - 40px);
+        padding: 30px;
+        margin-top: 100vh;
+        margin-bottom: 20px;
+        left: 20px;
+        /* bottom: 20px; */
+    }
+
+    .nav-button {
+        font-size: 1.2em;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        height: 30px;
+        width: 25px;
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        translate: 0 -50%;
+    }
+
+    .nav-menu.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        /* background-color: #f2dfd780; */
+        width: 100%;
+        /* backdrop-filter: blur(15px); */
+    }
+
+    .nav-menu.active .nav-button {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        /* background-color: #f2dfd780; */
+        /* backdrop-filter: blur(15px); */
+    }
+
+    .hamburger-menu.active #bar1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-menu.active #bar2 {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active #bar3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .nav-backdrop.active {
+        height: 220px;
+    }
+
+    #home-header {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .black-gradient {
+        display: none;
+    }
+
+    #footer-logo {
+        width: 40%;
+        height: 40%;
+    }
+
+    footer button {
+        font-size: 1.2em;
+    }
+
+    #personal-ig {
+        right: 30px;
+    }
+
+    #art-ig {
+        left: 30px;
+    }
+
+    #royal-home, #royal-video {
+        width: 150vw;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+    }
+
+    .left {
+        float: left;
     }
 }
