@@ -856,4 +856,8 @@ footer button:hover, header button:hover {
     .parallax-knip {
         background-position: 75%;
     }
+
+    .scrolldown {
+        display: none;
+    }
 }
