@@ -7,15 +7,17 @@
 
 :root {
     --douwe-beige: #f2dfd7;
+    --douwe-brown: #b37257;
+    --dark-bg: #262626;
 }
 
 body.dark-mode, body.dark-mode footer, body.dark-mode .text-box {
-    background-color: rgb(16, 16, 16);
+    background-color: var(--dark-bg);
     color: var(--douwe-beige);
 }
 
 body.dark-mode .nav-backdrop {
-    background-color: #1616167e;
+    background-color: #2626267e;
 }
 
 body.dark-mode p, body.dark-mode h1, body.dark-mode h2, body.dark-mode .text-box a {
@@ -27,11 +29,11 @@ body.dark-mode .nav-button, body.dark-mode footer button {
 }
 
 body.dark-mode .gallery .rellax .overlay {
-    background-color: rgba(16, 16, 16, 0.8);
+    background-color: #2626267e;
 }
 
 body.dark-mode .gradient {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(16, 16, 16, 1));
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(38, 38, 38, 1));
 }
 
 body {
@@ -40,7 +42,7 @@ body {
 }
 
 ::selection {
-    background-color: #B37257;
+    background-color: var(--douwe-brown);
 }
 
 /* width */
@@ -132,7 +134,7 @@ nav {
     left: 0;
     z-index: 999;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     transition: top 0.2s;
 }
 
@@ -234,6 +236,25 @@ h2 {
     line-height: 1.15em;
 }
 
+.home-button {
+    font-family: "dystopian", sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: var(--douwe-beige);
+    border: none;
+    background: #00000050;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.home-button:hover {
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    background: #000000;
+}
+
 .art-info h2 {
     margin-bottom: 20px;
 }
@@ -259,11 +280,29 @@ h2 {
     width: 27%;
     z-index: 3;
     padding: 2%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(38, 38, 38, 0.5);
     color: var(--douwe-beige);
     /* text-shadow: 0 0 20px rgba(0, 0, 0, 0.8); */
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 }
+
+#home-main .art-info {
+    background-color: #f2dfd781;
+    /* mix-blend-mode: hard-light; */
+    color: black;
+}
+
+.home-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--douwe-beige);
+    opacity: 100;
+    mix-blend-mode: color;
+}
+
 
 .right {
     left: 5vw;
@@ -420,6 +459,18 @@ header {
     background-position: center;
 }
 
+.home-img-overlay {
+    position: relative;
+}
+
+.home-img-overlay div {
+    position: absolute;
+    background-color: var(--douwe-beige);
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+}
+
 .gallery .rellax:hover {
     cursor: pointer;
     scale: 1.05;
@@ -459,25 +510,26 @@ header {
 }
 
 .img1 {
-    left: 20%;
+    top: 130vh;
+    left: 10vw;
     z-index: 3;
     background-image: url(../img/caelum-home.jpg);
-    width: 25vw;
-    height: 28vw;
+    width: 20vw;
+    height: 22vw;
 }
 
 .img2 {
-    top: 200px;
-    right: 20%;
+    top: 20vh;
+    right: 10vw;
     z-index: 2;
     background-image: url(../img/TranenVanSmaragd-poster.jpg);
-    width: 22.5vw;
-    height: 32vw;
+    width: 18vw;
+    height: 25.5vw;
 }
 
 .img3 {
-    top: 250px;
-    left: 40%;
+    top: 280vh;
+    right: 10vw;
     z-index: 1;
     background-image: url(../img/white-queen.gif);
     width: 20vw;
@@ -485,12 +537,12 @@ header {
 }
 
 .img4 {
-    top: 1100px;
-    left: 15%;
+    top: 50vh;
+    right: 25vw;
     z-index: 3;
     background-image: url(../img/001.jpg);
-    width: 23vw;
-    height: 23vw;
+    width: 15vw;
+    height: 15vw;
 }
 
 .img5 {
@@ -629,7 +681,7 @@ footer button:hover, header button:hover {
     height: 100%;
     background: var(--douwe-beige);
     mix-blend-mode: color;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
 }
 
 .parallax-one {
@@ -677,12 +729,24 @@ footer button:hover, header button:hover {
     background-image: url(../img/zonneberg.png);
 }
 
-.parallax-animation {
-    background-image: url(../img/sitting-at-lake.gif);
+.parallax-thirst {
+    background-image: url(../video/sitting-at-lake.gif);
 }
 
 .parallax-hjm {
     background-image: url(../img/trap.gif);
+}
+
+.parallax-cmd {
+    background-image: url(../img/design-header.jpg);
+}
+
+.parallax-art {
+    background-image: url(../img/yuki.jpg);
+}
+
+.parallax-animation {
+    background-image: url(../video/schaduw.gif);
 }
 
 #blender-video, #danji-video, #genart-video {
@@ -692,6 +756,25 @@ footer button:hover, header button:hover {
     height: 100vh;
     width: 100%;
     z-index: -2;
+}
+
+.parallax-royal {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 0%, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);
+}
+
+#royal-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
 }
 
 #blender-video video {
@@ -709,6 +792,12 @@ footer button:hover, header button:hover {
 }
 
 #genart-video video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#royal-video video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;

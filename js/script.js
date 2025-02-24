@@ -134,6 +134,58 @@ document
     }
   });
 
+// // opacity on scroll
+// function adjustOverlayOpacity() {
+//   var parallaxElements = document.querySelectorAll(".parallax");
+//   parallaxElements.forEach(function (element) {
+//     var rect = element.getBoundingClientRect();
+//     var windowHeight = window.innerHeight;
+//     var overlay = element.querySelector(".parallax-overlay");
+
+//     if (rect.top >= 0 && rect.bottom <= windowHeight) {
+//       // Element is completely in the viewport
+//       overlay.style.opacity = 0;
+//     } else if (rect.bottom < 0 || rect.top > windowHeight) {
+//       // Element is completely out of the viewport
+//       overlay.style.opacity = 1;
+//     } else {
+//       // Element is partially in the viewport
+//       var visibleHeight =
+//         Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+//       var visiblePercentage = (visibleHeight / rect.height) * 100;
+
+//       // // Set opacity based on the visible percentage
+//       // if (visiblePercentage >= 80) {
+//       //   overlay.style.opacity = 0;
+//       // } else if (visiblePercentage <= 50) {
+//       //   overlay.style.opacity = 1;
+//       // } else {
+//       //   // Interpolate opacity between 1 and 0 for visible percentages between 20% and 80%
+//       //   overlay.style.opacity = 1 - (visiblePercentage - 50) / 30;
+//       // }
+//     }
+//   });
+// }
+
+// // Add event listeners for the home button hover
+// var homeButton = document.querySelector(".home-button");
+// if (homeButton) {
+//   homeButton.addEventListener("mouseover", function () {
+//     var overlays = document.querySelectorAll(".parallax-overlay");
+//     overlays.forEach(function (overlay) {
+//       overlay.style.opacity = 0;
+//     });
+//   });
+
+//   homeButton.addEventListener("mouseout", function () {
+//     adjustOverlayOpacity();
+//   });
+// }
+
+// window.addEventListener("scroll", adjustOverlayOpacity);
+// window.addEventListener("resize", adjustOverlayOpacity);
+// document.addEventListener("DOMContentLoaded", adjustOverlayOpacity);
+
 // opacity on scroll
 function adjustOverlayOpacity() {
   var parallaxElements = document.querySelectorAll(".parallax");
@@ -150,16 +202,34 @@ function adjustOverlayOpacity() {
       overlay.style.opacity = 1;
     } else {
       // Element is partially in the viewport
-      var visibleHeight =
-        Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-      if (visibleHeight >= rect.height / 2) {
-        overlay.style.opacity = 0;
-      } else {
-        overlay.style.opacity = 1;
-      }
+      overlay.style.opacity = 1;
     }
   });
 }
+
+// Add event listeners for the home button hover
+var homeButtons = document.querySelectorAll(".home-button");
+homeButtons.forEach(function (homeButton) {
+  homeButton.addEventListener("mouseover", function () {
+    var parentParallax = homeButton.closest(".parallax");
+    if (parentParallax) {
+      var overlay = parentParallax.querySelector(".parallax-overlay");
+      if (overlay) {
+        overlay.style.opacity = 0;
+      }
+    }
+  });
+
+  homeButton.addEventListener("mouseout", function () {
+    var parentParallax = homeButton.closest(".parallax");
+    if (parentParallax) {
+      var overlay = parentParallax.querySelector(".parallax-overlay");
+      if (overlay) {
+        adjustOverlayOpacity();
+      }
+    }
+  });
+});
 
 window.addEventListener("scroll", adjustOverlayOpacity);
 window.addEventListener("resize", adjustOverlayOpacity);
