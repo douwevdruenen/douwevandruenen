@@ -10,7 +10,7 @@
     --dark-bg: #262626;
 }
 
-body.dark-mode, body.dark-mode footer, body.dark-mode .text-box {
+body.dark-mode, body.dark-mode footer, body.dark-mode .text-box, body.dark-mode header {
     background-color: var(--dark-bg);
     color: var(--douwe-beige);
 }
@@ -372,6 +372,8 @@ header {
     text-align: center;
     top: -80px;
     margin-bottom: -80px;
+    background-color: var(--douwe-beige);
+    z-index: -1;
 }
 
 .header-text {
@@ -393,6 +395,11 @@ header {
     color: #000;
     text-align: left;
     max-width: 30vw;
+}
+
+.header-img {
+    width: 100%;
+    height: 100%;
 }
 
 #home-header {
@@ -431,14 +438,20 @@ header {
 .overlay-color {
     background-color: var(--douwe-beige);
     mix-blend-mode: color;
-    z-index: -1;
+    z-index: -2;
+    /* display: none; */
 }
 
 .overlay-darker {
     background-color: #56392e;
     mix-blend-mode: color-burn;
     opacity: 0.5;
-    z-index: -1;
+    z-index: -2;
+    /* display: none; */
+}
+
+.header-transparent, body.dark-mode .header-transparent {
+    background-color: transparent;
 }
 
 #animation-header {
@@ -612,7 +625,7 @@ footer button:hover, header button:hover {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -2;
+    z-index: -3;
 }
 
 .dark-bg2 {
@@ -622,7 +635,7 @@ footer button:hover, header button:hover {
     left: 0;
     width: 100vw;
     height: 100%;
-    z-index: -1;
+    z-index: -3;
     object-fit: cover;
 }
 
@@ -632,7 +645,7 @@ footer button:hover, header button:hover {
     position: fixed;
     height: 100vh;
     width: 100%;
-    z-index: -2;
+    z-index: -3;
 }
 
 .parallax-royal, .parallax-blender {
@@ -813,8 +826,15 @@ footer button:hover, header button:hover {
         height: 220px;
     }
 
-    #home-header {
+    /* #home-header {
         background: url(../img/home-header.jpg) no-repeat 60%;
+        background-size: cover;
+        width: 100%;
+        height: 50vh;
+    } */
+
+    #header-edit {
+        /* background: url(../img/home-header.jpg) no-repeat 60%; */
         background-size: cover;
         width: 100%;
         height: 50vh;
@@ -822,6 +842,7 @@ footer button:hover, header button:hover {
 
     .header-text {
         width: 90vw;
+        bottom: 70px;
     }
 
     .black-gradient {
