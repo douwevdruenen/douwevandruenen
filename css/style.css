@@ -1,6 +1,5 @@
 @import url("https://use.typekit.net/xoz3bxj.css");
 
-
 * {
     box-sizing: border-box;
 }
@@ -130,14 +129,22 @@ body {
     background-position: center;
 }
 
+button {
+    font-family: "noka", sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
 nav {
-    height: 80px;
+    height: 60px;
     width: 100%;
     position: sticky;
     top: 0;
     left: 0;
     z-index: 999;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 60px rgba(0, 0, 0, 0.2); */
     /* backdrop-filter: blur(15px); */
     transition: top 0.2s;
 }
@@ -158,7 +165,7 @@ nav.scroll-up {
     top: 50%;
     left: 20px;
     width: auto;
-    height: 50%;
+    height: 60%;
     translate: 0 -50%;
     cursor: pointer;
 }
@@ -176,9 +183,6 @@ nav.scroll-up {
 }
 
 .nav-button {
-    font-family: "dystopian", sans-serif;
-    font-weight: 400;
-    font-size: 1.5em;
     text-align: center;
     transition: all 0.3s ease;
     color: #000;
@@ -225,48 +229,69 @@ nav.scroll-up {
 }
 
 h1 {
-    font-family: "dystopian", sans-serif;
-    font-weight: 700;
+    font-family: "noka", sans-serif;
+    font-weight: 800;
     font-size: 5em;
     /* margin-bottom: 20px; */
     line-height: 1.15em;
     text-align: center;
     /* text-align-last: justify; */
+    text-transform: uppercase;
 }
 
 h2 {
-    font-family: "dystopian", sans-serif;
-    font-weight: 700;
+    font-family: "noka", sans-serif;
+    font-weight: 800;
     font-size: 2.5em;
     line-height: 1.15em;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: "tt-commons-pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    width: auto;
+    text-align: justify;
+}
+
+p a {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-decoration: underline;
+}
+
+.text-box a {
+    color: black;
 }
 
 .home-button {
-    font-family: "dystopian", sans-serif;
+    font-family: "noka", sans-serif;
     font-weight: 400;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
     transition: all 0.3s ease;
-    color: var(--douwe-beige);
+    /* color: var(--douwe-beige); */
+    color: #000;
     border: none;
-    background: #00000050;
-    padding: 10px 20px;
+    /* background: #00000050; */
+    background: none;
+    /* padding: 10px 20px; */
+    padding: 0;
     margin-top: 20px;
 }
 
 .home-button:hover {
     letter-spacing: 0.05em;
     cursor: pointer;
-    background: #000000;
+    /* background: #000000; */
 }
 
 .art-info h2 {
     margin-bottom: 20px;
 }
 
-.info-bottom {
-    bottom: 10vh;
-}
 
 .text-box {
     width: 100%;
@@ -283,17 +308,22 @@ h2 {
     position: relative;
     margin-top: 5vw;
     margin-bottom: 5vw;
-    width: 27%;
+    width: 30%;
     z-index: 3;
-    padding: 2%;
+    padding: 3vw;
     background-color: rgba(38, 38, 38, 0.5);
     color: var(--douwe-beige);
-    /* text-shadow: 0 0 20px rgba(0, 0, 0, 0.8); */
     backdrop-filter: blur(15px);
 }
 
+.info-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 #home-main .art-info {
-    background-color: #f2dfd781;
+    background-color: #f2dfd7bd;
     /* mix-blend-mode: hard-light; */
     color: black;
 }
@@ -308,7 +338,6 @@ h2 {
     opacity: 100;
     mix-blend-mode: color;
 }
-
 
 .right {
     left: 5vw;
@@ -335,25 +364,6 @@ h2 {
     position: sticky;
 }
 
-p {
-    font-family: "tt-commons-pro", sans-serif;
-    font-weight: 500;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    width: auto;
-    text-align: justify;
-}
-
-p a {
-    cursor: pointer;
-    transition: all 0.5s ease;
-    text-decoration: underline;
-}
-
-.text-box a {
-    color: black;
-}
-
 header {
     color: var(--douwe-beige);
     height: 100vh;
@@ -371,6 +381,7 @@ header {
     left: 50%;
     translate: -50% 0;
     z-index: 1;
+    overflow: hidden;
 }
 
 .home-text {
@@ -384,15 +395,6 @@ header {
     max-width: 30vw;
 }
 
-#home-foto {
-    position: absolute;
-    max-width: 80vw;
-    height: auto;
-    left: 10vw;
-    top: 50%;
-    translate: 0 -50%;
-}
-
 #home-header {
     background: url(../img/home-header.jpg) no-repeat center;
     background-size: cover;
@@ -404,8 +406,13 @@ header {
     background-size: cover;
 }
 
+/* 
 #art-header button {
     margin-top: 10px;
+} */
+
+.art-button {
+    margin-bottom: 5px;
 }
 
 #design-header {
@@ -462,7 +469,7 @@ header {
 }
 
 footer {
-    height: 175px;
+    height: 155px;
     width: 100%;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -488,12 +495,8 @@ footer {
 footer button, header button {
     border: none;
     background: none;
-    font-family: "dystopian", sans-serif;
-    font-weight: 400;
-    font-size: 1.5em;
     text-align: center;
     transition: all 0.3s ease;
-
 }
 
 header button {
@@ -725,11 +728,8 @@ footer button:hover, header button:hover {
     } */
 
     .text-box {
-        padding: 100px 10vw 100px 10vw;
-    }
-
-    .header-text {
-        width: 90vw;
+        padding: 20vw 7vw;
+        width: 100%;
     }
 
     h1 {
@@ -740,23 +740,26 @@ footer button:hover, header button:hover {
         font-size: 2em;
     }
 
-    /* 
-    .parallax {
-        position: relative;
-        height: auto;
-    } */
-
-    .art-info {
-        /* position: relative; */
-        width: calc(100vw - 40px);
-        padding: 30px;
-        margin-top: 100vh;
-        margin-bottom: 20px;
-        left: 20px;
-        /* bottom: 20px; */
+    p {
+        font-size: 1.1em;
     }
 
-    .nav-button, footer button, .home-button {
+    .parallax {
+        min-height: 70vh;
+    }
+
+    .art-info {
+        position: relative;
+        /* width: calc(100vw - 40px); */
+        width: 100%;
+        padding: 7vw;
+        margin-top: 70vh;
+        margin-bottom: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    button {
         font-size: 1.2em;
     }
 
@@ -811,32 +814,38 @@ footer button:hover, header button:hover {
     }
 
     #home-header {
+        background: url(../img/home-header.jpg) no-repeat 60%;
+        background-size: cover;
         width: 100%;
         height: 50vh;
+    }
+
+    .header-text {
+        width: 90vw;
     }
 
     .black-gradient {
         display: none;
     }
 
-    #footer-logo {
+    /* #footer-logo {
         width: 40%;
         height: 40%;
-    }
+    } */
 
     #personal-ig {
-        right: 30px;
+        right: 7vw;
     }
 
     #art-ig {
-        left: 30px;
+        left: 7vw;
     }
 
     #royal-home, #royal-video {
         width: 150vw;
         height: auto;
         left: 50%;
-        top: 50%;
+        top: 40%;
         translate: -50% -50%;
     }
 
@@ -856,5 +865,9 @@ footer button:hover, header button:hover {
 
     .scrolldown {
         display: none;
+    }
+
+    footer {
+        padding: 20px;
     }
 }

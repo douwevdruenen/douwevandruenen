@@ -245,3 +245,21 @@ function toggleMenu() {
   var navControl = document.querySelector("nav");
   navControl.classList.toggle("active");
 }
+
+document.addEventListener("click", function (event) {
+  var navMenu = document.querySelector(".nav-menu");
+  var hamMenu = document.querySelector(".hamburger-menu");
+  var navBackdrop = document.querySelector(".nav-backdrop");
+  var navControl = document.querySelector("nav");
+
+  if (
+    !navMenu.contains(event.target) &&
+    !hamMenu.contains(event.target) &&
+    navMenu.classList.contains("active")
+  ) {
+    navMenu.classList.remove("active");
+    hamMenu.classList.remove("active");
+    navBackdrop.classList.remove("active");
+    navControl.classList.remove("active");
+  }
+});
