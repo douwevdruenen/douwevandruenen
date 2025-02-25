@@ -1,39 +1,3 @@
-// var userPreference = localStorage.getItem("darkMode");
-
-// if (userPreference) {
-//   var navLogo = document.getElementById("nav-logo");
-//   var scrollDown = document.getElementById("scrolldown");
-//   var footerLogo = document.getElementById("footer-logo"); // Add this line
-
-//   if (userPreference === "true") {
-//     document.getElementById("dark-mode-toggle").checked = true;
-//     document.body.classList.add("dark-mode");
-//     var isIndexPage;
-//     if (navLogo) navLogo.src = "img/logo-met-naam-licht.svg";
-//     if (scrollDown) scrollDown.src = "img/scrolldown-light.svg";
-//     if (footerLogo) footerLogo.src = "img/footer-logo-light.svg"; // Add this line
-//   } else {
-//     document.getElementById("dark-mode-toggle").checked = false;
-//     document.body.classList.remove("dark-mode");
-//     if (navLogo) navLogo.src = "img/logo-met-naam.svg";
-//     if (scrollDown) scrollDown.src = "img/scrolldown.svg";
-//     if (footerLogo) footerLogo.src = "img/footer-logo.svg"; // Add this line
-//   }
-// } else if (
-//   window.matchMedia &&
-//   window.matchMedia("(prefers-color-scheme: dark)").matches
-// ) {
-//   document.getElementById("dark-mode-toggle").checked = true;
-//   document.body.classList.add("dark-mode");
-//   var navLogo = document.getElementById("nav-logo");
-//   var scrollDown = document.getElementById("scrolldown");
-//   var footerLogo = document.getElementById("footer-logo"); // Add this line
-//   if (navLogo) navLogo.src = "img/logo-met-naam-licht.svg";
-//   if (scrollDown) scrollDown.src = "img/scrolldown-light.svg";
-//   if (footerLogo) footerLogo.src = "img/footer-logo-light.svg"; // Add this line
-//   localStorage.setItem("darkMode", "true");
-// }
-
 function scrollToBottom() {
   window.scrollTo({
     top: window.innerHeight,
@@ -134,59 +98,6 @@ document
     }
   });
 
-// // opacity on scroll
-// function adjustOverlayOpacity() {
-//   var parallaxElements = document.querySelectorAll(".parallax");
-//   parallaxElements.forEach(function (element) {
-//     var rect = element.getBoundingClientRect();
-//     var windowHeight = window.innerHeight;
-//     var overlay = element.querySelector(".parallax-overlay");
-
-//     if (rect.top >= 0 && rect.bottom <= windowHeight) {
-//       // Element is completely in the viewport
-//       overlay.style.opacity = 0;
-//     } else if (rect.bottom < 0 || rect.top > windowHeight) {
-//       // Element is completely out of the viewport
-//       overlay.style.opacity = 1;
-//     } else {
-//       // Element is partially in the viewport
-//       var visibleHeight =
-//         Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-//       var visiblePercentage = (visibleHeight / rect.height) * 100;
-
-//       // // Set opacity based on the visible percentage
-//       // if (visiblePercentage >= 80) {
-//       //   overlay.style.opacity = 0;
-//       // } else if (visiblePercentage <= 50) {
-//       //   overlay.style.opacity = 1;
-//       // } else {
-//       //   // Interpolate opacity between 1 and 0 for visible percentages between 20% and 80%
-//       //   overlay.style.opacity = 1 - (visiblePercentage - 50) / 30;
-//       // }
-//     }
-//   });
-// }
-
-// // Add event listeners for the home button hover
-// var homeButton = document.querySelector(".home-button");
-// if (homeButton) {
-//   homeButton.addEventListener("mouseover", function () {
-//     var overlays = document.querySelectorAll(".parallax-overlay");
-//     overlays.forEach(function (overlay) {
-//       overlay.style.opacity = 0;
-//     });
-//   });
-
-//   homeButton.addEventListener("mouseout", function () {
-//     adjustOverlayOpacity();
-//   });
-// }
-
-// window.addEventListener("scroll", adjustOverlayOpacity);
-// window.addEventListener("resize", adjustOverlayOpacity);
-// document.addEventListener("DOMContentLoaded", adjustOverlayOpacity);
-
-// opacity on scroll
 function adjustOverlayOpacity() {
   var parallaxElements = document.querySelectorAll(".parallax");
   parallaxElements.forEach(function (element) {
@@ -231,10 +142,6 @@ homeButtons.forEach(function (homeButton) {
   });
 });
 
-window.addEventListener("scroll", adjustOverlayOpacity);
-window.addEventListener("resize", adjustOverlayOpacity);
-document.addEventListener("DOMContentLoaded", adjustOverlayOpacity);
-
 function toggleMenu() {
   var navMenu = document.querySelector(".nav-menu");
   navMenu.classList.toggle("active");
@@ -263,3 +170,7 @@ document.addEventListener("click", function (event) {
     navControl.classList.remove("active");
   }
 });
+
+window.addEventListener("scroll", adjustOverlayOpacity);
+window.addEventListener("resize", adjustOverlayOpacity);
+document.addEventListener("DOMContentLoaded", adjustOverlayOpacity);

@@ -294,8 +294,9 @@ p a {
 
 
 .text-box {
+    position: relative;
     width: 100%;
-    z-index: 3;
+    z-index: 2;
     padding: 150px 25vw 150px 25vw;
     background-color: var(--douwe-beige);
 }
@@ -373,7 +374,7 @@ header {
     top: -80px;
     margin-bottom: -80px;
     background-color: var(--douwe-beige);
-    z-index: -1;
+    z-index: 0;
 }
 
 .header-text {
@@ -420,6 +421,7 @@ header {
 
 .art-button {
     margin-bottom: 5px;
+    border: none;
 }
 
 #design-header {
@@ -727,7 +729,7 @@ footer button:hover, header button:hover {
 
 @keyframes MoveUpDown {
     0%, 100% {
-        bottom: 50px;
+        bottom: 45px;
     }
 
     50% {
