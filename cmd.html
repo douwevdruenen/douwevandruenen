@@ -65,9 +65,9 @@
           on as a multimedia designer.
         </p>
       </section>
-      <div class="parallax parallax-royal">
+      <div class="parallax parallax-royal right">
         <div class="dark-bg"></div>
-        <div class="art-info right">
+        <div class="art-info">
           <h2>Royal in Motion</h2>
           <p>
             In my fourth year of CMD, I did a project for Royal Theater, an
@@ -81,13 +81,34 @@
             result.
           </p>
         </div>
+        <div class="extra-img-box extra-img-box-full">
+          <img src="img/royal-drank.jpg" class="extra-img" />
+
+          <video
+            autoplay
+            muted
+            loop
+            src="video/royal-logo-animatie.mp4"
+            class="extra-img"
+          ></video>
+          <img src="img/royal-posters-tekst.jpg" class="extra-img" />
+          <video
+            autoplay
+            muted
+            loop
+            src="video/royal-f1.mp4"
+            class="extra-img"
+          ></video>
+          <img src="img/royal-presentatie.jpg" class="extra-img" />
+          <img src="img/royal-posters.jpg" class="extra-img" />
+        </div>
         <div id="royal-video">
           <video autoplay muted loop src="video/royal.mp4"></video>
         </div>
       </div>
 
-      <div class="parallax parallax-codingcat">
-        <div class="art-info right">
+      <div class="parallax parallax-codingcat right">
+        <div class="art-info">
           <h2>Codingcat</h2>
           <p>
             At the end of my first year at CMD, we did a project called
@@ -99,10 +120,30 @@
             lot of fun.
           </p>
         </div>
+        <div class="extra-img-box extra-img-box-full">
+          <img src="img/codingcat-thumbnail.jpg" class="extra-img" />
+          <video
+            autoplay
+            muted
+            loop
+            src="video/codingcat-uitleg.mp4"
+            class="extra-img"
+          ></video>
+          <img src="img/codingcat-kaartje.jpg" class="extra-img" />
+
+          <video
+            autoplay
+            muted
+            loop
+            src="video/codingcat-spel.mp4"
+            class="extra-img"
+          ></video>
+          <img src="img/codingcat-funny.jpg" class="extra-img" />
+        </div>
       </div>
-      <div class="parallax parallax-mms">
-        <div class="black-gradient grdnt-right"></div>
-        <div class="art-info left">
+      <div class="parallax parallax-mms left">
+        <!-- <div class="black-gradient grdnt-right"></div> -->
+        <div class="art-info">
           <h2>Multimedia Story</h2>
           <p>
             In my third year at CMD, I had an internship at Centraal Bureau voor
@@ -120,9 +161,15 @@
             posters for a convention, a project I gladly took on.
           </p>
         </div>
+        <div class="extra-img-box">
+          <img src="img/cbs-boerderij.jpg" class="extra-img" />
+          <img src="img/cbs-energie.jpg" class="extra-img" />
+          <img src="img/cbs-industrie.jpg" class="extra-img" />
+          <img src="img/cbs-wonen.jpg" class="extra-img" />
+        </div>
       </div>
-      <div class="parallax parallax-genart">
-        <div class="art-info right">
+      <div class="parallax parallax-genart right">
+        <div class="art-info">
           <h2>Generative Art</h2>
           <p>
             In my first year at CMD, I did a project where I programmed
@@ -131,10 +178,26 @@
             visuals to accompany a live jazz band.
           </p>
         </div>
+        <div class="extra-img-box extra-img-box-full">
+          <video
+            autoplay
+            muted
+            loop
+            src="video/gen-art-action.mp4"
+            class="extra-img"
+          ></video>
+          <video
+            autoplay
+            muted
+            loop
+            src="video/gen-art-grid.mp4"
+            class="extra-img"
+          ></video>
+        </div>
       </div>
-      <div class="parallax parallax-knip">
+      <div class="parallax parallax-knip right">
         <div class="black-gradient grdnt-left"></div>
-        <div class="art-info right">
+        <div class="art-info">
           <h2>Knip Musical</h2>
           <p>
             The high school I attended has its own musical group that performs
@@ -151,6 +214,13 @@
             Gelukkig', a comedic piece about fairytales.
           </p>
         </div>
+        <div class="extra-img-box">
+          <img src="img/knip-musical-logo.jpg" class="extra-img" />
+          <img src="img/lang-en-gelukkig.jpg" class="extra-img" />
+          <img src="img/tranen-van-smaragd.jpg" class="extra-img" />
+          <img src="img/pinokkio.jpg" class="extra-img" />
+          <img src="img/ik-hou-van-jou.jpg" class="extra-img" />
+        </div>
       </div>
       <div id="genart-video">
         <video autoplay muted loop src="video/1-3-video.mp4"></video>
@@ -165,7 +235,7 @@
       </button>
 
       <img
-        src="img/logo-footer.svg"
+        src="img/footer-logo.svg"
         alt="logo"
         id="footer-logo"
         onclick="scrollToTop()"
@@ -177,6 +247,17 @@
         LinkedIn
       </button>
     </footer>
+    <div id="img-overlay" style="display: none">
+      <img id="img-overlay-img" src="" alt="enlarged image" />
+      <video
+        id="img-overlay-video"
+        style="display: none"
+        controls
+        autoplay
+        loop
+        muted
+      ></video>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
