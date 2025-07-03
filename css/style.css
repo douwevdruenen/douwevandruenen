@@ -232,9 +232,9 @@ nav.scroll-up {
 h1 {
     font-family: "noka", sans-serif;
     font-weight: 800;
-    font-size: 5em;
+    font-size: 3.5em;
     /* margin-bottom: 20px; */
-    line-height: 1.15em;
+    /* line-height: 1.15em; */
     text-align: center;
     /* text-align-last: justify; */
     text-transform: uppercase;
@@ -372,7 +372,7 @@ p a {
 }
 
 header {
-    color: var(--douwe-beige);
+    /* color: var(--douwe-beige); */
     height: 100vh;
     width: 100%;
     position: relative;
@@ -384,13 +384,20 @@ header {
 }
 
 .header-text {
-    width: 70vw;
+    width: max-content;
+    max-width: 90vw;
+    height: auto;
+    padding: 20px 30px;
     position: absolute;
     bottom: 12vh;
     left: 50%;
     translate: -50% 0;
     z-index: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
+    background-color: var(--douwe-beige);
+    color: #000;
+    border: #000 3px solid;
+    box-shadow: 10px 10px 0px rgb(0, 0, 0);
 }
 
 .home-text {
@@ -428,6 +435,7 @@ header {
 .art-button {
     margin-bottom: 5px;
     border: none;
+    color: #000;
 }
 
 #design-header {
@@ -468,11 +476,15 @@ header {
 }
 
 .gradient {
-    height: 20vh;
+    height: 25vh;
     width: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0), var(--douwe-beige));
+    /* background: linear-gradient(rgba(255, 255, 255, 0), var(--douwe-beige)); */
+    background-image: url(../img/bg-grdnt.svg);
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    /* background-size: cover; */
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     z-index: 0;
 }
@@ -518,10 +530,6 @@ footer button, header button {
     background: none;
     text-align: center;
     transition: all 0.3s ease;
-}
-
-header button {
-    color: var(--douwe-beige);
 }
 
 footer button:hover, header button:hover {
@@ -580,6 +588,7 @@ footer button:hover, header button:hover {
     border: #000 3px solid;
     box-shadow: 10px 10px 0px rgb(0, 0, 0);
     background-color: #000;
+    transition: all 0.3s ease;
 }
 
 .extra-img-box {
@@ -593,7 +602,7 @@ footer button:hover, header button:hover {
 }
 
 .extra-img:hover {
-    cursor: pointer;
+    cursor: zoom-in;
 }
 
 #img-overlay {
@@ -824,11 +833,11 @@ footer button:hover, header button:hover {
 
 @keyframes MoveUpDown {
     0%, 100% {
-        bottom: 45px;
+        bottom: 30px;
     }
 
     50% {
-        bottom: 30px;
+        bottom: 20px;
     }
 }
 
@@ -843,7 +852,7 @@ footer button:hover, header button:hover {
     }
 
     h1 {
-        font-size: 3.5em;
+        font-size: 2.5em;
     }
 
     h2 {
@@ -948,7 +957,8 @@ footer button:hover, header button:hover {
     }
 
     .header-text {
-        width: 90vw;
+        width: max-content;
+        max-width: 90vw;
         bottom: 70px;
     }
 
