@@ -603,6 +603,9 @@ footer button:hover, header button:hover {
 
 .extra-img:hover {
     cursor: zoom-in;
+    /* scale: 1.05; */
+    translate: 5px 5px 0px;
+    box-shadow: 5px 5px 0px rgb(0, 0, 0);
 }
 
 #img-overlay {
@@ -619,7 +622,7 @@ footer button:hover, header button:hover {
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    cursor: pointer;
+    cursor: zoom-out;
 }
 
 #img-overlay img, #img-overlay video {
@@ -675,6 +678,11 @@ footer button:hover, header button:hover {
 
 .parallax-caelum {
     background-image: url(../img/caelum.jpg);
+    background-position: top;
+}
+
+.parallax-luna {
+    background-image: url(../img/luna.jpg);
     background-position: top;
 }
 
