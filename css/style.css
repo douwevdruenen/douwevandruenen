@@ -289,7 +289,7 @@ p a {
     /* background: #000000; */
 }
 
-.art-info h2 {
+.art-info h2, .category-box h2 {
     margin-bottom: 20px;
 }
 
@@ -298,7 +298,7 @@ p a {
     position: relative;
     width: 100%;
     z-index: 2;
-    padding: 150px 25vw 150px 25vw;
+    padding: 100px 25vw 100px 25vw;
     background-color: var(--douwe-beige);
 }
 
@@ -504,7 +504,8 @@ header {
 footer {
     height: 155px;
     width: 100%;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 60px rgba(0, 0, 0, 0.2); */
+    /* border: #000 3px solid; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -839,6 +840,60 @@ footer button:hover, header button:hover {
     transition: 0.4s;
 }
 
+.home-categories {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    position: relative;
+    /* background-color: var(--douwe-beige); */
+    padding: 0 5vw 5vw 5vw;
+    margin-bottom: 5vw;
+    height: auto;
+    width: 100%;
+}
+
+.category-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* float: left; */
+    /* margin: 10px; */
+    width: 28vw;
+    z-index: 3;
+    background-color: #f2dfd7;
+    color: black;
+    border: #000 3px solid;
+    box-shadow: 10px 10px 0px rgb(0, 0, 0);
+    padding-bottom: 2vw;
+    transition: all 0.3s ease;
+}
+
+.category-box img, .category-box video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2vw;
+}
+
+.category-box h2, .category-box p, .category-box button {
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.category-box:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 0px rgb(0, 0, 0);
+    translate: 5px 5px 0px;
+}
+
+.category-box p {
+    margin-bottom: 10px;
+}
+
+.category-box button {
+    margin-top: auto;
+    margin-right: auto;
+}
+
 @keyframes MoveUpDown {
     0%, 100% {
         bottom: 30px;
@@ -1016,5 +1071,25 @@ footer button:hover, header button:hover {
 
     footer {
         padding: 20px;
+    }
+
+    .home-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-box {
+        width: 90vw;
+        margin-bottom: 30px;
+        padding-bottom: 7vw;
+    }
+
+    .category-box img, .category-box video {
+        margin-bottom: 7vw;
+    }
+
+    .category-box h2, .category-box p, .category-box button {
+        padding-left: 7vw;
+        padding-right: 7vw;
     }
 }

@@ -63,16 +63,42 @@
           website, so feel free to look around.
         </p>
       </section>
-      <!-- <section class="home-img-overlay">
-        <div class="img1 rellax" data-rellax-speed="2"></div>
-        <div class="img2 rellax" data-rellax-speed="2"></div>
-        <div class="img3 rellax" data-rellax-speed="2"></div>
-        <div class="img4 rellax" data-rellax-speed="1"></div>
-        <div class="img5 rellax" data-rellax-speed="2"></div>
-        <div class="img6 rellax" data-rellax-speed="2"></div>
-        <div class="img7 rellax" data-rellax-speed="2"></div>
-      </section> -->
-      <section id="home-main">
+      <section class="home-categories">
+        <div class="category-box" id="click-cmd">
+          <video autoplay muted loop src="video/royal.mp4"></video>
+          <h2>Multimedia Design</h2>
+          <p>
+            Multimedia design is a broad field and includes graphic design,
+            motion design, UX design and even programming. This is the field
+            I've done most of my professional work in. I've worked on many
+            different projects that you can see here.
+          </p>
+          <button class="home-button" onclick="goToCmd()">View projects</button>
+        </div>
+        <div class="category-box" id="click-art">
+          <img src="img/yuki.jpg" alt="" srcset="" />
+          <h2>Digital art</h2>
+          <p>
+            Mostly for personal projects, I create digital art. I love to create
+            illustrations, concept art, and character designs that you can see
+            here.
+          </p>
+          <button class="home-button" onclick="goToArt()">View projects</button>
+        </div>
+        <div class="category-box" id="click-animation">
+          <img src="video/schaduw.gif"></img>
+          <h2>Animation</h2>
+          <p>
+            For a few projects I've done animations. These vary from simple
+            animations to more complex ones. You can see some of my animation
+            projects here.
+          </p>
+          <button class="home-button" onclick="goToAnimation()">
+            View projects
+          </button>
+        </div>
+      </section>
+      <!-- <section id="home-main">
         <div class="dark-bg"></div>
         <div class="parallax parallax-home-cmd right">
           <div class="art-info">
@@ -87,20 +113,6 @@
               View projects
             </button>
           </div>
-          <!-- <div class="extra-img-box">
-            <img src="img/royal-posters-tekst.jpg" class="extra-img" />
-            <img src="img/codingcat-bord.png" class="extra-img" />
-            <img src="img/zonneberg.png" class="extra-img" />
-
-            <video
-              src="video/1-3-video.mp4"
-              class="extra-img"
-              autoplay
-              muted
-              loop
-            ></video>
-            <img src="img/knip-posters.jpg" class="extra-img" />
-          </div> -->
           <div class="parallax-overlay"></div>
         </div>
         <div class="parallax parallax-art left">
@@ -115,22 +127,6 @@
               View projects
             </button>
           </div>
-          <!-- <div class="extra-img-box">
-            <img src="img/serena-full.jpg" class="extra-img" />
-            <img src="img/jun-kaede-full.jpg" class="extra-img" />
-            <img src="img/navi-full.jpg" class="extra-img" />
-            <img src="img/axelia-full.jpg" class="extra-img" />
-            <img src="img/lyra-full.jpg" class="extra-img" />
-            <video
-              src="video/Danji morph.mp4"
-              class="extra-img"
-              autoplay
-              muted
-              loop
-            ></video>
-            <img src="img/caelum-full.jpg" class="extra-img" />
-            <img src="img/desideria-full.jpg" class="extra-img" />
-          </div> -->
           <div class="parallax-overlay"></div>
         </div>
         <div class="parallax parallax-animation right">
@@ -145,20 +141,9 @@
               View projects
             </button>
           </div>
-          <!-- <div class="extra-img-box">
-            <img src="video/sitting-at-lake.gif" class="extra-img" />
-            <img src="video/trap.gif" class="extra-img" />
-            <video
-              src="video/waveboat.mp4"
-              class="extra-img"
-              autoplay
-              muted
-              loop
-            ></video>
-          </div> -->
           <div class="parallax-overlay"></div>
         </div>
-      </section>
+      </section> -->
       <!-- <section class="gallery">
         <div class="img1 rellax" data-rellax-speed="2" onclick="goToArt()">
           <div class="overlay">
@@ -225,9 +210,9 @@
         </div>
       </section> -->
 
-      <div id="royal-home">
+      <!-- <div id="royal-home">
         <video autoplay muted loop src="video/royal.mp4"></video>
-      </div>
+      </div> -->
     </main>
     <footer>
       <button

@@ -259,3 +259,9 @@ document.getElementById("img-overlay").addEventListener("click", function () {
   vid.src = "";
   vid.style.display = "none";
 });
+
+document.getElementById("click-art").addEventListener("click", goToArt);
+document.getElementById("click-cmd").addEventListener("click", goToCmd);
+document
+  .getElementById("click-animation")
+  .addEventListener("click", goToAnimation);
