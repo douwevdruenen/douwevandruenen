@@ -289,6 +289,15 @@ p a {
     /* background: #000000; */
 }
 
+.contact {
+    display: block;
+    text-transform: unset;
+}
+
+.title-spacing {
+    margin-top: 30px;
+}
+
 .art-info h2, .category-box h2 {
     margin-bottom: 20px;
 }
@@ -414,33 +423,25 @@ header {
 .header-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-#home-header {
-    background: url(../img/home-header.jpg) no-repeat center;
-    background-size: cover;
-    background-color: var(--douwe-beige);
+.header-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-#art-header {
-    background: url(../img/yuki.jpg) no-repeat center center;
-    background-size: cover;
+.header-video-top {
+    object-position: top;
 }
-
-/* 
-#art-header button {
-    margin-top: 10px;
-} */
 
 .art-button {
     margin-bottom: 5px;
     border: none;
     color: #000;
-}
-
-#design-header {
-    background: url(../img/design-header.png) no-repeat center center;
-    background-size: cover;
 }
 
 .design-overlay {
@@ -932,7 +933,9 @@ footer button:hover, header button:hover {
 
     .art-info {
         position: relative;
-        width: calc(100vw - 30px);
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
         /* width: 100%; */
         padding: 7vw;
         margin-top: 70vh;
@@ -943,7 +946,7 @@ footer button:hover, header button:hover {
     .extra-img-box {
         margin-top: 0;
         padding-right: 0;
-        padding-left: 0;
+        padding-left: calc(5vw - 15px);
         margin-bottom: 10vw;
     }
 
@@ -980,6 +983,7 @@ footer button:hover, header button:hover {
     }
 
     .nav-menu.active .nav-button {
+        display: block;
         padding: 10px;
         text-align: center;
         width: 100%;
@@ -1002,7 +1006,7 @@ footer button:hover, header button:hover {
     }
 
     .nav-backdrop.active {
-        height: 220px;
+        min-height: 270px;
     }
 
     /* #home-header {
@@ -1058,7 +1062,7 @@ footer button:hover, header button:hover {
 
     .left .art-info, .right .art-info {
         float: none;
-        left: 10px;
+        left: 0px;
     }
 
     .parallax-knip {

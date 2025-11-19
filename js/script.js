@@ -28,6 +28,10 @@ function goToCmd() {
   window.location.href = "cmd.html";
 }
 
+function goToAbout() {
+  window.location.href = "about.html";
+}
+
 var lastScrollTop = 0;
 $(window).scroll(function () {
   var currentScrollTop = $(this).scrollTop();
