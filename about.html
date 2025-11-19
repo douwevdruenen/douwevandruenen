@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Douwe van Druenen</title>
+    <link rel="icon" type="image/x-icon" href="img/white-icon.svg" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-backdrop"></div>
+      <img
+        src="img/logo-met-naam.svg"
+        alt="logo"
+        id="nav-logo"
+        onclick="goToHome()"
+      />
+
+      <div class="nav-menu">
+        <button class="nav-button" onclick="goToCmd()">
+          Multimedia Design
+        </button>
+        <button class="nav-button" onclick="goToArt()">Digital Art</button>
+        <button class="nav-button" onclick="goToAnimation()">Animation</button>
+        <button class="nav-button" onclick="goToAbout()">About me</button>
+      </div>
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-backdrop"></div>
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+      </div>
+    </nav>
+    <header id="header-edit">
+      <img
+        src="img/about-foto.jpg"
+        class="header-img rellax"
+        id="home-header"
+        data-rellax-speed="-3"
+      />
+      <div class="header-text rellax" data-rellax-speed="1">
+        <h1>About me</h1>
+      </div>
+      <button class="scrolldown" onclick="scrollToBottom()">
+        <img id="scrolldown" src="img/scrolldown.svg" alt="" />
+      </button>
+      <div class="gradient"></div>
+    </header>
+    <main>
+      <section class="text-box">
+        <h2>So, who am I?</h2>
+        <p>
+          I'm Douwe van Druenen, a Multimedia Designer in the broadest sense.
+          Born and raised in Helmond, The Netherlands, I am currently pursuing
+          my studies in Communication & Multimedia Design (CMD) at Zuyd
+          University of Applied Sciences in Maastricht. My passion lies in
+          creating effective design and captivating art that tell compelling
+          stories. Through my work, I aim to blend creativity with
+          functionality, delivering engaging experiences across various
+          platforms. Whether it's graphic design, UX design, illustration,
+          animation or motion design, I strive to push the boundaries of visual
+          communication and bring ideas to life.
+        </p>
+
+        <h2 class="title-spacing">Contact me</h2>
+        <p>
+          I'm always open to new opportunities and collaborations. If you'd like
+          to get in touch, feel free to reach out to me. You can contact me via
+          email or connect with me on LinkedIn and social media.
+        </p>
+        <button
+          class="home-button contact"
+          onclick="window.open('mailto:douwevandruenen@gmail.com')"
+        >
+          douwevandruenen@gmail.com
+        </button>
+
+        <button
+          class="home-button contact"
+          onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')"
+        >
+          LinkedIn
+        </button>
+        <button
+          class="home-button contact"
+          onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')"
+        >
+          @dvdruenen.art (Instagram)
+        </button>
+      </section>
+    </main>
+    <footer>
+      <button
+        id="art-ig"
+        onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')"
+      >
+        Instagram
+      </button>
+
+      <img
+        src="img/footer-logo.svg"
+        alt="logo"
+        id="footer-logo"
+        onclick="scrollToTop()"
+      />
+      <button
+        id="personal-ig"
+        onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')"
+      >
+        LinkedIn
+      </button>
+    </footer>
+    <div id="img-overlay" style="display: none">
+      <img id="img-overlay-img" src="" alt="enlarged image" />
+      <video
+        id="img-overlay-video"
+        style="display: none"
+        controls
+        autoplay
+        loop
+        muted
+      ></video>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+      var rellax = new Rellax(".rellax");
+    </script>
+  </body>
+</html>
