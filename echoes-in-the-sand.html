@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echoes in the Sand - Douwe van Druenen</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-backdrop"></div>
+    <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
+    <div class="nav-menu">
+      <div class="dropdown">
+        <button class="dropbtn">Projects</button>
+        <div class="dropdown-content">
+          <button class="nav-button" onclick="goToProject1()">
+            Royal in Motion
+          </button>
+          <button class="nav-button" onclick="goToProject2()">
+            Had Je Maar
+          </button>
+          <button class="nav-button" onclick="goToArt()">Digital Art</button>
+          <button class="nav-button" onclick="goToProject3()">
+            Knip Musical
+          </button>
+          <button class="nav-button" onclick="goToProject4()">
+            Echoes in the Sand
+          </button>
+          <button class="nav-button" onclick="goToProject5()">
+            CBS Internship
+          </button>
+        </div>
+      </div>
+      <button class="nav-button" onclick="goToAbout()">About me</button>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar" id="bar1"></div>
+      <div class="bar" id="bar2"></div>
+      <div class="bar" id="bar3"></div>
+    </div>
+  </nav>
+  <header class="header-transparent">
+    <video autoplay muted loop src="video/echoes-header.mp4" class="header-video rellax" data-rellax-speed="-3"></video>
+    <div class="header-text rellax" data-rellax-speed="1">
+      <h1>Echoes in the Sand</h1>
+    </div>
+    <button class="scrolldown" onclick="scrollToBottom()"></button>
+    <div class="gradient"></div>
+  </header>
+  <div class="design-overlay overlay-darker"></div>
+  <div class="design-overlay overlay-color"></div>
+  <main>
+    <section class="text-box">
+      <div class="tagbox">
+        <div class="tag">Storytelling</div>
+        <div class="tag">Illustration</div>
+      </div>
+      <p>
+        In my fourth year of CMD, I followed a minor called 'The Narrative'.
+        This minor revolved around storytelling, and how to use it in
+        different media. While working on my story, I studied different
+        structures of storytelling, and did artistic research to find the best
+        way to tell my story. I adapted my short story 'Echoes in the Sand'
+        into an illustrated book.
+      </p>
+      <h2 class="title-spacing">The story</h2>
+      <p>
+        Echoes in the Sand is a short story about a group of 300 travelers who
+        venture into the desert to reach the southern shore, where their new
+        home awaits. Neith, the main character, leads the group, expecting to
+        be crowned queen upon her arrival in the promised land. She vows to
+        protect her people and ensure their survival in the harsh desert, but
+        as they journey deeper through the unforgiving sands, Neith's
+        leadership is put to the test.<br /><br />Neith insists they follow
+        the course of a dried riverbed, believing it will lead them to water
+        and safety. However, the river twists and turns, lengthening their
+        journey and depleting their resources. As the group faces the
+        relentless heat and scarcity of water, tensions rise, and Neith must
+        make the impossible choice between her people's survival and her own
+        ambition. <br /><br />Echoes in the Sand is set in a fictional world
+        I've spent years building. This story is one of many planned to take
+        place in this world. The book gives an insight into the world's
+        history, telling the story of how one of the greatest kingdoms was
+        founded. The book features some texts written in Sandscript, the
+        script used in this part of the fictional world. The story is set in a
+        desert known as the Dry Sea of Sahra, located in the south.<br /><br />I
+        knew early on I wanted the story to feel like an ancient legend, a
+        story that is told within the world I have created. To achieve this, I
+        did a lot of research on how stories were told in ancient times. I
+        took inspitation from ancient Egyptian wall paintings, becoming the
+        basis for the art style of the book. I also looked at how stories were
+        often told in rhyme, and I decided to write my story in rhyme as well.
+      </p>
+    </section>
+    <div class="parallax parallax-echoes right">
+      <div class="art-info">
+        <!-- <h2>Title</h2> -->
+        <p class="quote">
+          "Thousands of years in the past, <br />Mortals first dared the
+          desert vast.<br />A large group of humans and elvenkind,<br />The
+          southern shore they wished to find."
+        </p>
+      </div>
+    </div>
+    <section class="text-box">
+      <h2>Symbolism</h2>
+      <p>
+        The story has many symbolic elements to enhance its themes and
+        messages. The biggest example is the group of travelers. Each person
+        in the group represents a different aspect of Neith's personality, and
+        as the story progresses, they are slowly lost one by one, just as .
+        Neith loses pieces of herself. The first person she is forced to leave
+        behind is Nadia, whose name means 'hope'. Eakas is the most
+        antagonistic character, and represents Neith's doubts. After she
+        leaves him behind, no one in the group openly questions her leadership
+        anymore, and she becomes more and more isolated. When she finally
+        reaches the shore, she is a shell of her former self.
+      </p>
+      <img class="extra-img" src="img/echoes-leopard.jpg" />
+      <p>
+        Hakim, Neith's advisor, mentions she is blessed by the Goddess of the
+        Moon, a part of the culture she came from. However, after Hakim is
+        left behind, a leopard appears on a dune's crest, bathing in the light
+        of the rising sun. On the other side of the dune, they finally reach
+        the shore. The leopard is an incarnation of the God of the Sun,
+        representing Neith leaving her Goddess behind as well. It is mentioned
+        there are ten Gods, but the travellers arrive at the shore with a
+        total of nine. This unholy number reflects the dark reality of Neith
+        leaving her people to die.
+        <br /><br />
+        The last illustration in the book shows a crow looking back at the
+        desert. The crow's presence, who represents the God of Death, implies
+        the travellers left behind have met their fate.
+      </p>
+    </section>
+    <div class="parallax parallax-echoes-2 left">
+      <div class="art-info">
+        <!-- <h2>Title</h2> -->
+        <p class="quote">
+          "The ninth soul remains on the dune's crest,<br />His fearful gaze
+          to the desert pressed.<br />The sands are quiet, yet in his mind,<br />He
+          hears the echoes of those they left behind."
+        </p>
+      </div>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/echoes-river.jpg" class="extra-img" />
+          <img src="img/echoes-moon.jpg" class="extra-img" />
+          <img src="img/echoes-left.jpg" class="extra-img" />
+          <img src="img/echoes-hakim.jpg" class="extra-img" />
+        </div>
+      </div>
+    </div>
+    <button id="scroll-top" onclick="scrollToTop()"></button>
+  </main>
+  <footer>
+    <button id="art-ig" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+      Instagram
+    </button>
+    <img src="img/logo-met-naam.svg" alt="logo" id="footer-logo" onclick="goToHome()" />
+    <button id="personal-ig" onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')">
+      LinkedIn
+    </button>
+  </footer>
+  <div id="img-overlay" style="display: none">
+    <img id="img-overlay-img" src="" alt="enlarged image" />
+    <video id="img-overlay-video" style="display: none" controls autoplay loop muted></video>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script>
+    var rellax = new Rellax(".rellax");
+  </script>
+</body>
+
+</html>

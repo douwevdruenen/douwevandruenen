@@ -12,20 +12,89 @@ function scrollToTop() {
   });
 }
 
+const buttonRights = document.querySelectorAll('.scroll-right');
+const buttonLefts = document.querySelectorAll('.scroll-left');
+
+buttonRights.forEach(button => {
+  button.onclick = function () {
+    const container = button.parentElement;
+    const box = container.querySelector('.extra-img-box');
+    box.scrollBy({ left: window.innerWidth * 1, behavior: 'smooth' });
+  };
+});
+
+buttonLefts.forEach(button => {
+  button.onclick = function () {
+    const container = button.parentElement;
+    const box = container.querySelector('.extra-img-box');
+    box.scrollBy({ left: -window.innerWidth * 1, behavior: 'smooth' });
+  };
+});
+
+function updateButtons(container) {
+  const box = container.querySelector('.extra-img-box');
+  const leftBtn = container.querySelector('.scroll-left');
+  const rightBtn = container.querySelector('.scroll-right');
+  const hasOverflow = box.scrollWidth > box.clientWidth;
+  const atStart = box.scrollLeft <= 0;
+  const atEnd = box.scrollLeft + box.clientWidth >= box.scrollWidth - 1;
+  leftBtn.style.display = hasOverflow && !atStart ? 'block' : 'none';
+  rightBtn.style.display = hasOverflow && !atEnd ? 'block' : 'none';
+}
+
+const containers = document.querySelectorAll('.extra-img-container');
+containers.forEach(container => {
+  const box = container.querySelector('.extra-img-box');
+  box.addEventListener('scroll', () => updateButtons(container));
+});
+
+function checkOverflow() {
+  containers.forEach(container => {
+    updateButtons(container);
+  });
+}
+
+window.addEventListener('load', checkOverflow);
+window.addEventListener('resize', checkOverflow);
+
+// Scroll-to-top button visibility
+const scrollTopBtn = document.getElementById('scroll-top');
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      scrollTopBtn.style.transform = 'translateY(0)';
+    } else {
+      scrollTopBtn.style.transform = 'translateY(100px)';
+    }
+  });
+}
+
 function goToArt() {
-  window.location.href = "art.html";
+  window.location.href = "digital-art.html";
 }
 
 function goToHome() {
   window.location.href = "/";
 }
 
-function goToAnimation() {
-  window.location.href = "animation.html";
+function goToProject1() {
+  window.location.href = "royal-in-motion.html";
 }
 
-function goToCmd() {
-  window.location.href = "cmd.html";
+function goToProject2() {
+  window.location.href = "had-je-maar.html";
+}
+
+function goToProject3() {
+  window.location.href = "knip-musical.html";
+}
+
+function goToProject4() {
+  window.location.href = "echoes-in-the-sand.html";
+}
+
+function goToProject5() {
+  window.location.href = "cbs-internship.html";
 }
 
 function goToAbout() {
@@ -265,7 +334,18 @@ document.getElementById("img-overlay").addEventListener("click", function () {
 });
 
 document.getElementById("click-art").addEventListener("click", goToArt);
-document.getElementById("click-cmd").addEventListener("click", goToCmd);
 document
-  .getElementById("click-animation")
-  .addEventListener("click", goToAnimation);
+  .getElementById("click-project-1")
+  .addEventListener("click", goToProject1);
+document
+  .getElementById("click-project-2")
+  .addEventListener("click", goToProject2);
+document
+  .getElementById("click-project-3")
+  .addEventListener("click", goToProject3);
+document
+  .getElementById("click-project-4")
+  .addEventListener("click", goToProject4);
+document
+  .getElementById("click-project-5")
+  .addEventListener("click", goToProject5);

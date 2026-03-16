@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Art - Douwe van Druenen</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-backdrop"></div>
+    <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
+    <div class="nav-menu">
+      <div class="dropdown">
+        <button class="dropbtn">Projects</button>
+        <div class="dropdown-content">
+          <button class="nav-button" onclick="goToProject1()">
+            Royal in Motion
+          </button>
+          <button class="nav-button" onclick="goToProject2()">
+            Had Je Maar
+          </button>
+          <button class="nav-button" onclick="goToArt()">Digital Art</button>
+          <button class="nav-button" onclick="goToProject3()">
+            Knip Musical
+          </button>
+          <button class="nav-button" onclick="goToProject4()">
+            Echoes in the Sand
+          </button>
+          <button class="nav-button" onclick="goToProject5()">
+            CBS Internship
+          </button>
+        </div>
+      </div>
+      <button class="nav-button" onclick="goToAbout()">About me</button>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar" id="bar1"></div>
+      <div class="bar" id="bar2"></div>
+      <div class="bar" id="bar3"></div>
+    </div>
+  </nav>
+  <header>
+    <video autoplay muted loop src="video/digital-art-transition.mp4" class="header-video rellax header-video-top"
+      data-rellax-speed="-3"></video>
+    <div class="header-text rellax" data-rellax-speed="1">
+      <h1>Digital Art</h1>
+      <button class="art-button" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+        @dvdruenen.art
+      </button>
+    </div>
+    <button class="scrolldown" onclick="scrollToBottom()"></button>
+    <div class="gradient"></div>
+  </header>
+  <main>
+    <section class="text-box">
+      <div class="tagbox">
+        <div class="tag">Illustration</div>
+        <div class="tag">Character Design</div>
+      </div>
+      <p>
+        For as long as I can remember I've loved to draw. A few years ago, I
+        started drawing digitally as well. Now, most of my art is done digitally with Adobe Fresco. My art mostly
+        revolves around
+        character design of original characters.
+      </p>
+      <h2 class="title-spacing">Worldbuilding</h2>
+      <p>
+        Many of my characters are part of a larger world that I created. This
+        world has a rich history and a complex political landscape, which
+        provides a lot of inspiration for my character designs. I enjoy
+        creating characters with unique backgrounds and personalities, and I
+        often use my art to explore different aspects of their stories. <br /><br />
+        The world I created has a fantasy setting with a diverse range of cultures, which allows for a lot of creativity
+        in my character designs. I often draw inspiration from real-world cultures and historical periods, but I also
+        like to add my own twists and interpretations to create something new and unique.
+      </p>
+      <h2 class="title-spacing">Character Design</h2>
+      <p>
+        My character designs are influenced by a variety of sources, including
+        real-world mythology and history. I strive to create
+        characters that are not only visually appealing but whose rich
+        backstories and distinct personalities are reflected in their designs.
+      </p>
+      <img class="extra-img" src="img/serena-design.jpg" />
+      <p>
+        For example, Serena's design as seen above reflects her backstory. She was once captured by a slave trader,
+        which is represented by the chains on the sheaths of her swords. The slave trader gave her the scar on her
+        cheek, a tradition in parts of the world. She now hides her face behind a mask, representing the shame and
+        trauma she wants to hide away. The design of the mask is inspired by Japanese half-masks, which adds
+        an element of cultural
+        depth to her design. The mask features dragon-feathers, representing the Black Feather Company, the guise of her
+        father's crime syndicate. The scalemail around her waist also resembles feathers. Yamika, her family name
+        meaning
+        'dark flower', is represented by the floral
+        design on the guards of her swords. She has crafted her own armour, which explains its asymmetry. To balance her
+        design, most details of her face, like the scar and her piercings, are placed on her right side, while her hair
+        falls to her left. Lastly, the red colour scheme of her design reflects her past and her personality,
+        representing the violence and danger she has experienced.
+      </p>
+    </section>
+    <div class="parallax parallax-inanis right">
+      <div class="art-info">
+        <h2>Inanis</h2>
+        <p>
+          Inanis is the hollow one, the Goddess of the Void. She is nothing, everything that does not exist. Her defeat
+          at the hands of the Eternal One marked the start of time. One day, she will swallow everything that exists.
+          This event, the Unmaking, will mark the end of time.
+          <br /><br />Her design in based on a black hole, shaped like a six-armed woman. Her size is already
+          incomparable, yet she continues to grow with every passing second.
+        </p>
+      </div>
+    </div>
+    <div class="parallax parallax-tempestia left">
+      <div class="art-info">
+        <h2>Tempestia</h2>
+        <p>
+          Tempestia, the Goddess of Time, is a prisoner of the Godless Pits. With the void, a contained piece of the
+          hollow one, below and reality above, the God of Death watches over her.
+          <br /><br />The twelve chains that hold her in place represent a clock. The chains at the start of the clock
+          have started to rust and break, while the chains at the end of the clock are still strong and intact. This
+          represents Tempestia will one day break free.
+        </p>
+      </div>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/tempestia-full.jpg" class="extra-img" />
+          <img src="img/tempestia-close.jpg" class="extra-img" />
+        </div>
+      </div>
+    </div>
+    <div class="parallax parallax-luna right">
+      <div class="art-info">
+        <h2>Luna</h2>
+        <p>
+          Luna is the Goddess of the Moon and Night. Luna was corrupted by the hollow one, which is why she is
+          the Goddess of Darkness and why she gave birth to the God of Death. It also explains her expression. Her
+          design features elements resembling a crescent moon, as seen on her forehead, her jewellery and the shape of
+          her hair. Her skin is dark blue and is scattered with stars, reflecting the night sky.
+          <br /><br />Older generations of Gods have six arms, at least in the religion this artwork is based on. In
+          this artwork I wanted to show that these arms can physically interact with objects and even with each other,
+          instead of just being symbolical.
+        </p>
+      </div>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/luna-full.jpg" class="extra-img" />
+          <img src="img/luna-close.jpg" class="extra-img" />
+        </div>
+      </div>
+    </div>
+    <div class="parallax parallax-mortifer right">
+      <div class="art-info">
+        <h2>Mortifer and Tsumi</h2>
+        <p>
+          Mortifer is the God of Death, and Tsumi, Demigoddess of Judgement, is his daughter.
+          Mortifer carries a shepherd's crook, which is a symbol of his role as a guide for souls to the afterlife.
+          Besides the God of Death, Mortifer is also the King of Crows, which is the reason for crows being associated
+          with death in my world.
+          It is also the reason for the black, feathered cloak he wears. His mask is loosely inspired by Japanese oni
+          masks, with elements of a skull.
+          <br /><br />Tsumi wears a similar mask, though hers only covers the left side of her face. Her white hair,
+          which is a feature present in all Demigods, is caused by the stress divine powers put on a mortal body.
+          Tsumi wears black feathers as well, but her are not a crow's. Tsumi is the Princess of Jackdaws, who are often
+          associated with sin, a role Tsumi once had.
+        </p>
+      </div>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/mortifer-tsumi-full.jpg" class="extra-img" />
+          <img src="img/mortifer-close.jpg" class="extra-img" />
+          <img src="img/tsumi-close.jpg" class="extra-img" />
+        </div>
+      </div>
+    </div>
+    <div class="parallax parallax-soralia right">
+      <div class="art-info">
+        <h2>Soralia</h2>
+        <p>
+          Soralia, the Fateweaver, is the Scion of Fate and Destiny. She weaves the threads of fate for all living
+          beings, determining their destinies. She uses two arms to form the threads and two to weave them into ribbons.
+          A crow cuts the ribbons with golden shears, representing the God of Death's influence on the end of fate.
+          <br /><br />Inspired by Ancient Greek and Roman sculptures of deities, Soralia's body is more exposed than
+          most of my other designs. She wears no clothing, but is covered by ribbons of fate. These ribbons depict the
+          end of the world in multiple realities, and are thus written in different scripts, including some from outside
+          this world.
+          <br /><br />Soralia is the daughter of the Goddess of Time. After her mother's imprisonment, she was adopted
+          by the God of Death, which is why she now wears a mask similar to his. To feel more connected to her horned
+          father and sister, Soralia has braided her hair to resemble horns.
+        </p>
+      </div>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/soralia-full.jpg" class="extra-img" />
+          <img src="img/soralia-close.jpg" class="extra-img" />
+          <img src="img/soralia-crow.jpg" class="extra-img" />
+        </div>
+      </div>
+    </div>
+    <section class="collage collage-spacing bottom-section">
+      <h2>More work</h2>
+      <p>
+        Besides the characters mentioned above, I have created many other characters and artworks. I have a large
+        collection of original character designs, which I often share on my Instagram account. So if you want to see
+        more of my art, be sure to check it out.
+      </p>
+      <button class="home-button contact collage-button"
+        onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+        @dvdruenen.art
+      </button>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/caelum.jpg" class="extra-img" />
+          <img src="img/jun-kaede.jpg" class="extra-img" />
+          <img src="img/nori-design.jpg" class="extra-img" />
+          <img src="img/alitura.jpg" class="extra-img" />
+          <img src="img/dragon-design.jpg" class="extra-img" />
+          <img src="img/muzami.jpg" class="extra-img" />
+        </div>
+    </section>
+    <button id="scroll-top" onclick="scrollToTop()"></button>
+  </main>
+  <footer>
+    <button id="art-ig" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+      Instagram
+    </button>
+    <img src="img/logo-met-naam.svg" alt="logo" id="footer-logo" onclick="goToHome()" />
+    <button id="personal-ig" onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')">
+      LinkedIn
+    </button>
+  </footer>
+  <div id="img-overlay" style="display: none">
+    <img id="img-overlay-img" src="" alt="enlarged image" />
+    <video id="img-overlay-video" style="display: none" controls autoplay loop muted></video>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script>
+    var rellax = new Rellax(".rellax");
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CBS Internship - Douwe van Druenen</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-backdrop"></div>
+    <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
+    <div class="nav-menu">
+      <div class="dropdown">
+        <button class="dropbtn">Projects</button>
+        <div class="dropdown-content">
+          <button class="nav-button" onclick="goToProject1()">
+            Royal in Motion
+          </button>
+          <button class="nav-button" onclick="goToProject2()">
+            Had Je Maar
+          </button>
+          <button class="nav-button" onclick="goToArt()">Digital Art</button>
+          <button class="nav-button" onclick="goToProject3()">
+            Knip Musical
+          </button>
+          <button class="nav-button" onclick="goToProject4()">
+            Echoes in the Sand
+          </button>
+          <button class="nav-button" onclick="goToProject5()">
+            CBS Internship
+          </button>
+        </div>
+      </div>
+      <button class="nav-button" onclick="goToAbout()">About me</button>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar" id="bar1"></div>
+      <div class="bar" id="bar2"></div>
+      <div class="bar" id="bar3"></div>
+    </div>
+  </nav>
+  <header class="header-transparent">
+    <video autoplay muted loop src="video/cbs-transition.mp4" class="header-video rellax"
+      data-rellax-speed="-3"></video>
+    <div class="header-text rellax" data-rellax-speed="1">
+      <h1>CBS Internship</h1>
+    </div>
+    <button class="scrolldown" onclick="scrollToBottom()"></button>
+    <div class="gradient"></div>
+  </header>
+  <div class="design-overlay overlay-darker"></div>
+  <div class="design-overlay overlay-color"></div>
+  <main>
+    <section class="text-box">
+      <div class="tagbox">
+        <div class="tag">Graphic Design</div>
+        <div class="tag">Illustration</div>
+        <div class="tag">Data visualisation</div>
+      </div>
+      <p>
+        In my third year at CMD, I interned at Centraal Bureau voor de
+        Statistiek (CBS). CBS has a lot of data, but felt the need for a more
+        engaging way to present it, especially when it comes to making complex
+        information accessible for a general audience. Together with two other
+        interns, I worked on a multimedia story about the European Green Deal.
+        I was primarily responsible for the illustrations and animations of
+        the story. During the internship, I also designed posters for a
+        presentation at the Dutch Ministry of Foreign Affairs.
+      </p>
+      <h2 class="title-spacing">View the full story</h2>
+      <p>
+        Below is an interactive prototype of the multimedia story. You can
+        also click
+        <a href="https://www.figma.com/proto/TsGYTDZYNzQuxuWYM31qsS/prototype?page-id=118%3A14074&type=design&node-id=278-2599&viewport=-11803%2C9993%2C0.86&t=eqNcTJa4S9kA65zn-1&scaling=scale-down-width&starting-point-node-id=278%3A2599"
+          target="_blank">this link</a>
+        to view the story in full-screen. <br />
+      </p>
+      <iframe
+        src="https://embed.figma.com/proto/TsGYTDZYNzQuxuWYM31qsS/prototype?node-id=278-2599&scaling=scale-down-width&content-scaling=fixed&embed-host=share&hide-ui=1"
+        allowfullscreen>
+      </iframe>
+      <h2 class="title-spacing">Concept and storyline</h2>
+      <p>
+        To explain the importance of the European Green Deal, we decided to
+        create a story that would show the potential consequences of climate
+        change. To do this, we wanted to look into the future, specifically to
+        2050, the deadline of the European Green Deal's goals. The story shows
+        two different futures: one that shows the impact of inaction while
+        another explores the benefits of achieving the goals of the European
+        Green Deal. <br /><br />The story features a character named Sam, who
+        lives with her parents in a small town called Zonneberg. While she
+        looks through boxes in the attic, she discovers a mysterious diary
+        dated 2050. The diary appears to be written by her future self and
+        contains entries about the dire state of Zonneberg in 2050. Sam's
+        pessimism is confirmed, but after she learns about the European Green
+        Deal, new pages appear. These green pages show a more optimistic
+        future where the goals of the European Green Deal were achieved.<br />
+        <br />Users can explore Zonneberg with Sam, where each location
+        reveals new pages of the diary. Users can compare the two futures by
+        switching between the green and purple pages. The ending shows Sam
+        starting her journey towards a more sustainable future, writing her
+        progress in a diary, completing the circle.
+      </p>
+    </section>
+    <div class="parallax parallax-mms left">
+      <div class="art-info">
+        <h2>Illustrations</h2>
+        <p>
+          The visual style of the story was an important aspect of the
+          project, as it needed to be engaging and accessible to a general
+          audience. We decided early on that the positive and negative pages
+          of the diary needed to be easily distinguishable. We decided to use
+          green for the future where the goals of the European Green Deal were
+          achieved and purple for the future where the goals were not
+          achieved. These colours, which are prominently present in the
+          illustrations and interactive elements of the pages, create a clear
+          contrast.<br /><br />To fit CBS's identity, I decided to go for
+          simple and minimalistic illustrations, using the CBS colour palette.
+          To achieve the right look, I primarily used Adobe Illustrator. The
+          vector images also allowed for easy recolouring for the purple and
+          green pages. The images were designed to be easily understandable,
+          with clear differences for each possible future, visualising the
+          impact of climate change.
+        </p>
+      </div>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/cbs-boerderij.jpg" class="extra-img" />
+          <img src="img/cbs-energie.jpg" class="extra-img" />
+          <img src="img/cbs-industrie.jpg" class="extra-img" />
+          <img src="img/cbs-wonen.jpg" class="extra-img" />
+        </div>
+      </div>
+    </div>
+    <section class="collage collage-spacing bottom-section">
+      <h2>Posters for Foreign Affairs</h2>
+      <p>
+        Besides the multimedia story, I also designed posters for a
+        presentation of the Internationalisation Monitor at the Dutch Ministry
+        of Foreign Affairs. It was a great opportunity to create informative
+        and visually appealing posters that effectively communicated the key
+        messages of each chapter. The design process involved a lot of
+        collaboration with the team at CBS to ensure that the posters
+        effectively communicated the intended message. Each poster went
+        through multiple iterations before the authors and I were all
+        satisfied with the final design. The posters were then printed at A0
+        size and presented at the Ministry of Foreign Affairs, where they
+        received positive feedback from the attendees. The posters remained at
+        the Ministry on the host's request.
+      </p>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/CBS-poster-H1.png" class="extra-img" />
+          <img src="img/CBS-poster-H2.png" class="extra-img" />
+          <img src="img/CBS-poster-H3.png" class="extra-img" />
+          <img src="img/CBS-poster-H4.png" class="extra-img" />
+          <img src="img/CBS-poster-H5.png" class="extra-img" />
+          <img src="img/CBS-poster-kritieke_materialen.png" class="extra-img" />
+        </div>
+      </div>
+    </section>
+    <button id="scroll-top" onclick="scrollToTop()"></button>
+  </main>
+  <footer>
+    <button id="art-ig" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+      Instagram
+    </button>
+    <img src="img/logo-met-naam.svg" alt="logo" id="footer-logo" onclick="goToHome()" />
+    <button id="personal-ig" onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')">
+      LinkedIn
+    </button>
+  </footer>
+  <div id="img-overlay" style="display: none">
+    <img id="img-overlay-img" src="" alt="enlarged image" />
+    <video id="img-overlay-video" style="display: none" controls autoplay loop muted></video>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script>
+    var rellax = new Rellax(".rellax");
+  </script>
+</body>
+
+</html>

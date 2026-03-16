@@ -1,235 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Douwe van Druenen</title>
-    <link rel="icon" type="image/x-icon" href="img/white-icon.svg" />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <nav>
-      <div class="nav-backdrop"></div>
-      <img
-        src="img/logo-met-naam.svg"
-        alt="logo"
-        id="nav-logo"
-        onclick="goToHome()"
-      />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Douwe van Druenen</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-      <div class="nav-menu">
-        <button class="nav-button" onclick="goToCmd()">
-          Multimedia Design
-        </button>
-        <button class="nav-button" onclick="goToArt()">Digital Art</button>
-        <button class="nav-button" onclick="goToAnimation()">Animation</button>        
-        <button class="nav-button" onclick="goToAbout()">About me</button>
-      </div>
-      <div class="hamburger-menu" onclick="toggleMenu()">
-        <div class="hamburger-backdrop"></div>
-        <div class="bar" id="bar1"></div>
-        <div class="bar" id="bar2"></div>
-        <div class="bar" id="bar3"></div>
-      </div>
-    </nav>
-    <header id="header-edit">
-      <img src="img/home-header.jpg" class="header-img rellax" id="home-header" data-rellax-speed="-3" />
-      <button class="scrolldown" onclick="scrollToBottom()">
-        <img id="scrolldown" src="img/scrolldown.svg" alt="" />
-      </button>
-      <div class="gradient"></div>
-    </header>
-    <main>
-      <section class="text-box">
-        <h2>Hi, I'm Douwe</h2>
-        <p>
-          Welcome to my portfolio. I'm a (digital) artist and multimedia designer currently based in Maastricht. I specialise in graphic design, UX design, illustration, animation and motion design. I've worked on many projects, with some highlights featured on this website, so feel free to look around.
-        </p>
-      </section>
-      <section class="home-categories">
-        <div class="category-box" id="click-cmd">
-          <video autoplay muted loop src="video/royal.mp4"></video>
-          <h2>Multimedia Design</h2>
-          <p>
-            Multimedia design is a broad field that includes graphic design, motion design, UX design, and programming. Multimedia design has been the primary focus for most of my professional work. This page shows a variety of projects I've worked on.
-          </p>
-          <button class="home-button" onclick="goToCmd()">View projects</button>
-        </div>
-        <div class="category-box" id="click-art">
-          <video autoplay muted loop src="video/digital-art-transition.mp4"></video>
-          <h2>Digital art</h2>
-          <p>
-            I primarily create digital art for personal projects, focusing on illustrations, concept art, and character designs. You can view some of my work on this page.
-          </p>
-          <button class="home-button" onclick="goToArt()">View projects</button>
-        </div>
-        <div class="category-box" id="click-animation">
-          <img src="video/schaduw.gif"></img>
-          <h2>Animation</h2>
-          <p>
-            For some projects, I've used various forms of animation. From simple animated sequences to a teaser for a short film, these projects vary in complexity. You can view some of my animation projects on this page.
-          </p>
-          <button class="home-button" onclick="goToAnimation()">
-            View projects
+<body>
+  <nav>
+    <div class="nav-backdrop"></div>
+    <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
+    <div class="nav-menu">
+      <div class="dropdown">
+        <button class="dropbtn">Projects</button>
+        <div class="dropdown-content">
+          <button class="nav-button" onclick="goToProject1()">
+            Royal in Motion
           </button>
+          <button class="nav-button" onclick="goToProject2()">Had Je Maar</button>
+          <button class="nav-button" onclick="goToArt()">Digital Art</button>
+          <button class="nav-button" onclick="goToProject3()">
+            Knip Musical
+          </button>
+          <button class="nav-button" onclick="goToProject4()">
+            Echoes in the Sand
+          </button>
+          <button class="nav-button" onclick="goToProject5()">
+            CBS Internship</button>
         </div>
-      </section>
-      <!-- <section id="home-main">
-        <div class="dark-bg"></div>
-        <div class="parallax parallax-home-cmd right">
-          <div class="art-info">
-            <h2>Multimedia Design</h2>
-            <p>
-              Multimedia design is a broad field and includes graphic design,
-              motion design, UX design and even programming. This is the field
-              I've done most of my professional work in. I've worked on many
-              different projects that you can see here.
-            </p>
-            <button class="home-button" onclick="goToCmd()">
-              View projects
-            </button>
-          </div>
-          <div class="parallax-overlay"></div>
-        </div>
-        <div class="parallax parallax-art left">
-          <div class="art-info">
-            <h2>Digital art</h2>
-            <p>
-              Mostly for personal projects, I create digital art. I love to
-              create illustrations, concept art, and character designs that you
-              can see here.
-            </p>
-            <button class="home-button" onclick="goToArt()">
-              View projects
-            </button>
-          </div>
-          <div class="parallax-overlay"></div>
-        </div>
-        <div class="parallax parallax-animation right">
-          <div class="art-info">
-            <h2>Animation</h2>
-            <p>
-              For a few projects I've done animations. These vary from simple
-              animations to more complex ones. You can see some of my animation
-              projects here.
-            </p>
-            <button class="home-button" onclick="goToAnimation()">
-              View projects
-            </button>
-          </div>
-          <div class="parallax-overlay"></div>
-        </div>
-      </section> -->
-      <!-- <section class="gallery">
-        <div class="img1 rellax" data-rellax-speed="2" onclick="goToArt()">
-          <div class="overlay">
-            <p>Digital Art</p>
-          </div>
-        </div>
-        <div class="img2 rellax" data-rellax-speed="0" onclick="goToCmd()">
-          <div class="overlay">
-            <p>Multimedia Design</p>
-          </div>
-        </div>
-        <div
-          class="img3 rellax"
-          data-rellax-speed="-2"
-          onclick="goToAnimation()"
-        >
-          <div class="overlay">
-            <p>Animation</p>
-          </div>
-        </div>
-        <div class="img4 rellax" data-rellax-speed="4" onclick="goToCmd()">
-          <div class="overlay">
-            <p>Multimedia Design</p>
-          </div>
-        </div>
-        <div class="img5 rellax" data-rellax-speed="-2" onclick="goToCmd()">
-          <div class="overlay">
-            <p>Multimedia Design</p>
-          </div>
-        </div>
-        <div class="img6 rellax" data-rellax-speed="0" onclick="goToCmd()">
-          <div class="overlay">
-            <p>Multimedia Design</p>
-          </div>
-        </div>
-        <div class="img7 rellax" data-rellax-speed="4" onclick="goToArt()">
-          <div class="overlay">
-            <p>Digital Art</p>
-          </div>
-        </div>
-        <div class="img8 rellax" data-rellax-speed="2" onclick="goToArt()">
-          <div class="overlay">
-            <p>Digital Art</p>
-          </div>
-        </div>
-        <div
-          class="img9 rellax"
-          data-rellax-speed="-2"
-          onclick="goToAnimation()"
-        >
-          <div class="overlay">
-            <p>Animation</p>
-          </div>
-        </div>
-        <div class="img10 rellax" data-rellax-speed="4" onclick="goToCmd()">
-          <div class="overlay">
-            <p>Multimedia Design</p>
-          </div>
-        </div>
-        <div class="img11 rellax" data-rellax-speed="2" onclick="goToArt()">
-          <div class="overlay">
-            <p>Animation</p>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- <div id="royal-home">
-        <video autoplay muted loop src="video/royal.mp4"></video>
-      </div> -->
-    </main>
-    <footer>
-      <button
-        id="art-ig"
-        onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')"
-      >
-        Instagram
-      </button>
-
-      <img
-        src="img/footer-logo.svg"
-        alt="logo"
-        id="footer-logo"
-        onclick="scrollToTop()"
-      />
-      <button
-        id="personal-ig"
-        onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')"
-      >
-        LinkedIn
-      </button>
-    </footer>
-    <div id="img-overlay" style="display: none">
-      <img id="img-overlay-img" src="" alt="enlarged image" />
-      <video
-        id="img-overlay-video"
-        style="display: none"
-        controls
-        autoplay
-        loop
-        muted
-      ></video>
+      </div>
+      <button class="nav-button" onclick="goToAbout()">About me</button>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-    <script>
-      var rellax = new Rellax(".rellax");
-    </script>
-  </body>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="hamburger-backdrop"></div>
+      <div class="bar" id="bar1"></div>
+      <div class="bar" id="bar2"></div>
+      <div class="bar" id="bar3"></div>
+    </div>
+  </nav>
+  <header id="header-edit">
+    <img src="img/home-header.jpg" class="header-img rellax" id="home-header" data-rellax-speed="-3" />
+    <button class="scrolldown" onclick="scrollToBottom()"></button>
+    <div class="gradient"></div>
+  </header>
+  <main>
+    <section class="text-box">
+      <h2>Hi, I'm Douwe</h2>
+      <p>
+        Welcome to my portfolio. I'm a multimedia designer and digital artist currently based in Maastricht. I
+        specialise in graphic design, storytelling, UX design, illustration, animation and motion design. I've worked on
+        many projects requiring a blend of skills. Below are some of my highlights.
+      </p>
+    </section>
+    <section class="home-categories">
+
+      <div class="category-box" id="click-project-1">
+        <video autoplay muted loop src="video/royal.mp4"></video>
+        <h2>Royal in Motion</h2>
+        <div class="tagbox">
+          <div class="tag">Graphic Design</div>
+          <div class="tag">Motion Design</div>
+        </div>
+        <p>
+          In my fourth year of Communication & Multimedia Design (CMD), I underwent a project for Royal, an arthouse
+          cinema in Heerlen. I created a rebranding for the cinema, including a new logo, visual identity, and marketing
+          materials.</p>
+        <button class="home-button" onclick="goToProject1()">See more</button>
+      </div>
+
+      <div class="category-box" id="click-project-2">
+        <img src="video/schaduw.gif"></img>
+        <h2>Had Je Maar</h2>
+        <div class="tagbox">
+          <div class="tag">Animation</div>
+          <div class="tag">Storytelling</div>
+          <div class="tag">Sound Design</div>
+        </div>
+        <p>
+          In my third year of CMD, I followed an external elective of Visual Communication called 'Storytelling
+          Fiction', where I spent half a year making the animated short film 'Had Je Maar'.</p>
+        <button class="home-button" onclick="goToProject2()">
+          See more
+        </button>
+      </div>
+      <div class="category-box" id="click-art">
+        <video autoplay muted loop src="video/digital-art-transition.mp4"></video>
+        <h2>Digital art</h2>
+        <div class="tagbox">
+          <div class="tag">Illustration</div>
+          <div class="tag">Character Design</div>
+        </div>
+        <p>
+          I primarily create digital art for personal projects, focusing on illustrations, concept art, and character
+          design. You can view some of my work on this page.
+        </p>
+        <button class="home-button" onclick="goToArt()">See more</button>
+      </div>
+      </div>
+      <div class="category-box" id="click-project-3">
+        <video autoplay muted loop src="video/knip-collage.mp4"></video>
+        <h2>Knip Musical</h2>
+        <div class="tagbox">
+          <div class="tag">Graphic Design</div>
+          <div class="tag">Illustration</div>
+          <div class="tag">Photography</div>
+        </div>
+        <p>
+          The high school I attended has its own musical group. Since 2022, I've been designing the posters and other
+          marketing materials for their annual performances.
+        </p>
+        <button class="home-button" onclick="goToProject3()">See more</button>
+      </div>
+      <div class="category-box" id="click-project-4">
+        <video autoplay muted loop src="video/echoes-header.mp4"></video>
+        <h2>Echoes in the Sand</h2>
+        <div class="tagbox">
+          <div class="tag">Storytelling</div>
+          <div class="tag">Illustration</div>
+        </div>
+        <p>
+          In my fourth year of CMD, I followed a minor called 'The Narrative', which revolved around storytelling. I
+          wrote the short story 'Echoes in the Sand',
+          which I adapted into an illustrated book. </p>
+        <button class="home-button" onclick="goToProject4()">See more</button>
+      </div>
+      <div class="category-box" id="click-project-5">
+        <video autoplay muted loop src="video/cbs-transition.mp4"></video>
+        <h2>CBS Internship</h2>
+        <div class="tagbox">
+          <div class="tag">Graphic Design</div>
+          <div class="tag">Illustration</div>
+          <div class="tag">Data visualisation</div>
+        </div>
+        <p>
+          During my internship at Centraal Bureau voor de Statistiek (CBS), I worked on a multimedia story about the
+          European Green Deal and created informative posters for a presentation at Foreign Affairs.
+        </p>
+        <button class="home-button" onclick="goToProject5()">See more</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <button id="art-ig" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+      Instagram
+    </button>
+    <img src="img/logo-met-naam.svg" alt="logo" id="footer-logo" onclick="goToHome()" />
+    <button id="personal-ig" onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')">
+      LinkedIn
+    </button>
+  </footer>
+  <div id="img-overlay" style="display: none">
+    <img id="img-overlay-img" src="" alt="enlarged image" />
+    <video id="img-overlay-video" style="display: none" controls autoplay loop muted></video>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script>
+    var rellax = new Rellax(".rellax");
+  </script>
+</body>
+
 </html>

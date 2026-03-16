@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal in Motion - Douwe van Druenen</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-backdrop"></div>
+    <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
+    <div class="nav-menu">
+      <div class="dropdown">
+        <button class="dropbtn">Projects</button>
+        <div class="dropdown-content">
+          <button class="nav-button" onclick="goToProject1()">
+            Royal in Motion
+          </button>
+          <button class="nav-button" onclick="goToProject2()">
+            Had Je Maar
+          </button>
+          <button class="nav-button" onclick="goToArt()">Digital Art</button>
+          <button class="nav-button" onclick="goToProject3()">
+            Knip Musical
+          </button>
+          <button class="nav-button" onclick="goToProject4()">
+            Echoes in the Sand
+          </button>
+          <button class="nav-button" onclick="goToProject5()">
+            CBS Internship
+          </button>
+        </div>
+      </div>
+      <button class="nav-button" onclick="goToAbout()">About me</button>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar" id="bar1"></div>
+      <div class="bar" id="bar2"></div>
+      <div class="bar" id="bar3"></div>
+    </div>
+  </nav>
+  <header class="header-transparent">
+    <video autoplay muted loop src="video/royal.mp4" class="header-video rellax" data-rellax-speed="-3"></video>
+    <div class="header-text rellax" data-rellax-speed="1">
+      <h1>Royal in Motion</h1>
+    </div>
+    <button class="scrolldown" onclick="scrollToBottom()"></button>
+    <div class="gradient"></div>
+  </header>
+  <div class="design-overlay overlay-darker"></div>
+  <div class="design-overlay overlay-color"></div>
+  <main>
+    <section class="text-box">
+      <div class="tagbox">
+        <div class="tag">Graphic Design</div>
+        <div class="tag">Motion Design</div>
+      </div>
+      <p>
+        In my fourth year of Communication & Multimedia Design (CMD), I did a
+        project for Royal, an arthouse cinema in Heerlen. They are undergoing
+        a large renovation and wanted to reimagine their branding. Together
+        with fellow student Patrick Dammer, we created the concept 'Royal in
+        Motion'.
+      </p>
+      <h2 class="title-spacing">Concept</h2>
+      <video src="video/royal-logo-animatie.mp4" class="extra-img" autoplay muted loop></video>
+      <p>
+        After researching the case, having interviewed the stakeholders, we
+        created a concept that revolves around motion. The motion of a film
+        camera, the motion of innovation, and the motion of visitors coming
+        together in the new Royal. The logo we created captures the 'o' in
+        'Royal' mid-motion, as seen in the animation above. This symbol can be
+        found in most of the designs, either as a static shape or as a moving
+        element. <br />
+        <br />For the wordmark, we chose a bold font with elements reminiscent
+        of Art Deco, which is a style often associated with the mining history
+        of Heerlen. The font gives a modern feel while still embracing the
+        rich history of the cinema and the city.
+      </p>
+    </section>
+    <div class="parallax parallax-royal right">
+      <div class="dark-bg"></div>
+      <div class="art-info">
+        <h2>Colour and movement</h2>
+        <p>
+          The concept of motion influenced every aspect of the design, from
+          the logo and prominent shape language to the vast amounts of motion
+          graphics. The movement in the designs makes them more dynamic and
+          eye-catching, while also reinforcing the concept. It allows for more
+          creativity and flexibility in the designs, as the moving elements
+          can be adapted to different contexts and applications. <br />
+          <br />The colour palette we chose is based on the primary and
+          secondary colours of light, the colours used in film. The palette is
+          vibrant and energetic, with a mix of bold and bright tones. The
+          colours give a modern and lively feel to the designs. The palette
+          was carefully balanced to ensure that the colours work well together
+          and create sufficient contrast between background and foreground
+          elements. To ensure consistency and legibility, we created a set of
+          rules for which colours could be used together, and which to avoid.
+        </p>
+      </div>
+      <div id="royal-video">
+        <video autoplay muted loop src="video/colors-animation.mp4"></video>
+      </div>
+    </div>
+    <section class="collage collage-spacing bottom-section">
+      <h2>End products</h2>
+      <p>
+        After establishing the concept and designing the visual identity, we
+        created a range of prototype products for Royal, including physical
+        and digital assets. I was responsible for the motion design of the
+        digital products, whichs include social media posts, website
+        animations, and animations for the big screen. Some of our designs can
+        be seen below.
+      </p>
+      <div class="extra-img-container">
+        <button class="side-scroll scroll-left"></button>
+        <button class="side-scroll scroll-right"></button>
+        <div class="extra-img-box">
+          <img src="img/royal-drank.jpg" class="extra-img" />
+          <video autoplay muted loop src="video/royal-logo-animatie.mp4" class="extra-img"></video>
+          <img src="img/royal-posters-tekst.jpg" class="extra-img" />
+          <video autoplay muted loop src="video/royal-f1.mp4" class="extra-img"></video>
+          <img src="img/royal-posters.jpg" class="extra-img" />
+        </div>
+      </div>
+    </section>
+    <button id="scroll-top" onclick="scrollToTop()"></button>
+  </main>
+  <footer>
+    <button id="art-ig" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+      Instagram
+    </button>
+    <img src="img/logo-met-naam.svg" alt="logo" id="footer-logo" onclick="goToHome()" />
+    <button id="personal-ig" onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')">
+      LinkedIn
+    </button>
+  </footer>
+  <div id="img-overlay" style="display: none">
+    <img id="img-overlay-img" src="" alt="enlarged image" />
+    <video id="img-overlay-video" style="display: none" controls autoplay loop muted></video>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script>
+    var rellax = new Rellax(".rellax");
+  </script>
+</body>
+
+</html>
