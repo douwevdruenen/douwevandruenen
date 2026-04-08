@@ -63,11 +63,39 @@ if (scrollTopBtn) {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
       scrollTopBtn.style.transform = 'translateY(0)';
+      scrollTopBtn.style.opacity = '1';
     } else {
       scrollTopBtn.style.transform = 'translateY(100px)';
+      scrollTopBtn.style.opacity = '0';
     }
   });
 }
+
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.text-box .tagbox, .text-box .home-button, iframe, .text-box h2, .text-box p, .text-box .extra-img, .category-box, .art-info, .extra-img-container, .collage h2, .collage p');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+    });
+
+    revealElements.forEach(el => {
+      el.classList.add('scroll-reveal');
+      observer.observe(el);
+    });
+  } else {
+    revealElements.forEach(el => el.classList.add('active'));
+  }
+}
+
+window.addEventListener('load', initScrollReveal);
 
 function goToArt() {
   window.location.href = "digital-art.html";

@@ -167,8 +167,12 @@ p {
 
 p a {
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: color 0.3s ease;
     text-decoration: underline;
+}
+
+p a:hover {
+    color: var(--douwe-brown);
 }
 
 .text-box a {
@@ -180,7 +184,7 @@ p a {
     font-weight: 400;
     font-size: 1.2em;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: letter-spacing 0.3s ease;
     /* color: var(--douwe-beige); */
     color: #000;
     border: none;
@@ -219,6 +223,23 @@ p a {
     z-index: 2;
     padding: 100px 25vw 100px 25vw;
     background-color: var(--douwe-beige);
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.extra-img.scroll-reveal,
+.category-box.scroll-reveal,
+.home-button.scroll-reveal {
+    transition: opacity 0.6s ease, transform 0.6s ease, translate 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
 }
 
 .text-box h2 {
@@ -427,7 +448,6 @@ footer {
     width: auto;
     height: 40%;
     margin: 0 auto;
-    transition: all 0.4s ease;
 }
 
 #footer-logo:hover {
@@ -439,7 +459,7 @@ header button {
     border: none;
     background: none;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: letter-spacing 0.3s ease;
 }
 
 footer button:hover,
@@ -492,7 +512,7 @@ header button:hover {
     border: #000 3px solid;
     box-shadow: 10px 10px 0px rgb(0, 0, 0);
     background-color: #000;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease, translate 0.3s ease;
 }
 
 .extra-img-box .extra-img {
@@ -568,7 +588,7 @@ header button:hover {
     height: 100%;
     background: var(--douwe-beige);
     mix-blend-mode: color;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
     pointer-events: none;
     display: none;
 }
@@ -757,7 +777,7 @@ header button:hover {
     border: #000 3px solid;
     box-shadow: 10px 10px 0px rgb(0, 0, 0);
     padding-bottom: 2vw;
-    transition: all 0.3s ease;
+    transition: translate 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: calc(2vw + 10px);
     margin-right: calc(2vw + 10px);
 }
@@ -859,13 +879,14 @@ iframe {
 
 #scroll-top {
     position: fixed;
+    opacity: 1;
     width: auto;
     float: right;
     margin-top: 10vh;
     right: 2vw;
     bottom: 55px;
     background-image: url(../img/scroll-top.svg);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     transform: translateY(100px);
 }
 
