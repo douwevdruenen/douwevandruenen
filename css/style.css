@@ -10,7 +10,8 @@ html {
 
 :root {
     --douwe-beige: #f2dfd7;
-    --douwe-brown: #AE7A63;
+    --douwe-brown: #D3A997;
+    --douwe-dark-brown: #AE7A63;
     --dark-bg: #262626;
 }
 
@@ -28,7 +29,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ae7963b4;
+    background: var(--douwe-brown);
     background-clip: padding-box;
     border: 3px solid rgba(0, 0, 0, 0);
     transition: all 0.3s ease;
@@ -36,7 +37,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #ae7963;
+    background: var(--douwe-dark-brown);
     background-clip: padding-box;
     border: 3px solid rgba(0, 0, 0, 0);
 }
