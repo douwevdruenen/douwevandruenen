@@ -57,8 +57,6 @@ nav {
     top: 0;
     left: 0;
     z-index: 999;
-    /* box-shadow: 0 0 60px rgba(0, 0, 0, 0.2); */
-    /* backdrop-filter: blur(15px); */
     transition: top 0.2s;
 }
 
@@ -69,8 +67,6 @@ nav.scroll-up {
 .nav-backdrop {
     height: 100%;
     width: 100%;
-    /* background-color: #f2dfd780; */
-    /* backdrop-filter: blur(15px); */
     background-color: var(--douwe-beige);
     box-shadow: 0px 2.5px 0px rgb(0, 0, 0);
 }
@@ -410,7 +406,8 @@ body.dark-mode .header-transparent {
 }
 
 .gradient {
-    height: 20vh;
+    /* display: none; */
+    height: 15vh;
     width: 100%;
     /* background: linear-gradient(rgba(255, 255, 255, 0), var(--douwe-beige)); */
     background-image: url(../img/bg-grdnt.svg);
