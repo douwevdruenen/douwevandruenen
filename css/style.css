@@ -582,6 +582,7 @@ header button:hover {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    z-index: -2;
 }
 
 .parallax-overlay {
@@ -831,11 +832,13 @@ header button:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 80vh;
+    height: 70vh;
+    max-height: 800px;
     background-image: url(../img/bg-brown.svg);
     background-repeat: repeat-x;
+    background-size: contain;
     background-position: center bottom -10vh;
-    z-index: 0;
+    z-index: -1;
     /* mix-blend-mode: darken; */
     pointer-events: none;
 }
@@ -845,7 +848,9 @@ header button:hover {
 }
 
 .brown-bg-about {
-    background-position: center bottom -35vh;
+    height: 45vh;
+    max-height: 500px;
+    /* background-position: center bottom -25vh; */
     z-index: 3;
     mix-blend-mode: darken;
 }
@@ -1285,5 +1290,10 @@ iframe {
 
     .brown-bg {
         background-size: cover;
+        height: 60vh;
+    }
+
+    .brown-bg-about {
+        height: 400px;
     }
 }
