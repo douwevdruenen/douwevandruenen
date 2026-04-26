@@ -81,10 +81,13 @@
           target="_blank">this link</a>
         to view the story in full-screen. <br />
       </p>
-      <iframe
-        src="https://embed.figma.com/proto/TsGYTDZYNzQuxuWYM31qsS/prototype?node-id=278-2599&scaling=scale-down-width&content-scaling=fixed&embed-host=share&hide-ui=1"
-        allowfullscreen>
-      </iframe>
+      <div class="figma-container">
+        <iframe class="figma-embed"
+          src="https://embed.figma.com/proto/TsGYTDZYNzQuxuWYM31qsS/prototype?node-id=278-2599&scaling=scale-down-width&content-scaling=fixed&embed-host=share&hide-ui=1"
+          allowfullscreen>
+        </iframe>
+        <button class="fullscreen-btn"></button>
+      </div>
       <h2 class="title-spacing">Concept and storyline</h2>
       <p>
         To explain the importance of the European Green Deal, we decided to
@@ -183,7 +186,8 @@
   </footer>
   <div id="img-overlay" style="display: none">
     <img id="img-overlay-img" src="" alt="enlarged image" />
-    <video id="img-overlay-video" style="display: none" controls autoplay loop muted></video>
+    <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
+    <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="js/script.js"></script>
