@@ -1171,8 +1171,7 @@ iframe {
     .nav-menu.active {
         opacity: 1;
         transform: translateY(0px);
-        transition-delay: 0.15s;
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
         pointer-events: auto;
     }
 
