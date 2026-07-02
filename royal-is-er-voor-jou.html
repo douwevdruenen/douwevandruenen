@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal is er voor jou - Douwe</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <script>
+        const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+        document.documentElement.setAttribute('data-lang', savedLang);
+        document.body.setAttribute('data-lang', savedLang); document.addEventListener('DOMContentLoaded', function () {
+            const langBtn = document.getElementById('lang-toggle');
+            if (langBtn) {
+                langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+            }
+        });    </script>
+    <nav>
+        <div class="nav-backdrop"></div>
+        <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
+        <div class="nav-menu">
+            <div class="dropdown">
+                <button class="dropbtn"><span class="en">Projects</span><span class="nl">Projecten</span></button>
+                <div class="dropdown-content">
+                    <button class="nav-button" onclick="goToProject6()"
+                        data-preview="video/royal-is-er-voor-jou-header.mp4">
+                        Royal is er voor jou
+                    </button>
+                    <button class="nav-button" onclick="goToProject1()" data-preview="video/royal.mp4">
+                        Royal in Motion
+                    </button>
+                    <button class="nav-button" onclick="goToArt()" data-preview="video/digital-art-transition.mp4"><span
+                            class="en">Digital Art</span><span class="nl">Digitale
+                            kunst</span></button>
+                    <button class="nav-button" onclick="goToProject2()" data-preview="video/schaduw.gif">Had Je
+                        Maar</button>
+                    <button class="nav-button" onclick="goToProject3()" data-preview="video/knip-collage.mp4">
+                        Knip Musical
+                    </button>
+                    <button class="nav-button" onclick="goToProject4()" data-preview="video/echoes-header.mp4">
+                        Echoes in the Sand
+                    </button>
+                    <button class="nav-button" onclick="goToProject5()" data-preview="video/cbs-transition.mp4">
+                        <span class="en">CBS Internship</span><span class="nl">CBS Stage</span>
+                    </button>
+                </div>
+            </div>
+            <button class="nav-button" onclick="goToAbout()"><span class="en">About me</span><span class="nl">Over
+                    mij</span></button>
+            <button class="nav-button" id="lang-toggle" onclick="toggleLanguage()">NL</button>
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>
+        </div>
+    </nav>
+    <header class="header-transparent">
+        <video autoplay muted loop src="video/royal-is-er-voor-jou-header.mp4" class="header-video rellax"
+            data-rellax-speed="-3"></video>
+        <div class="header-text rellax" data-rellax-speed="1">
+            <h1>Royal is er voor jou</h1>
+        </div>
+        <button class="scrolldown" onclick="scrollToBottom()"></button>
+        <div class="gradient"></div>
+    </header>
+    <div class="design-overlay overlay-darker"></div>
+    <div class="design-overlay overlay-color"></div>
+    <main>
+        <section class="text-box">
+            <div class="tagbox">
+                <div class="tag"><span class="en">Graphic design</span><span class="nl">Grafisch ontwerp</span></div>
+                <div class="tag">UX design</div>
+            </div>
+            <p>
+                <span class="en">In my final year of Communication and Multimedia Design (CMD), I did another project
+                    for
+                    Royal, an arthouse cinema in Heerlen (for my previous work for Royal, see <a
+                        onclick="goToProject1()">Royal in Motion</a>). They are undergoing a large transition, during
+                    which they want to connect with a younder target audience. Before the renovation, Royal's audience
+                    was mainly above 55 years old, despite national trends showing that younger audiences are more and
+                    more likely to visit arthouse cinemas. The goal of this project was to create a campaign that makes
+                    Royal visible in the city and attracts a younger audience. The campaign focused on the diversity of
+                    the cinema's future offerings and included a visual identity, a series of posters, and an
+                    interactive installation.</span>
+                <span class="nl">In mijn laatste jaar van Communication and Multimedia Design (CMD) voerde ik wederom
+                    een
+                    project uit voor Royal, een artistiek filmhuis in Heerlen (voor mijn vorige werk voor Royal, zie <a
+                        onclick="goToProject1()">Royal in Motion</a>). Ze ondergaan een grote transitie, waardoor ze
+                    willen aansluiten bij een jonger doelpubliek. Vóór de renovatie was Royal's publiek voornamelijk
+                    ouder dan 55 jaar, ondanks nationale trends die aantonen dat jongere doelgroepen steeds vaker
+                    filmhuizen bezoeken. Het doel van dit project was het creëren van een campagne die Royal
+                    zichtbaar maakt in de stad en een jonger publiek aantrekt. De campagne legde de focus op de
+                    diversiteit van het toekomstige aanbod van het filmhuis en omvatte een visuele identiteit, een reeks
+                    posters en een interactieve installatie.</span>
+            </p>
+            <h2 class="title-spacing"><span class="en">Research</span><span class="nl">Onderzoek</span></h2>
+            <img src="img/royal-cocreatie.png" class="extra-img" />
+            <p>
+                <span class="en">Through stakeholder interviews, target group sessions, desk research, and a competitive
+                    analysis of similar venues, I mapped the landscape around arthouse cinema and public communication.
+                    The research revealed that young people in Parkstad aren't opposed to culture, they simply don't
+                    seek it out beyond their immediate social circle. <br /> <br />The research made it clear that the
+                    campaign should focus on changing perceptions of Royal, rather than simply promoting the movie
+                    theatre. The
+                    campaign should show that Royal is a place for everyone, and that it offers a diverse range of films
+                    and events that are relevant to young people. Another issue that came up is the perception that
+                    Royal is a thing of the past, despite the fact that it has been showing movies every day for years.
+                    <br /> <br />These insights directly shaped the design direction. The research made clear that any
+                    effective communication needed to be social, repeatable, and grounded in what Royal will actually
+                    offer. Rather than positioning Royal as a cultural institution to be respected, the campaign needed
+                    to frame it as a place that is genuinely for you. This led to the concept 'Royal is er voor jou': a
+                    campaign that communicates the venue's versatility across film, food, and community, and actively
+                    invites young people in rather than assuming they'll find their way there.</span>
+                <span class="nl">Door interviews met belanghebbenden, doelgroepsessies, bureauonderzoek en een
+                    analyse van gerelateerde projecten heb ik het landschap rond
+                    arthouse-bioscoop en publiekscommunicatie in kaart gebracht. Het onderzoek toonde aan dat jongeren
+                    in Parkstad niet
+                    tegen cultuur zijn, ze zoeken het gewoon niet op buiten hun onmiddellijke sociale kring. <br />
+                    <br />Het onderzoek maakte duidelijk dat de campagne zich moest richten op het veranderen van
+                    percepties van Royal, in plaats van simpelweg het filmhuis te promoten. De campagne moest laten zien
+                    dat Royal een plek voor iedereen is, en dat het een diverse selectie van films en evenementen biedt
+                    die relevant zijn voor jongeren. Een ander probleem dat naar voren kwam, is de perceptie dat Royal
+                    iets uit het verleden is, ondanks het feit dat het al jaren elke dag films toont.
+                    <br /> <br />Deze inzichten gaven vorm aan de ontwerprichting. Het onderzoek maakte duidelijk
+                    dat effectieve communicatie sociaal, herhaalbaar en gegrond moet zijn in wat Royal werkelijk zal
+                    bieden.
+                    In plaats van Royal als een culturele instelling te positioneren die wordt gerespecteerd, moest de
+                    campagne het framen als een plek die echt voor jou is. Dit leidde tot het concept 'Royal is er voor
+                    jou': een campagne die de veelzijdigheid van de plek met betrekking tot film, horeca en gemeenschap
+                    communiceert, en actief jongeren uitnodigt in plaats van aan te nemen dat ze hun weg daar zelf
+                    zullen vinden.</span>
+            </p>
+        </section>
+        <div class="parallax parallax-keuzeboom left">
+            <div class="dark-bg"></div>
+            <div class="art-info">
+                <h2>Keuzeboom</h2>
+                <p>
+                    <span class="en">The centerpiece of the campaign is the 'Keuzeboom' (Decision Tree), an interactive
+                        installation placed on the square in front of the train station. Passers-by navigate a branching
+                        series of choices about their mood, company, and what kind of evening they're looking for,
+                        ultimately arriving at a personalised suggestion for their ideal day out, all of which leads to
+                        Royal. The installation turns a passive audience into active participants, creating a
+                        low-threshold, playful first encounter with the venue without requiring any prior knowledge or
+                        commitment. The installation also points to Royal literally, as the final arrow points to the
+                        cinema's location down the stairs. <br /> <br />The Decision Tree was also developed as a
+                        digital experience, accessible via a QR code linked to the physical installation and various
+                        other touchpoints. The digital version mirrors the branching logic of the physical tree, guiding
+                        users through the same series of choices on their phone and ending with a personalised result.
+                        This dual format extends the reach of the installation beyond the physical location, allowing
+                        people to engage with it in their own time. A working prototype of the digital Decision Tree can
+                        be experienced <a
+                            href="https://www.figma.com/proto/XRj6B4WzVTWoJjLI8FOAbi/HighFi-website?page-id=0%3A1&node-id=1-6&p=f&viewport=-305%2C57%2C1.1&t=jNJIjNExX2Og1xoU-8&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A6&device-frame=0&hotspot-hints=0&disable-default-keyboard-nav=1&hide-ui=1"
+                            target="_blank">here</a>, or by scanning the QR-code below.</span>
+                    <span class="nl">Het boegbeeld van de campagne is de 'Keuzeboom', een interactieve installatie op
+                        het Spoorplein, direct voor het station. Voorbijgangers navigeren een vertakkende reeks keuzes
+                        over hun
+                        stemming, gezelschap en wat voor soort avond ze zoeken, wat uiteindelijk leidt tot een
+                        gepersonaliseerde suggestie voor hun ideale dagje uit, die allemaal naar Royal wijzen. De
+                        installatie verandert een passief publiek in actieve deelnemers, wat een laagdrempelige, speelse
+                        eerste ontmoeting met de plek creëert zonder enige voorkennis of betrokkenheid te vereisen. De
+                        installatie wijst ook letterlijk naar Royal, aangezien de laatste pijl naar de locatie van
+                        het filmhuis wijst onderaan de trap. <br /> <br />De Keuzeboom is ook als een digitale ervaring
+                        ontwikkeld, toegankelijk via een QR-code gekoppeld aan de fysieke installatie en verschillende
+                        andere uitingen. De digitale versie weerspiegelt de vertakkingslogica van de fysieke boom,
+                        waarbij gebruikers door dezelfde reeks keuzes worden geleid op hun telefoon en eindigen met een
+                        gepersonaliseerd
+                        resultaat. Dit format breidt het bereik van de installatie buiten de fysieke locatie uit,
+                        waardoor mensen eraan kunnen deelnemen in hun eigen tijd. Een werkend prototype van de digitale
+                        Keuzeboom kan <a
+                            href="https://www.figma.com/proto/XRj6B4WzVTWoJjLI8FOAbi/HighFi-website?page-id=0%3A1&node-id=1-6&p=f&viewport=-305%2C57%2C1.1&t=jNJIjNExX2Og1xoU-8&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A6&device-frame=0&hotspot-hints=0&disable-default-keyboard-nav=1&hide-ui=1"
+                            target="_blank">hier</a> worden ervaren, of door de onderstaande QR-code te scannen.</span>
+                </p>
+            </div>
+            <div class="extra-img-container">
+                <button class="side-scroll scroll-left"></button>
+                <button class="side-scroll scroll-right"></button>
+                <div class="extra-img-box">
+                    <img src="img/keuzeboom-closeup.jpg" class="extra-img" />
+                    <img src="img/keuzeboom-mockup-2.jpg" class="extra-img" />
+                    <img src="img/keuzeboom-banner.jpg" class="extra-img" />
+                    <img src="img/keuzeboom-website.jpg" class="extra-img" />
+                    <img src="img/keuzeboom-qr.png" class="extra-img" />
+                </div>
+            </div>
+        </div>
+        <section class="text-box">
+            <h2><span class="en">Visual Identity</span><span class="nl">Visuele identiteit</span></h2>
+            <video src="video/royal-is-er-voor-jou-stijl-animatie.mp4" class="extra-img" autoplay muted loop></video>
+            <p>
+                <span class="en">The visual identity of the campaign draws on Royal's existing neon signage; bold,
+                    high-contrast lettering with a strong typographic presence; updated for legibility and contemporary
+                    application. Aditionally, the iconic building's shape is incorporated into the shape language. The
+                    result is a visual language that feels both historically rooted and immediately relevant to a
+                    younger audience.</span>
+                <span class="nl">De visuele identiteit van de campagne bouwt voort op Royal's bestaande neon-bord; vet,
+                    hoogcontrast letterwerk met een sterke typografische aanwezigheid; bijgewerkt voor leesbaarheid en
+                    hedendaagse toepassing. Bovendien is de vorm van het iconische gebouw opgenomen in de vormtaal. Het
+                    resultaat is een visuele taal die historisch gegrond is en toch onmiddellijk relevant is voor een
+                    jonger publiek.</span>
+            </p>
+        </section>
+        <div class="parallax parallax-royal-posters left">
+            <div class="dark-bg"></div>
+            <div class="art-info">
+                <h2>Posters</h2>
+                <p>
+                    <span class="en">The posters use a direct, fill-in-the-blank format (Royal is er voor…) that keeps
+                        the message open and welcoming while anchoring each execution to a specific experience the venue
+                        offers. The QR code on each poster leads to the digital version of the Decision Tree, allowing
+                        passers-by to engage with the campaign even if they don't come into contact with
+                        the physical installation. The posters would be placed in high-traffic areas in Heerlen,
+                        including bus stops, train stations, and popular spots for young people such as the
+                        University of Applied Sciences.</span>
+                    <span class="nl">De posters gebruiken een direct invulformat (Royal is er voor…) dat het bericht
+                        open en verwelkomend houdt terwijl elke uitvoering wordt verankerd aan een specifieke ervaring
+                        die
+                        de plek biedt. De QR-code op elke poster leidt naar de digitale versie van de Keuzeboom,
+                        waardoor voorbijgangers met de campagne kunnen interacteren, zelfs als ze niet in contact komen
+                        met de fysieke installatie. De posters zouden op drukke
+                        locaties in Heerlen worden geplaatst, waaronder bushaltes, het station en populaire
+                        plekken voor jongeren, zoals de Hogeschool.</span>
+                </p>
+            </div>
+            <div class="extra-img-container">
+                <button class="side-scroll scroll-left"></button>
+                <button class="side-scroll scroll-right"></button>
+                <div class="extra-img-box">
+                    <img src="img/royal-is-er-voor-poster-1.jpg" class="extra-img" />
+                    <img src="img/royal-is-er-voor-poster-2.jpg" class="extra-img" />
+                    <img src="img/royal-is-er-voor-poster-3.jpg" class="extra-img" />
+                    <img src="img/royal-is-er-voor-poster-4.jpg" class="extra-img" />
+                    <img src="img/royal-is-er-voor-poster-5.jpg" class="extra-img" />
+                    <img src="img/royal-is-er-voor-poster-6.jpg" class="extra-img" />
+                    <img src="img/royal-is-er-voor-poster-7.jpg" class="extra-img" />
+                    <img src="img/royal-is-er-voor-poster-8.jpg" class="extra-img" />
+                </div>
+            </div>
+            <div class="brown-bg brown-bg-small"></div>
+        </div>
+        <button id="scroll-top" onclick="scrollToTop()"></button>
+    </main>
+    <footer>
+        <button id="art-ig" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+            Instagram
+        </button>
+        <img src="img/logo-met-naam.svg" alt="logo" id="footer-logo" onclick="goToHome()" />
+        <button id="personal-ig"
+            onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')">
+            LinkedIn
+        </button>
+    </footer>
+    <div id="img-overlay" style="display: none">
+        <img id="img-overlay-img" src="" alt="enlarged image" />
+        <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
+        <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
+    </div>
+    <div id="hover-preview" class="hover-preview" style="display:none;">
+        <video id="hover-preview-video" muted playsinline loop></video>
+        <img id="hover-preview-img" style="display:none;" alt="preview" />
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+        var rellax = new Rellax(".rellax");
+    </script>
+</body>
+
+</html>

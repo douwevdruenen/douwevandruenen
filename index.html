@@ -12,29 +12,49 @@
 </head>
 
 <body>
+  <script>
+    const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+    document.documentElement.setAttribute('data-lang', savedLang);
+    document.body.setAttribute('data-lang', savedLang);
+    document.addEventListener('DOMContentLoaded', function () {
+      const langBtn = document.getElementById('lang-toggle');
+      if (langBtn) {
+        langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+      }
+    });
+  </script>
   <nav>
     <div class="nav-backdrop"></div>
     <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
     <div class="nav-menu">
       <div class="dropdown">
-        <button class="dropbtn">Projects</button>
+        <button class="dropbtn"><span class="en">Projects</span><span class="nl">Projecten</span></button>
         <div class="dropdown-content">
-          <button class="nav-button" onclick="goToProject1()">
+          <button class="nav-button" onclick="goToProject6()" data-preview="video/royal-is-er-voor-jou-header.mp4">
+            Royal is er voor jou
+          </button>
+          <button class="nav-button" onclick="goToProject1()" data-preview="video/royal.mp4">
             Royal in Motion
           </button>
-          <button class="nav-button" onclick="goToProject2()">Had Je Maar</button>
-          <button class="nav-button" onclick="goToArt()">Digital Art</button>
-          <button class="nav-button" onclick="goToProject3()">
+          <button class="nav-button" onclick="goToArt()" data-preview="video/digital-art-transition.mp4"><span
+              class="en">Digital Art</span><span class="nl">Digitale
+              kunst</span></button>
+          <button class="nav-button" onclick="goToProject2()" data-preview="video/schaduw.gif">Had Je Maar</button>
+          <button class="nav-button" onclick="goToProject3()" data-preview="video/knip-collage.mp4">
             Knip Musical
           </button>
-          <button class="nav-button" onclick="goToProject4()">
+          <button class="nav-button" onclick="goToProject4()" data-preview="video/echoes-header.mp4">
             Echoes in the Sand
           </button>
-          <button class="nav-button" onclick="goToProject5()">
-            CBS Internship</button>
+          <button class="nav-button" onclick="goToProject5()" data-preview="video/cbs-transition.mp4">
+            <span class="en">CBS Internship</span><span class="nl">CBS Stage</span>
+          </button>
         </div>
       </div>
-      <button class="nav-button" onclick="goToAbout()">About me</button>
+      <button class="nav-button" onclick="goToAbout()"><span class="en">About me</span><span class="nl">Over
+          mij</span></button>
+      <button class="nav-button" id="lang-toggle" onclick="toggleLanguage()">NL</button>
+
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="hamburger-backdrop"></div>
@@ -50,101 +70,153 @@
   </header>
   <main>
     <section class="text-box">
-      <h2>Hi, I'm Douwe</h2>
+      <h2><span class="en">Hi, I'm Douwe</span><span class="nl">Hoi, ik ben Douwe</span></h2>
       <p>
-        Welcome to my portfolio. I'm a multimedia designer and digital artist currently based in Maastricht. I
-        specialise in graphic design, storytelling, UX design, illustration, animation and motion design. I've worked on
-        many projects requiring a blend of skills. Below are some of my highlights.
+        <span class="en">Welcome to my portfolio. I'm a multimedia designer and digital artist currently based in
+          Maastricht. I specialise in graphic design, storytelling, UX design, illustration, animation and motion
+          design. I've worked on many projects requiring a blend of skills. Below are some of my highlights.</span>
+        <span class="nl">Welkom op mijn portfolio. Ik ben een multimedia designer en digitaal kunstenaar momenteel
+          gevestigd in
+          Maastricht. Ik ben gespecialiseerd in grafisch ontwerp, storytelling, UX design, illustratie, animatie en
+          motion design. Ik heb aan veel projecten gewerkt die een mix van vaardigheden vereisen. Hieronder vind je
+          enkele hoogtepunten.</span>
       </p>
     </section>
     <section class="home-categories">
+      <div class="category-box" id="click-project-6">
+        <video autoplay muted loop src="video/royal-is-er-voor-jou-header.mp4"></video>
+        <h2>Royal is er voor jou</h2>
+        <div class="tagbox">
+          <div class="tag"><span class="en">Graphic design</span><span class="nl">Grafisch ontwerp</span></div>
+          <div class="tag">UX design</div>
+        </div>
+        <p>
+          <span class="en">Seeking to connect with a younger target audience, I developed a campaign for Royal, an
+            arthouse cinema in Heerlen (for my earlier work for Royal, see <a onclick="goToProject1()">Royal in
+              Motion</a>). The campaign focused on the diversity of the cinema's future offerings ands included a visual
+            identity, a series of posters, and an interactive installation.</span>
+          <span class="nl">Om een jongere doelgroep aan te spreken ontwikkelde ik een campagne voor Royal, een
+            artistiek filmhuis in Heerlen (voor mijn eerdere werk voor Royal, zie <a onclick="goToProject1()">Royal in
+              Motion</a>). De campagne legde de focus op de diversiteit van het toekomstige aanbod van het filmhuis
+            en omvatte een visuele identiteit, een reeks posters en een interactieve installatie.</span>
+        </p>
+        <button class="home-button" onclick="goToProject6()"><span class="en">See more</span><span class="nl">Bekijk
+            meer</span></button>
+      </div>
 
       <div class="category-box" id="click-project-1">
         <video autoplay muted loop src="video/royal.mp4"></video>
         <h2>Royal in Motion</h2>
         <div class="tagbox">
-          <div class="tag">Graphic Design</div>
-          <div class="tag">Motion Design</div>
+          <div class="tag"><span class="en">Graphic design</span><span class="nl">Grafisch ontwerp</span></div>
+          <div class="tag">Motion design</div>
         </div>
         <p>
-          In my fourth year of Communication & Multimedia Design (CMD), I underwent a project for Royal, an arthouse
-          cinema in Heerlen. I created a rebranding for the cinema, including a new logo, visual identity, and marketing
-          materials.</p>
-        <button class="home-button" onclick="goToProject1()">See more</button>
+          <span class="en">In my fourth year of Communication and Multimedia Design (CMD), I underwent a project for
+            Royal, an arthouse cinema in Heerlen (for my later work for Royal, see <a onclick="goToProject6()">Royal is
+              er voor jou</a>). I created a rebranding for the cinema, including a new logo, visual identity, and
+            marketing materials.</span>
+          <span class="nl">In mijn vierde jaar van Communication and Multimedia Design (CMD), voerde ik een project uit
+            voor Royal, een artistiek filmhuis in Heerlen (voor mijn latere werk voor Royal, zie <a
+              onclick="goToProject6()">Royal is er voor jou</a>). Ik maakte een rebrand voor het filmhuis, inclusief
+            een nieuw logo, visuele identiteit en marketingmaterialen.</span>
+        </p>
+        <button class="home-button" onclick="goToProject1()"><span class="en">See more</span><span class="nl">Bekijk
+            meer</span></button>
+      </div>
+
+      <div class="category-box" id="click-art">
+        <video autoplay muted loop src="video/digital-art-transition.mp4"></video>
+        <h2><span class="en">Digital art</span><span class="nl">Digitale kunst</span></h2>
+        <div class="tagbox">
+          <div class="tag"><span class="en">Illustration</span><span class="nl">Illustratie</span></div>
+          <div class="tag">Character design</div>
+        </div>
+        <p>
+          <span class="en">I primarily create digital art for personal projects, focusing on illustrations, concept art,
+            and character design. You can view some of my work on this page.</span>
+          <span class="nl">Ik maak vooral digitale kunst voor persoonlijke projecten, met focus op illustraties,
+            concept-art en character design. Je kan hier enkele van mijn werken bekijken.</span>
+        </p>
+        <button class="home-button" onclick="goToArt()"><span class="en">See more</span><span class="nl">Bekijk
+            meer</span></button>
       </div>
 
       <div class="category-box" id="click-project-2">
         <img src="video/schaduw.gif"></img>
         <h2>Had Je Maar</h2>
         <div class="tagbox">
-          <div class="tag">Animation</div>
+          <div class="tag"><span class="en">Animation</span><span class="nl">Animatie</span></div>
           <div class="tag">Storytelling</div>
-          <div class="tag">Sound Design</div>
+          <div class="tag">Sound design</div>
         </div>
         <p>
-          In my third year of CMD, I followed an external elective of Visual Communication called 'Storytelling
-          Fiction', where I spent half a year making the animated short film 'Had Je Maar'.</p>
-        <button class="home-button" onclick="goToProject2()">
-          See more
-        </button>
-      </div>
-      <div class="category-box" id="click-art">
-        <video autoplay muted loop src="video/digital-art-transition.mp4"></video>
-        <h2>Digital art</h2>
-        <div class="tagbox">
-          <div class="tag">Illustration</div>
-          <div class="tag">Character Design</div>
-        </div>
-        <p>
-          I primarily create digital art for personal projects, focusing on illustrations, concept art, and character
-          design. You can view some of my work on this page.
+          <span class="en">In my third year of CMD, I followed an external elective of Visual Communication called
+            'Storytelling Fiction', where I spent half a year making the animated short film 'Had Je Maar'.</span>
+          <span class="nl">In mijn derde jaar van CMD volgde ik een externe minor van Visuele Communicatie genaamd
+            'Storytelling Fiction', waar ik een half jaar aan de geanimeerde korte film 'Had Je
+            Maar' heb gewerkt.</span>
         </p>
-        <button class="home-button" onclick="goToArt()">See more</button>
-      </div>
+        <button class="home-button" onclick="goToProject2()">
+          <span class="en">See more</span><span class="nl">Bekijk meer</span>
+        </button>
       </div>
       <div class="category-box" id="click-project-3">
         <video autoplay muted loop src="video/knip-collage.mp4"></video>
         <h2>Knip Musical</h2>
         <div class="tagbox">
-          <div class="tag">Graphic Design</div>
-          <div class="tag">Illustration</div>
-          <div class="tag">Photography</div>
+          <div class="tag"><span class="en">Graphic design</span><span class="nl">Grafisch ontwerp</span></div>
+          <div class="tag"><span class="en">Illustration</span><span class="nl">Illustratie</span></div>
+          <div class="tag"><span class="en">Photography</span><span class="nl">Fotografie</span></div>
         </div>
         <p>
-          The high school I attended has its own musical group. Since 2022, I've been designing the posters and other
-          marketing materials for their annual performances.
+          <span class="en">The high school I attended has its own musical group. Since 2022, I've been designing the
+            posters and other marketing materials for their annual performances.</span>
+          <span class="nl">Mijn middelbare school heeft zijn eigen musicalgroep. Sinds 2022 ontwerp ik de
+            posters en ander uitingen voor hun jaarlijkse voorstellingen.</span>
         </p>
-        <button class="home-button" onclick="goToProject3()">See more</button>
+        <button class="home-button" onclick="goToProject3()"><span class="en">See more</span><span class="nl">Bekijk
+            meer</span></button>
       </div>
       <div class="category-box" id="click-project-4">
         <video autoplay muted loop src="video/echoes-header.mp4"></video>
         <h2>Echoes in the Sand</h2>
         <div class="tagbox">
           <div class="tag">Storytelling</div>
-          <div class="tag">Illustration</div>
+          <div class="tag"><span class="en">Illustration</span><span class="nl">Illustratie</span></div>
         </div>
         <p>
-          In my fourth year of CMD, I followed a minor called 'The Narrative', which revolved around storytelling. I
-          wrote the short story 'Echoes in the Sand',
-          which I adapted into an illustrated book. </p>
-        <button class="home-button" onclick="goToProject4()">See more</button>
+          <span class="en">In my fourth year of CMD, I followed a minor called 'The Narrative', which revolved around
+            storytelling. I wrote the short story 'Echoes in the Sand', which I adapted into an illustrated book.</span>
+          <span class="nl">In mijn vierde jaar van CMD volgde ik een minor genaamd 'The Narrative', die draaide om
+            storytelling. Ik schreef het korte verhaal 'Echoes in the Sand', dat ik heb gerealiseerd tot een
+            geïllustreerd boek.</span>
+        </p>
+        <button class="home-button" onclick="goToProject4()"><span class="en">See more</span><span class="nl">Bekijk
+            meer</span></button>
       </div>
       <div class="category-box" id="click-project-5">
         <video autoplay muted loop src="video/cbs-transition.mp4"></video>
-        <h2>CBS Internship</h2>
+        <h2><span class="en">CBS Internship</span><span class="nl">CBS Stage</span></h2>
         <div class="tagbox">
-          <div class="tag">Graphic Design</div>
-          <div class="tag">Illustration</div>
-          <div class="tag">Data visualisation</div>
+          <div class="tag"><span class="en">Graphic design</span><span class="nl">Grafisch ontwerp</span></div>
+          <div class="tag"><span class="en">Illustration</span><span class="nl">Illustratie</span></div>
+          <div class="tag"><span class="en">Data visualisation</span><span class="nl">Datavisualisatie</span></div>
         </div>
         <p>
-          During my internship at Statistics Netherlands (CBS), I worked on a multimedia story about the
-          European Green Deal and created informative posters for a presentation at Foreign Affairs.
+          <span class="en">During my internship at Statistics Netherlands (CBS), I worked on a multimedia story about
+            the European Green Deal and created informative posters for a presentation at Foreign Affairs.</span>
+          <span class="nl">Tijdens mijn stage bij het Centraal Bureau voor de Statistiek (CBS) werkte ik aan een
+            multimediaverhaal over de European Green Deal en maakte ik informatieve posters voor een presentatie bij het
+            Ministerie van
+            Buitenlandse Zaken.</span>
         </p>
-        <button class="home-button" onclick="goToProject5()">See more</button>
+        <button class="home-button" onclick="goToProject5()"><span class="en">See more</span><span class="nl">Bekijk
+            meer</span></button>
       </div>
     </section>
     <div class="brown-bg brown-bg-home"></div>
+    <button id="scroll-top" onclick="scrollToTop()"></button>
   </main>
   <footer>
     <button id="art-ig" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
@@ -159,6 +231,10 @@
     <img id="img-overlay-img" src="" alt="enlarged image" />
     <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
     <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
+  </div>
+  <div id="hover-preview" class="hover-preview" style="display:none;">
+    <video id="hover-preview-video" muted playsinline loop></video>
+    <img id="hover-preview-img" style="display:none;" alt="preview" />
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="js/script.js"></script>

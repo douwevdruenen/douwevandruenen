@@ -12,32 +12,48 @@
 </head>
 
 <body>
+  <script>
+    const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+    document.documentElement.setAttribute('data-lang', savedLang);
+    document.body.setAttribute('data-lang', savedLang);
+    document.addEventListener('DOMContentLoaded', function () {
+      const langBtn = document.getElementById('lang-toggle');
+      if (langBtn) {
+        langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+      }
+    });
+  </script>
   <nav>
     <div class="nav-backdrop"></div>
     <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
     <div class="nav-menu">
       <div class="dropdown">
-        <button class="dropbtn">Projects</button>
+        <button class="dropbtn"><span class="en">Projects</span><span class="nl">Projecten</span></button>
         <div class="dropdown-content">
-          <button class="nav-button" onclick="goToProject1()">
+          <button class="nav-button" onclick="goToProject6()" data-preview="video/royal-is-er-voor-jou-header.mp4">
+            Royal is er voor jou
+          </button>
+          <button class="nav-button" onclick="goToProject1()" data-preview="video/royal.mp4">
             Royal in Motion
           </button>
-          <button class="nav-button" onclick="goToProject2()">
-            Had Je Maar
-          </button>
-          <button class="nav-button" onclick="goToArt()">Digital Art</button>
-          <button class="nav-button" onclick="goToProject3()">
+          <button class="nav-button" onclick="goToArt()" data-preview="video/digital-art-transition.mp4"><span
+              class="en">Digital Art</span><span class="nl">Digitale
+              kunst</span></button>
+          <button class="nav-button" onclick="goToProject2()" data-preview="video/schaduw.gif">Had Je Maar</button>
+          <button class="nav-button" onclick="goToProject3()" data-preview="video/knip-collage.mp4">
             Knip Musical
           </button>
-          <button class="nav-button" onclick="goToProject4()">
+          <button class="nav-button" onclick="goToProject4()" data-preview="video/echoes-header.mp4">
             Echoes in the Sand
           </button>
-          <button class="nav-button" onclick="goToProject5()">
-            CBS Internship
+          <button class="nav-button" onclick="goToProject5()" data-preview="video/cbs-transition.mp4">
+            <span class="en">CBS Internship</span><span class="nl">CBS Stage</span>
           </button>
         </div>
       </div>
-      <button class="nav-button" onclick="goToAbout()">About me</button>
+      <button class="nav-button" onclick="goToAbout()"><span class="en">About me</span><span class="nl">Over
+          mij</span></button>
+      <button class="nav-button" id="lang-toggle" onclick="toggleLanguage()">NL</button>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="bar" id="bar1"></div>
@@ -58,19 +74,23 @@
   <main>
     <section class="text-box">
       <div class="tagbox">
-        <div class="tag">Graphic Design</div>
-        <div class="tag">Illustration</div>
-        <div class="tag">Photography</div>
+        <div class="tag"><span class="en">Graphic design</span><span class="nl">Grafisch ontwerp</span></div>
+        <div class="tag"><span class="en">Illustration</span><span class="nl">Illustratie</span></div>
+        <div class="tag"><span class="en">Photography</span><span class="nl">Fotografie</span></div>
       </div>
       <p>
-        The high school I attended has its own musical group that performs
-        every year in the biggest theatre in Helmond. The producer approached
-        me in 2022 for the design of the poster for their musical 'Ik hou van
-        jou'. I gladly accepted and have designed all their posters since.
+        <span class="en">The high school I attended has its own musical group that performs every year in the biggest
+          theatre in Helmond. The producer approached me in 2022 for the design of the poster for their musical 'Ik hou
+          van jou'. I gladly accepted and have designed all their posters and some other materials since.</span>
+        <span class="nl">Mijn middelbare school heeft een eigen musicalgroep die elk jaar in het grootste
+          theater van Helmond optreedt. De producent benaderde me in 2022 voor het ontwerp van de poster voor hun
+          musical
+          'Ik hou van jou'. Ik heb dit met plezier geaccepteerd en heb sindsdien elk jaar de poster en andere uitingen
+          ontworpen.</span>
       </p>
     </section>
     <section class="collage">
-      <h2>All designs (2022 - 2026)</h2>
+      <h2><span class="en">All designs (2022 - 2026)</span><span class="nl">Alle ontwerpen (2022 - 2026)</span></h2>
       <div class="extra-img-container">
         <button class="side-scroll scroll-left"></button>
         <button class="side-scroll scroll-right"></button>
@@ -87,38 +107,54 @@
     <section class="text-box">
       <h2>Tranen van Smaragd</h2>
       <p>
-        In 2024 I continued my work for Knip Musical with the musical 'Tranen van Smaragd'. The
-        musical revolved around the Moluccan history in Helmond, which inspired my design. The design features buildings
-        and key landmarks of Helmond. These gray, jagged shapes differ greatly from the colourful, organic shapes in the
-        center. The central
-        shape, which looks like a river of green also represents the title, which means 'Tears of Emerald'. The
-        buildings, which almost look like sharp teeth, represent the oppressive feeling of the city and the culture the
-        Moluccans had to live in after leaving their home. The background features a pattern based on Indonesian
-        tapestries, and the typography is partially based on Indonesian writing as well.
-        <br /><br />
-        In the end, I designed a poster, flyer, banner, and an advert
-        for a digital billboard next to a busy road in Helmond. My designs were also
-        featured on projections during the musical itself.
+        <span class="en">In 2024 I continued my work for Knip Musical with the musical 'Tranen van Smaragd'. The musical
+          revolved around the Moluccan history in Helmond, which inspired my design. The design features buildings and
+          key landmarks of Helmond. These gray, jagged shapes differ greatly from the colourful, organic shapes in the
+          center. The central shape, which looks like a river of green also represents the title, which means 'Tears of
+          Emerald'. The buildings, which almost look like sharp teeth, represent the oppressive feeling of the city and
+          the culture the Moluccans had to live in after leaving their home. The background features a pattern based on
+          Indonesian tapestries, and the typography is partially based on Indonesian writing as well.
+          <br /><br /> In the end, I designed a poster, flyer, banner, and an advert for a digital billboard next to a
+          busy road in Helmond. My designs were also featured on projections during the musical itself.</span>
+        <span class="nl">In 2024 zette ik mijn werk voor Knip Musical voort met de musical 'Tranen van Smaragd'. De
+          musical draaide om de Molukse geschiedenis in Helmond, wat mijn ontwerp inspireerde. Het ontwerp bevat
+          gebouwen en belangrijke bezienswaardigheden van Helmond. Deze grijze, hoekige vormen verschillen sterk van de
+          kleurrijke, organische vormen in het midden. De centrale vorm, die een groene rivier voorstelt,
+          vertegenwoordigt ook de titel. De gebouwen, die bijna op scherpe tanden
+          lijken, vertegenwoordigen het onderdrukkende gevoel van de stad en de cultuur waarin de Molukkers moesten
+          leven na het verlaten van hun thuis. De achtergrond bevat een patroon gebaseerd op
+          Indonesische tapijten en
+          de typografie is deels gebaseerd op Indonesisch schrift.
+          <br /><br /> Uiteindelijk ontwierp ik een poster, flyer, banner en advertentie voor een digitaal reclamebord
+          naast een drukke weg in Helmond. Mijn ontwerpen waren ook te zien op projecties tijdens de musical
+          zelf.</span>
       </p>
+    </section>
+    <section class="text-box">
     </section>
     <div class="parallax parallax-knip right">
       <div class="art-info">
         <h2>Helltown 2126</h2>
         <p>
-          2026's musical 'Helltown 2126' is a dystopian piece, for which the
-          director wanted a more gritty and realistic style. I used Adobe
-          Photoshop to create a dystopian skyline of Helmond. Buildings have
-          collapsed, the channel has dried up and in the distance, remains of
-          tall skyscrapers and factories can be seen. The skyline shows how
-          humanity's greed has led to the destruction of the world, but also
-          how nature is slowly taking over again. <br /><br />Inspired by
-          post-apocalyptic movie posters, I created a decaying logo for the
-          musical and used a gritty and textured style for the poster design.
-          To complete the poster, I photographed the actors in a studio and
-          edited them to fit the dystopian style of the poster. The result is
-          a poster that captures the dark and gritty atmosphere of a
-          post-apocalyptic Helmond, while also showcasing the characters that
-          inhabit this dystopian future.
+          <span class="en">2026's musical 'Helltown 2126' is a dystopian piece, for which the director wanted a more
+            gritty and realistic style. I used Adobe Photoshop to create a dystopian skyline of Helmond. Buildings have
+            collapsed, the channel has dried up and in the distance, remains of tall skyscrapers and factories can be
+            seen. The skyline shows how humanity's greed has led to the destruction of the world, but also how nature is
+            slowly taking over again. <br /><br />Inspired by post-apocalyptic movie posters, I created a decaying logo
+            for the musical and used a gritty and textured style for the poster design. To complete the poster, I
+            photographed the actors in a studio and edited them to fit the dystopian style of the poster. The result is
+            a poster that captures the dark and gritty atmosphere of a post-apocalyptic Helmond, while also showcasing
+            the characters that inhabit this dystopian future.</span>
+          <span class="nl">De musical 'Helltown 2126' van 2026 is een dystopisch stuk, waarvoor de regisseur een ruwere
+            en realistischere stijl wilde. Ik gebruikte Adobe Photoshop om een dystopische skyline van Helmond te
+            creëren. Gebouwen zijn ingestort, het kanaal is uitgedroogd en in de verte zijn resten van hoge
+            wolkenkrabbers en fabrieken zichtbaar. De skyline laat zien hoe de hebzucht van de mensheid tot de
+            vernietiging van de wereld heeft geleid, maar ook hoe de natuur langzaam de stad weer overneemt.
+            <br /><br />Geïnspireerd door post-apocalyptische filmposters creëerde ik een vervallend logo voor de
+            musical en gebruikte ik een ruwe texturen voor het posterontwerp. Om de poster af te maken,
+            fotografeerde ik acteurs in een studio en bewerkte ik de foto's om bij de dystopische stijl van de poster
+            te passen. Het resultaat is een poster die de donkere en ruwe atmosfeer van een post-apocalyptisch Helmond
+            vastlegt, terwijl ook de karakters worden getoond die in deze dystopische toekomst wonen.</span>
         </p>
       </div>
       <div class="extra-img-container">
@@ -147,6 +183,10 @@
     <img id="img-overlay-img" src="" alt="enlarged image" />
     <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
     <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
+  </div>
+  <div id="hover-preview" class="hover-preview" style="display:none;">
+    <video id="hover-preview-video" muted playsinline loop></video>
+    <img id="hover-preview-img" style="display:none;" alt="preview" />
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="js/script.js"></script>

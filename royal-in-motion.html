@@ -12,32 +12,48 @@
 </head>
 
 <body>
+  <script>
+    const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+    document.documentElement.setAttribute('data-lang', savedLang);
+    document.body.setAttribute('data-lang', savedLang);
+    document.addEventListener('DOMContentLoaded', function () {
+      const langBtn = document.getElementById('lang-toggle');
+      if (langBtn) {
+        langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+      }
+    });
+  </script>
   <nav>
     <div class="nav-backdrop"></div>
     <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
     <div class="nav-menu">
       <div class="dropdown">
-        <button class="dropbtn">Projects</button>
+        <button class="dropbtn"><span class="en">Projects</span><span class="nl">Projecten</span></button>
         <div class="dropdown-content">
-          <button class="nav-button" onclick="goToProject1()">
+          <button class="nav-button" onclick="goToProject6()" data-preview="video/royal-is-er-voor-jou-header.mp4">
+            Royal is er voor jou
+          </button>
+          <button class="nav-button" onclick="goToProject1()" data-preview="video/royal.mp4">
             Royal in Motion
           </button>
-          <button class="nav-button" onclick="goToProject2()">
-            Had Je Maar
-          </button>
-          <button class="nav-button" onclick="goToArt()">Digital Art</button>
-          <button class="nav-button" onclick="goToProject3()">
+          <button class="nav-button" onclick="goToArt()" data-preview="video/digital-art-transition.mp4"><span
+              class="en">Digital Art</span><span class="nl">Digitale
+              kunst</span></button>
+          <button class="nav-button" onclick="goToProject2()" data-preview="video/schaduw.gif">Had Je Maar</button>
+          <button class="nav-button" onclick="goToProject3()" data-preview="video/knip-collage.mp4">
             Knip Musical
           </button>
-          <button class="nav-button" onclick="goToProject4()">
+          <button class="nav-button" onclick="goToProject4()" data-preview="video/echoes-header.mp4">
             Echoes in the Sand
           </button>
-          <button class="nav-button" onclick="goToProject5()">
-            CBS Internship
+          <button class="nav-button" onclick="goToProject5()" data-preview="video/cbs-transition.mp4">
+            <span class="en">CBS Internship</span><span class="nl">CBS Stage</span>
           </button>
         </div>
       </div>
-      <button class="nav-button" onclick="goToAbout()">About me</button>
+      <button class="nav-button" onclick="goToAbout()"><span class="en">About me</span><span class="nl">Over
+          mij</span></button>
+      <button class="nav-button" id="lang-toggle" onclick="toggleLanguage()">NL</button>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="bar" id="bar1"></div>
@@ -58,51 +74,75 @@
   <main>
     <section class="text-box">
       <div class="tagbox">
-        <div class="tag">Graphic Design</div>
-        <div class="tag">Motion Design</div>
+        <div class="tag"><span class="en">Graphic design</span><span class="nl">Grafisch ontwerp</span></div>
+        <div class="tag">Motion design</div>
       </div>
       <p>
-        In my fourth year of Communication & Multimedia Design (CMD), I did a
-        project for Royal, an arthouse cinema in Heerlen. They are undergoing
-        a large renovation and wanted to reimagine their branding. Together
-        with fellow student Patrick Dammer, we created the concept 'Royal in
-        Motion'.
+        <span class="en">In my fourth year of Communication and Multimedia Design (CMD), I did a
+          project for Royal, an arthouse cinema in Heerlen. They are undergoing
+          a large transition and wanted to reimagine their branding. Alongside my fellow student Patrick Dammer we
+          created the concept 'Royal in
+          Motion'. For my later work for Royal, see <a onclick="goToProject6()">Royal is er voor jou</a>.</span>
+        <span class="nl">In mijn vierde jaar van Communication and Multimedia Design (CMD) voerde ik een
+          project uit voor Royal, een artistiek filmhuis in Heerlen. Ze ondergaan
+          een grote transitie en wilden hun merkidentiteit herzien. Samen
+          met medestudent Patrick Dammer ontwikkelden we het concept 'Royal in
+          Motion'. Voor mijn latere werk voor Royal, zie <a onclick="goToProject6()">Royal is er voor jou</a>.</span>
       </p>
       <h2 class="title-spacing">Concept</h2>
       <video src="video/royal-logo-animatie.mp4" class="extra-img" autoplay muted loop></video>
       <p>
-        After researching the case, having interviewed the stakeholders, we
-        created a concept that revolves around motion. The motion of a film
-        camera, the motion of innovation, and the motion of visitors coming
-        together in the new Royal. The logo we created captures the 'o' in
-        'Royal' mid-motion, as seen in the animation above. This symbol can be
-        found in most of the designs, either as a static shape or as a moving
-        element. <br />
-        <br />For the wordmark, we chose a bold font with elements reminiscent
-        of Art Deco, which is a style often associated with the mining history
-        of Heerlen. The font gives a modern feel while still embracing the
-        rich history of the cinema and the city.
+        <span class="en">After researching the case, having interviewed the stakeholders, we
+          created a concept that revolves around motion. The motion of a film
+          camera, the motion of innovation, and the motion of visitors coming
+          together in the new Royal. The logo we created captures the 'o' in
+          'Royal' mid-motion, as seen in the animation above. This symbol can be
+          found in most of the designs, either as a static shape or as a moving
+          element. <br />
+          <br />For the wordmark, we chose a bold font with elements reminiscent
+          of Art Deco, which is a style often associated with the mining history
+          of Heerlen. The font gives a modern feel while still embracing the
+          rich history of the cinema and the city.</span>
+        <span class="nl">Na het onderzoeken van de opdracht en het interviewen van de stakeholders,
+          ontwikkelden we een concept dat om beweging draait. De beweging van een
+          filmrol, de beweging van innovatie, en de beweging van bezoekers die
+          samenkomen in de nieuwe Royal. Het logo dat we hebben ontworpen vangt de 'o'
+          in 'Royal' in de beweging, zoals te zien is in de animatie hierboven. Dit
+          symbool kan in de meeste ontwerpen worden gevonden, ofwel als statische
+          vorm ofwel als bewegend element. <br />
+          <br />Voor het woordmerk kozen we voor een vetgedrukt lettertype met
+          elementen die doen denken aan Art Deco, een stijl die vaak wordt
+          geassocieerd met de mijnbouwgeschiedenis van Heerlen. Het lettertype
+          heeft een hedendaagse uitstraling terwijl het de rijke geschiedenis
+          van het filmhuis en de stad omarmt.</span>
       </p>
     </section>
     <div class="parallax parallax-royal right">
       <div class="dark-bg"></div>
       <div class="art-info">
-        <h2>Colour and movement</h2>
+        <h2><span class="en">Colour and movement</span><span class="nl">Kleur en beweging</span></h2>
         <p>
-          The concept of motion influenced every aspect of the design, from
-          the logo and prominent shape language to the vast amounts of motion
-          graphics. The movement in the designs makes them more dynamic and
-          eye-catching, while also reinforcing the concept. It allows for more
-          creativity and flexibility in the designs, as the moving elements
-          can be adapted to different contexts and applications. <br />
-          <br />The colour palette we chose is based on the primary and
-          secondary colours of light, the colours used in film. The palette is
-          vibrant and energetic, with a mix of bold and bright tones. The
-          colours give a modern and lively feel to the designs. The palette
-          was carefully balanced to ensure that the colours work well together
-          and create sufficient contrast between background and foreground
-          elements. To ensure consistency and legibility, we created a set of
-          rules for which colours could be used together, and which to avoid.
+          <span class="en">The concept of motion influenced every aspect of the design, from the logo and prominent
+            shape language to the vast amounts of motion graphics. The movement in the designs makes them more dynamic
+            and eye-catching, while also reinforcing the concept. It allows for more creativity and flexibility in the
+            designs, as the moving elements can be adapted to different contexts and applications. <br /> <br />The
+            colour palette we chose is based on the primary and secondary colours of light, the colours used in film.
+            The palette is vibrant and energetic, with a mix of bold and bright tones. The colours give a modern and
+            lively feel to the designs. The palette was carefully balanced to ensure that the colours work well together
+            and create sufficient contrast between background and foreground elements. To ensure consistency and
+            legibility, we created a set of rules for which colours could be used together, and which to avoid.</span>
+          <span class="nl">Het concept van beweging beïnvloedde elk aspect van het ontwerp, van het logo en prominente
+            vormtaal tot de grote hoeveelheid aan motion graphics. De beweging maakt de ontwerpen dynamischer en
+            opvallender, terwijl ze ook het concept versterken. Het biedt meer creativiteit en flexibiliteit in de
+            ontwerpen, omdat de bewegende elementen in verschillende contexten kunnen worden toegepast.
+            <br /> <br />Het kleurenpalet dat we kozen is gebaseerd op de primaire en secundaire kleuren van licht, de
+            kleuren die in film worden gebruikt. Het palet is levendig en energiek, met een mix van gedurfde en heldere
+            tinten. De kleuren geven de ontwerpen een hedendaags en levendig gevoel. Het palet werd zorgvuldig in
+            evenwicht
+            gehouden om ervoor te zorgen dat de kleuren goed samenwerken en er voldoende contrast blijft tussen
+            achtergrond- en
+            voorgrond-elementen. Om consistentie en leesbaarheid te garanderen, ontwikkelden we een reeks regels
+            voor welke kleuren samen konden worden gebruikt en welke te vermijden.</span>
         </p>
       </div>
       <div id="royal-video">
@@ -110,14 +150,18 @@
       </div>
     </div>
     <section class="collage collage-spacing bottom-section">
-      <h2>End products</h2>
+      <h2><span class="en">Final products</span><span class="nl">Eindproducten</span></h2>
       <p>
-        After establishing the concept and designing the visual identity, we
-        created a range of prototype products for Royal, including physical
-        and digital assets. I was responsible for the motion design of the
-        digital products, whichs include social media posts, website
-        animations, and animations for the big screen. Some of our designs can
-        be seen below.
+        <span class="en">After establishing the concept and designing the visual identity, we created a range of
+          prototype products for Royal, including physical and digital assets. I was responsible for the motion design
+          of the digital products, which include social media posts, website animations, and animations for the big
+          screen. Some of our designs can be seen below.</span>
+        <span class="nl">Na het vaststellen van het concept en het ontwerpen van de visuele identiteit, ontwikkelden we
+          een
+          reeks protypeproducten voor Royal, waaronder fysieke en digitale assets. Ik was verantwoordelijk voor de
+          motion design van de digitale producten, waaronder social media posts, website-animaties en animaties voor op
+          het
+          witte doek. Enkele van onze ontwerpen zijn hieronder te zien.</span>
       </p>
       <div class="extra-img-container">
         <button class="side-scroll scroll-left"></button>
@@ -147,6 +191,10 @@
     <img id="img-overlay-img" src="" alt="enlarged image" />
     <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
     <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
+  </div>
+  <div id="hover-preview" class="hover-preview" style="display:none;">
+    <video id="hover-preview-video" muted playsinline loop></video>
+    <img id="hover-preview-img" style="display:none;" alt="preview" />
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="js/script.js"></script>

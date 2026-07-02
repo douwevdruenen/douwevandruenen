@@ -12,32 +12,48 @@
 </head>
 
 <body>
+  <script>
+    const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+    document.documentElement.setAttribute('data-lang', savedLang);
+    document.body.setAttribute('data-lang', savedLang);
+    document.addEventListener('DOMContentLoaded', function () {
+      const langBtn = document.getElementById('lang-toggle');
+      if (langBtn) {
+        langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+      }
+    });
+  </script>
   <nav>
     <div class="nav-backdrop"></div>
     <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
     <div class="nav-menu">
       <div class="dropdown">
-        <button class="dropbtn">Projects</button>
+        <button class="dropbtn"><span class="en">Projects</span><span class="nl">Projecten</span></button>
         <div class="dropdown-content">
-          <button class="nav-button" onclick="goToProject1()">
+          <button class="nav-button" onclick="goToProject6()" data-preview="video/royal-is-er-voor-jou-header.mp4">
+            Royal is er voor jou
+          </button>
+          <button class="nav-button" onclick="goToProject1()" data-preview="video/royal.mp4">
             Royal in Motion
           </button>
-          <button class="nav-button" onclick="goToProject2()">
-            Had Je Maar
-          </button>
-          <button class="nav-button" onclick="goToArt()">Digital Art</button>
-          <button class="nav-button" onclick="goToProject3()">
+          <button class="nav-button" onclick="goToArt()" data-preview="video/digital-art-transition.mp4"><span
+              class="en">Digital Art</span><span class="nl">Digitale
+              kunst</span></button>
+          <button class="nav-button" onclick="goToProject2()" data-preview="video/schaduw.gif">Had Je Maar</button>
+          <button class="nav-button" onclick="goToProject3()" data-preview="video/knip-collage.mp4">
             Knip Musical
           </button>
-          <button class="nav-button" onclick="goToProject4()">
+          <button class="nav-button" onclick="goToProject4()" data-preview="video/echoes-header.mp4">
             Echoes in the Sand
           </button>
-          <button class="nav-button" onclick="goToProject5()">
-            CBS Internship
+          <button class="nav-button" onclick="goToProject5()" data-preview="video/cbs-transition.mp4">
+            <span class="en">CBS Internship</span><span class="nl">CBS Stage</span>
           </button>
         </div>
       </div>
-      <button class="nav-button" onclick="goToAbout()">About me</button>
+      <button class="nav-button" onclick="goToAbout()"><span class="en">About me</span><span class="nl">Over
+          mij</span></button>
+      <button class="nav-button" id="lang-toggle" onclick="toggleLanguage()">NL</button>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="bar" id="bar1"></div>
@@ -49,7 +65,7 @@
     <video autoplay muted loop src="video/digital-art-transition.mp4" class="header-video rellax header-video-top"
       data-rellax-speed="-3"></video>
     <div class="header-text rellax" data-rellax-speed="1">
-      <h1>Digital Art</h1>
+      <h1><span class="en">Digital Art</span><span class="nl">Digitale kunst</span></h1>
       <button class="art-button" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
         @dvdruenen.art
       </button>
@@ -60,59 +76,91 @@
   <main>
     <section class="text-box">
       <div class="tagbox">
-        <div class="tag">Illustration</div>
-        <div class="tag">Character Design</div>
+        <div class="tag"><span class="en">Illustration</span><span class="nl">Illustratie</span></div>
+        <div class="tag">Character design</div>
       </div>
       <p>
-        For as long as I can remember I've loved to draw. A few years ago, I
-        started drawing digitally as well. Now, most of my art is done digitally with Adobe Fresco. My art mostly
-        revolves around
-        character design of original characters.
+        <span class="en">For as long as I can remember I've loved to draw. A few years ago, I started drawing digitally
+          as well. Now, most of my art is done digitally with Adobe Fresco. My art mostly revolves around character
+          design of original characters.</span>
+        <span class="nl">Zolang ik me kan herinneren hou ik van tekenen. Een paar jaar geleden ben ik ook digitaal gaan
+          tekenen. Nu maak ik de meeste van mijn tekeningen digitaal met Adobe Fresco. Mijn kunst draait vooral om
+          character design van originele personages.</span>
       </p>
       <h2 class="title-spacing">Worldbuilding</h2>
       <p>
-        Many of my characters are part of a larger world that I created. This
-        world has a rich history and a complex political landscape, which
-        provides a lot of inspiration for my character designs. I enjoy
-        creating characters with unique backgrounds and personalities, and I
-        often use my art to explore different aspects of their stories. <br /><br />
-        The world I created has a fantasy setting with a diverse range of cultures, which allows for a lot of creativity
-        in my character designs. I often draw inspiration from real-world cultures and historical periods, but I also
-        like to add my own twists and interpretations to create something new and unique.
+        <span class="en">Many of my characters are part of a larger world that I created. This world has a rich history
+          and a complex political landscape, which provides a lot of inspiration for my character designs. I enjoy
+          creating characters with unique backgrounds and personalities, and I often use my art to explore different
+          aspects of their stories. <br /><br />The world I created has a fantasy setting with a diverse range of
+          cultures, which allows for a lot of creativity in my character designs. I often draw inspiration from
+          real-world cultures and historical periods, but I also like to add my own twists and interpretations to create
+          something new and unique.</span>
+        <span class="nl">Veel van mijn karakters maken deel uit van een grotere wereld die ik heb gecreëerd. Deze wereld
+          heeft een rijke geschiedenis en een complex politiek landschap, wat veel inspiratie biedt voor mijn character
+          design. Ik hou ervan karakters te creëren met unieke achtergronden en persoonlijkheden, en ik gebruik mijn
+          kunst vaak om verschillende aspecten van hun verhalen te verkennen. <br /><br />De wereld die ik heb
+          gecreëerd heeft een fantasy setting met diverse culturen, waardoor ik veel creativiteit kan
+          gebruiken in mijn character design. Ik haal vaak inspiratie op uit echte culturen en historische periodes,
+          maar
+          ik voeg ook graag mijn eigen draaien en interpretaties toe om iets nieuws en unieks te creëren.</span>
       </p>
       <h2 class="title-spacing">Character Design</h2>
       <p>
-        My character designs are influenced by a variety of sources, including
-        real-world mythology and history. I strive to create
-        characters that are not only visually appealing but whose rich
-        backstories and distinct personalities are reflected in their designs.
+        <span class="en">My character designs are influenced by a variety of sources, including real-world mythology and
+          history. I strive to create characters that are not only visually appealing but whose rich backstories and
+          distinct personalities are reflected in their designs.</span>
+        <span class="nl">Mijn character design wordt beïnvloed door verschillende bronnen, waaronder echte mythologie
+          en geschiedenis. Ik streef ernaar karakters te creëren die niet alleen visueel aantrekkelijk zijn, maar
+          waarvan
+          de rijke achtergronden en persoonlijkheden duidelijk in hun ontwerp naar voren komen.</span>
       </p>
       <img class="extra-img" src="img/serena-design.jpg" />
       <p>
-        For example, Serena's design as seen above reflects her backstory. She was once captured by a slave trader,
-        which is represented by the chains on the sheaths of her swords. The slave trader gave her the scar on her
-        cheek, a tradition in parts of the world. She now hides her face behind a mask, representing the shame and
-        trauma she wants to hide away. The design of the mask is inspired by Japanese half-masks, which adds
-        an element of cultural
-        depth to her design. The mask features dragon-feathers, representing the Black Feather Company, the guise of her
-        father's crime syndicate. The scalemail around her waist also resembles feathers. Yamika, her family name
-        meaning
-        'dark flower', is represented by the floral
-        design on the guards of her swords. She has crafted her own armour, which explains its asymmetry. To balance her
-        design, most details of her face, like the scar and her piercings, are placed on her right side, while her hair
-        falls to her left. Lastly, the red colour scheme of her design reflects her past and her personality,
-        representing the violence and danger she has experienced.
+        <span class="en">For example, Serena's design as seen above reflects her backstory. She was once captured by a
+          slave trader, which is represented by the chains on the sheaths of her swords. The slave trader gave her the
+          scar on her cheek, a tradition in parts of the world. She now hides her face behind a mask, representing the
+          shame and trauma she wants to hide away. The design of the mask is inspired by Japanese half-masks, which adds
+          an element of cultural depth to her design. The mask features dragon-feathers, representing the Black Feather
+          Company, the guise of her father's crime syndicate. The scalemail around her waist also resembles feathers.
+          Yamika, her family name meaning 'dark flower', is represented by the floral design on the guards of her
+          swords. She has crafted her own armour, which explains its asymmetry. To balance her design, most details of
+          her face, like the scar and her piercings, are placed on her right side, while her hair falls to her left.
+          Lastly, the red colour scheme of her design reflects her past and her personality, representing the violence
+          and danger she has experienced.</span>
+        <span class="nl">Serena's design, zoals hierboven te zien, weerspiegelt bijvoorbeeld haar achtergrond. Ze werd
+          ooit gevangen genomen door een slavenhandelaar, wat wordt weergegeven door de kettingen op de schedes van haar
+          zwaarden. De slavenhandelaar gaf haar het litteken op haar wang, een traditie in delen van de wereld. Ze
+          verbergt haar gezicht nu achter een masker, wat de schaamte en het trauma representeert die ze weg wil
+          stoppen.
+          Het ontwerp van het masker is gebaseerd op Japanse halve maskers, wat inspeelt op het culturele element
+          van haar ontwerp. Het masker heeft drakenveren, die de Black Feather Company vertegenwoordigen, de
+          dekmantel van het misdaadsyndicaat van haar vader. Het schubbenpantser rond haar middel lijkt ook op veren.
+          Yamika,
+          haar familienaam die 'donkere bloem' betekent, wordt gerepresenteerd door het bloemenpatroon op de stootplaten
+          van haar
+          zwaarden. Ze heeft haar eigen harnas gemaakt, wat de asymmetrie ervan verklaart. Om haar ontwerp in evenwicht
+          te brengen, zijn de meeste details van haar gezicht, zoals het litteken en haar piercings, aan haar
+          rechterkant geplaatst, terwijl haar haar naar links valt. Tot slot weerspiegelt het rode kleurenschema van
+          haar ontwerp haar verleden en persoonlijkheid, wat het geweld en gevaar dat ze heeft meegemaakt
+          vertegenwoordigt.</span>
       </p>
     </section>
     <div class="parallax parallax-inanis right">
       <div class="art-info">
         <h2>Inanis</h2>
         <p>
-          Inanis is the hollow one, the Goddess of the Void. She is nothing, everything that does not exist. Her defeat
-          at the hands of the Eternal One marked the start of time. One day, she will swallow everything that exists.
-          This event, the Unmaking, will mark the end of time.
-          <br /><br />Her design in based on a black hole, shaped like a six-armed woman. Her size is already
-          incomparable, yet she continues to grow with every passing second.
+          <span class="en">Inanis is the hollow one, the Goddess of the Void. She is nothing, everything that does not
+            exist. Her defeat at the hands of the Eternal One marked the start of time. One day, she will swallow
+            everything that exists. This event, the Unmaking, will mark the end of time.
+            <br /><br />Her design in based on a black hole, shaped like a six-armed woman. Her size is already
+            incomparable, yet she continues to grow with every passing second.</span>
+          <span class="nl">Inanis is the hollow one, de Godin van de Leegte. Ze is niets, alles wat niet bestaat. Haar
+            nederlaag aan de handen van the Eternal One markeert het begin van de tijd. Op een dag zal zij alles wat
+            bestaat
+            in zich opnemen. Deze gebeurtenis, the Unmaking, zal het einde van de tijd markeren.
+            <br /><br />Haar ontwerp is gebaseerd op een zwart gat, gevormd als een vrouw met zes armen. Haar grootte is
+            al onvoorstelbaar, toch groeit ze met elke seconde.</span>
         </p>
       </div>
     </div>
@@ -120,11 +168,16 @@
       <div class="art-info">
         <h2>Tempestia</h2>
         <p>
-          Tempestia, the Goddess of Time, is a prisoner of the Godless Pits. With the void, a contained piece of the
-          hollow one, below and reality above, the God of Death watches over her.
-          <br /><br />The twelve chains that hold her in place represent a clock. The chains at the start of the clock
-          have started to rust and break, while the chains at the end of the clock are still strong and intact. This
-          represents Tempestia will one day break free.
+          <span class="en">Tempestia, the Goddess of Time, is a prisoner of the Godless Pits. With the void, a contained
+            piece of the hollow one, below and reality above, the God of Death watches over her.
+            <br /><br />The twelve chains that hold her in place represent a clock. The chains at the start of the clock
+            have started to rust and break, while the chains at the end of the clock are still strong and intact. This
+            represents Tempestia will one day break free.</span>
+          <span class="nl">Tempestia, de Godin van de Tijd, is een gevangene van the Godless Pits. Met de leegheid, een
+            ingebonden stuk van Inanis, beneden en de werkelijkheid boven, waakt de God van de Dood over haar.
+            <br /><br />De twaalf kettingen die haar op haar plaats houden vertegenwoordigen een klok. De kettingen aan
+            het begin van de klok beginnen te het roesten en te breken, terwijl de kettingen aan het einde van de klok
+            nog steeds sterk en intact zijn. Dit vertegenwoordigt dat Tempestia op een dag vrij zal breken.</span>
         </p>
       </div>
       <div class="extra-img-container">
@@ -140,13 +193,22 @@
       <div class="art-info">
         <h2>Luna</h2>
         <p>
-          Luna is the Goddess of the Moon and Night. Luna was corrupted by the hollow one, which is why she is
-          the Goddess of Darkness and why she gave birth to the God of Death. It also explains her expression. Her
-          design features elements resembling a crescent moon, as seen on her forehead, her jewellery and the shape of
-          her hair. Her skin is dark blue and is scattered with stars, reflecting the night sky.
-          <br /><br />Older generations of Gods have six arms, at least in the religion this artwork is based on. In
-          this artwork I wanted to show that these arms can physically interact with objects and even with each other,
-          instead of just being symbolical.
+          <span class="en">Luna is the Goddess of the Moon and Night. Luna was corrupted by the hollow one, which is why
+            she is the Goddess of Darkness and why she gave birth to the God of Death. It also explains her expression.
+            Her design features elements resembling a crescent moon, as seen on her forehead, her jewellery and the
+            shape of her hair. Her skin is dark blue and is scattered with stars, reflecting the night sky.
+            <br /><br />Older generations of Gods have six arms, at least in the religion this artwork is based on. In
+            this artwork I wanted to show that these arms can physically interact with objects and even with each other,
+            instead of just being symbolical.</span>
+          <span class="nl">Luna is de Godin van de Maan en de Nacht. Luna is corrupt door Inanis, daarom is ze ook de
+            Godin
+            van Duisternis en gaf ze geboorte aan de God van de Dood. Het verklaart ook haar gezichtsuitdrukking. Haar
+            ontwerp bevat elementen die op een maansikkel lijken, te zien op haar voorhoofd, haar sieraden en de vorm
+            van
+            haar haar. Haar huid is donkerblauw en is bezaaid met sterren, wat de nachtelijke hemel weerspiegelt.
+            <br /><br />Oudere generaties goden hebben zes armen, ten minste in de religie waarop dit kunstwerk is
+            gebaseerd. In dit kunstwerk wilde ik laten zien dat deze armen fysiek met objecten en zelfs met elkaar
+            kunnen interacteren, en dus niet alleen symbolisch zijn.</span>
         </p>
       </div>
       <div class="extra-img-container">
@@ -160,18 +222,31 @@
     </div>
     <div class="parallax parallax-mortifer right">
       <div class="art-info">
-        <h2>Mortifer and Tsumi</h2>
+        <h2><span class="en">Mortifer and Tsumi</span><span class="nl">Mortifer en Tsumi</span></h2>
         <p>
-          Mortifer is the God of Death, and Tsumi, Demigoddess of Judgement, is his daughter.
-          Mortifer carries a shepherd's crook, which is a symbol of his role as a guide for souls to the afterlife.
-          Besides the God of Death, Mortifer is also the King of Crows, which is the reason for crows being associated
-          with death in my world.
-          It is also the reason for the black, feathered cloak he wears. His mask is loosely inspired by Japanese oni
-          masks, with elements of a skull.
-          <br /><br />Tsumi wears a similar mask, though hers only covers the left side of her face. Her white hair,
-          which is a feature present in all Demigods, is caused by the stress divine powers put on a mortal body.
-          Tsumi wears black feathers as well, but her are not a crow's. Tsumi is the Princess of Jackdaws, who are often
-          associated with sin, a role Tsumi once had.
+          <span class="en">Mortifer is the God of Death, and Tsumi, Demigoddess of Judgement, is his daughter.
+            Mortifer carries a shepherd's crook, which is a symbol of his role as a guide for souls to the afterlife.
+            Besides the God of Death, Mortifer is also the King of Crows, which is the reason for crows being associated
+            with death in my world.
+            It is also the reason for the black, feathered cloak he wears. His mask is loosely inspired by Japanese oni
+            masks, with elements of a skull.
+            <br /><br />Tsumi wears a similar mask, though hers only covers the left side of her face. Her white hair,
+            which is a feature present in all Demigods, is caused by the stress divine powers put on a mortal body.
+            Tsumi wears black feathers as well, but her are not a crow's. Tsumi is the Princess of Jackdaws, birds that
+            are
+            often associated with sin in my world, a role Tsumi once embodied.</span>
+          <span class="nl">Mortifer is de God van de Dood, en
+            Tsumi, Halfgodin van het Oordeel, is zijn dochter.
+            Mortifer draagt een herdersstaf, wat een symbool is van zijn rol als gids voor zielen naar het hiernamaals.
+            Naast de God van de Dood, is Mortifer ook de Koning der Kraaien, wat de reden is dat kraaien in mijn wereld
+            geassocieerd worden met de dood.
+            Het is ook de reden voor de zwarte mantel van veren die hij draagt. Zijn masker is losjes gebaseerd op
+            Japanse oni-maskers, waarin elementen van een schedel zijn verwerkt.
+            <br /><br />Tsumi draagt een soortgelijk masker, hoewel dat van haar alleen de linkerkant van haar gezicht
+            bedekt. Haar witte haar, wat een kenmerk is dat aanwezig is bij alle Halfgoden, wordt veroorzaakt door de
+            druk die goddelijke krachten op een sterfelijk lichaam uitoefenen.
+            Tsumi draagt ook zwarte veren, maar die zijn niet van een kraai. Tsumi is de Prinses der Kauwen, vogels die
+            in mijn wereld vaak geassocieerd worden met zonde, een rol die Tsumi ooit omarmde.</span>
         </p>
       </div>
       <div class="extra-img-container">
@@ -187,17 +262,30 @@
     <div class="parallax parallax-soralia right">
       <div class="art-info">
         <h2>Soralia</h2>
-        <p>
-          Soralia, the Fateweaver, is the Scion of Fate and Destiny. She weaves the threads of fate for all living
-          beings, determining their destinies. She uses two arms to form the threads and two to weave them into ribbons.
-          A crow cuts the ribbons with golden shears, representing the God of Death's influence on the end of fate.
-          <br /><br />Inspired by Ancient Greek and Roman sculptures of deities, Soralia's body is more exposed than
-          most of my other designs. She wears no clothing, but is covered by ribbons of fate. These ribbons depict the
-          end of the world in multiple realities, and are thus written in different scripts, including some from outside
-          this world.
-          <br /><br />Soralia is the daughter of the Goddess of Time. After her mother's imprisonment, she was adopted
-          by the God of Death, which is why she now wears a mask similar to his. To feel more connected to her horned
-          father and sister, Soralia has braided her hair to resemble horns.
+        <p><span class="en">Soralia, the Fateweaver, is the Scion of Fate and Destiny. She weaves the threads of fate
+            for all
+            living beings, determining their destinies. She uses two arms to form the threads and two to weave them into
+            ribbons. A crow cuts the ribbons with golden shears, representing the God of Death's influence on the end of
+            fate.
+            <br /><br />Inspired by Ancient Greek and Roman sculptures of deities, Soralia's body is more exposed than
+            most of my other designs. She wears no clothing, but is covered by ribbons of fate. These ribbons depict
+            the end of the world in multiple realities, and are thus written in different scripts, including some from
+            outside this world.
+            <br /><br />Soralia is the daughter of the Goddess of Time. After her mother's imprisonment, she was adopted
+            by the God of Death, which is why she now wears a mask similar to his. To feel more connected to her horned
+            father and sister, Soralia has braided her hair to resemble horns.</span>
+          <span class="nl">Soralia, de Fateweaver, is de Scion van het Lot. Ze weeft de draden van het lot
+            voor alle levende wezens, en bepaalt daarmee hun lot. Ze gebruikt twee armen om de draden te vormen en twee
+            om ze in linten te weven. Een kraai knipt de linten met gouden scharen, wat de invloed van de God van de
+            Dood op het einde van het lot vertegenwoordigt.
+            <br /><br />Geïnspireerd door oude Griekse en Romeinse sculpturen van goden, is Soralia's lichaam meer
+            blootgesteld dan de meeste van mijn andere karakters. Ze draagt geen kleding, maar is bedekt met linten van
+            het lot. Deze linten tonen het einde van de wereld in meerdere realiteiten, en zijn dus geschreven in
+            verschillende schriften, waaronder enkele van buiten deze wereld.
+            <br /><br />Soralia is de dochter van de Godin van de Tijd. Na de gevangenneming van haar moeder, werd ze
+            geadopteerd door de God van de Dood, wat de verklaart waarom haar masker op dat van hem lijkt.
+            Om zich meer verbonden te voelen met haar gehoornde vader en zus, heeft Soralia haar haar gevlochten om op
+            hoorns te lijken.</span>
         </p>
       </div>
       <div class="extra-img-container">
@@ -211,11 +299,15 @@
       </div>
     </div>
     <section class="collage collage-spacing bottom-section">
-      <h2>More work</h2>
-      <p>
-        Besides the characters mentioned above, I have created many other characters and artworks. I have a large
-        collection of original character designs, which I often share on my Instagram account. So if you want to see
-        more of my art, be sure to check it out.
+      <h2><span class="en">More work</span><span class="nl">Meer werk</span></h2>
+      <p><span class="en">Besides the characters mentioned above, I have created many other characters and artworks. I
+          have a
+          large collection of original character designs, which I often share on my Instagram account. So if you want to
+          see more of my art, be sure to check it out.</span>
+        <span class="nl">Naast de karakters die hierboven zijn genoemd, heb ik veel andere karakters en kunstwerken
+          gemaakt. Ik heb een grote collectie originele character
+          designs, die ik vaak deel op mijn Instagram pagina. Dus als je meer van mijn kunst wilt zien, neem dan zeker
+          een kijkje.</span>
       </p>
       <button class="home-button contact collage-button"
         onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
@@ -250,6 +342,10 @@
     <img id="img-overlay-img" src="" alt="enlarged image" />
     <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
     <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
+  </div>
+  <div id="hover-preview" class="hover-preview" style="display:none;">
+    <video id="hover-preview-video" muted playsinline loop></video>
+    <img id="hover-preview-img" style="display:none;" alt="preview" />
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="js/script.js"></script>

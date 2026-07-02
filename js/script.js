@@ -125,6 +125,10 @@ function goToProject5() {
   window.location.href = "cbs-internship.html";
 }
 
+function goToProject6() {
+  window.location.href = "royal-is-er-voor-jou.html";
+}
+
 function goToAbout() {
   window.location.href = "about.html";
 }
@@ -288,19 +292,143 @@ document.getElementById("img-overlay").addEventListener("click", function () {
   iframe.style.display = "none";
 });
 
-document.getElementById("click-art").addEventListener("click", goToArt);
-document
-  .getElementById("click-project-1")
-  .addEventListener("click", goToProject1);
-document
-  .getElementById("click-project-2")
-  .addEventListener("click", goToProject2);
-document
-  .getElementById("click-project-3")
-  .addEventListener("click", goToProject3);
-document
-  .getElementById("click-project-4")
-  .addEventListener("click", goToProject4);
-document
-  .getElementById("click-project-5")
-  .addEventListener("click", goToProject5);
+function addListenerIfExists(selector, handler) {
+  const el = document.getElementById(selector);
+  if (el) {
+    el.addEventListener("click", handler);
+  }
+}
+
+addListenerIfExists("click-art", goToArt);
+addListenerIfExists("click-project-1", goToProject1);
+addListenerIfExists("click-project-2", goToProject2);
+addListenerIfExists("click-project-3", goToProject3);
+addListenerIfExists("click-project-4", goToProject4);
+addListenerIfExists("click-project-5", goToProject5);
+addListenerIfExists("click-project-6", goToProject6);
+
+// Language Toggle
+function toggleLanguage() {
+  const currentLang = document.documentElement.getAttribute('data-lang') || 'nl';
+  const newLang = currentLang === 'en' ? 'nl' : 'en';
+  document.documentElement.setAttribute('data-lang', newLang);
+  document.body.setAttribute('data-lang', newLang);
+  localStorage.setItem('preferredLanguage', newLang);
+
+  const langBtn = document.getElementById('lang-toggle');
+  langBtn.textContent = newLang === 'en' ? 'NL' : 'EN';
+}
+
+// Initialize language preference on page load
+window.addEventListener('load', function () {
+  const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+  document.documentElement.setAttribute('data-lang', savedLang);
+  document.body.setAttribute('data-lang', savedLang);
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+  }
+});
+
+// Hover preview for dropdown project items
+(function () {
+  const hoverSupport = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+  if (!hoverSupport) return; // skip touch
+
+  const preview = document.getElementById('hover-preview');
+  const previewVideo = document.getElementById('hover-preview-video');
+  const previewImg = document.getElementById('hover-preview-img');
+  const items = document.querySelectorAll('.dropdown-content .nav-button[data-preview]');
+  const dropdown = document.querySelector('.dropdown');
+  const dropdownContent = document.querySelector('.dropdown-content');
+
+  if (!preview || !items.length) return;
+
+  function showPreview(src, e) {
+    if (!src) return;
+    const isVideo = /\.(mp4|webm|ogg)$/i.test(src);
+    // prepare content
+    if (isVideo) {
+      previewImg.style.display = 'none';
+      previewVideo.src = src;
+      previewVideo.style.display = 'block';
+      previewVideo.play().catch(() => { });
+    } else {
+      previewVideo.pause();
+      previewVideo.src = '';
+      previewVideo.style.display = 'none';
+      previewImg.src = src;
+      previewImg.style.display = 'block';
+    }
+
+    // show with transition
+    preview.style.display = 'block';
+    // ensure class addition happens on next frame so transition runs
+    requestAnimationFrame(() => preview.classList.add('show'));
+    movePreview(e);
+  }
+
+  function hidePreview() {
+    // fade out; cleanup after transitionend
+    preview.classList.remove('show');
+  }
+
+  function hidePreviewIfDropdownClosed() {
+    if (!dropdownContent) {
+      hidePreview();
+      return;
+    }
+
+    const isOpen = window.getComputedStyle(dropdownContent).opacity === '1' && dropdownContent.style.pointerEvents !== 'none';
+    if (!isOpen) {
+      hidePreview();
+    }
+  }
+
+  // cleanup when transition finishes
+  preview.addEventListener('transitionend', (ev) => {
+    if (ev.propertyName === 'opacity' && !preview.classList.contains('show')) {
+      preview.style.display = 'none';
+      previewVideo.pause();
+      previewVideo.src = '';
+      previewImg.src = '';
+    }
+  });
+
+  function movePreview(e) {
+    if (!e) return;
+    const offsetX = 12;
+    const offsetY = 18;
+    const w = preview.offsetWidth || 280;
+    const h = preview.offsetHeight || 158;
+    // Always position bottom-left of the cursor
+    let left = e.clientX - w - offsetX;
+    let top = e.clientY + offsetY;
+    // Clamp to viewport so it doesn't go fully off-screen
+    if (left < 8) left = 8;
+    if (top + h > window.innerHeight) top = Math.max(8, window.innerHeight - h - 8);
+    preview.style.left = left + 'px';
+    preview.style.top = top + 'px';
+  }
+
+  items.forEach(item => {
+    const src = item.getAttribute('data-preview');
+    item.addEventListener('mouseenter', (e) => showPreview(src, e));
+    item.addEventListener('mousemove', (e) => movePreview(e));
+    item.addEventListener('mouseleave', hidePreview);
+  });
+
+  if (dropdown) {
+    dropdown.addEventListener('mouseleave', hidePreview);
+  }
+
+  // hide preview if dropdown closes due to click or menu state changes
+  document.addEventListener('click', (event) => {
+    if (dropdown && !dropdown.contains(event.target)) {
+      hidePreview();
+    }
+  });
+
+  window.addEventListener('mousemove', hidePreviewIfDropdownClosed);
+  window.addEventListener('scroll', hidePreviewIfDropdownClosed);
+})();

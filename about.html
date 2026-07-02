@@ -12,33 +12,48 @@
 </head>
 
 <body>
+  <script>
+    const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+    document.documentElement.setAttribute('data-lang', savedLang);
+    document.body.setAttribute('data-lang', savedLang);
+    document.addEventListener('DOMContentLoaded', function () {
+      const langBtn = document.getElementById('lang-toggle');
+      if (langBtn) {
+        langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+      }
+    });
+  </script>
   <nav>
     <div class="nav-backdrop"></div>
     <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
-
     <div class="nav-menu">
       <div class="dropdown">
-        <button class="dropbtn">Projects</button>
+        <button class="dropbtn"><span class="en">Projects</span><span class="nl">Projecten</span></button>
         <div class="dropdown-content">
-          <button class="nav-button" onclick="goToProject1()">
+          <button class="nav-button" onclick="goToProject6()" data-preview="video/royal-is-er-voor-jou-header.mp4">
+            Royal is er voor jou
+          </button>
+          <button class="nav-button" onclick="goToProject1()" data-preview="video/royal.mp4">
             Royal in Motion
           </button>
-          <button class="nav-button" onclick="goToProject2()">
-            Had Je Maar
-          </button>
-          <button class="nav-button" onclick="goToArt()">Digital Art</button>
-          <button class="nav-button" onclick="goToProject3()">
+          <button class="nav-button" onclick="goToArt()" data-preview="video/digital-art-transition.mp4"><span
+              class="en">Digital Art</span><span class="nl">Digitale
+              kunst</span></button>
+          <button class="nav-button" onclick="goToProject2()" data-preview="video/schaduw.gif">Had Je Maar</button>
+          <button class="nav-button" onclick="goToProject3()" data-preview="video/knip-collage.mp4">
             Knip Musical
           </button>
-          <button class="nav-button" onclick="goToProject4()">
+          <button class="nav-button" onclick="goToProject4()" data-preview="video/echoes-header.mp4">
             Echoes in the Sand
           </button>
-          <button class="nav-button" onclick="goToProject5()">
-            CBS Internship
+          <button class="nav-button" onclick="goToProject5()" data-preview="video/cbs-transition.mp4">
+            <span class="en">CBS Internship</span><span class="nl">CBS Stage</span>
           </button>
         </div>
       </div>
-      <button class="nav-button" onclick="goToAbout()">About me</button>
+      <button class="nav-button" onclick="goToAbout()"><span class="en">About me</span><span class="nl">Over
+          mij</span></button>
+      <button class="nav-button" id="lang-toggle" onclick="toggleLanguage()">NL</button>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="hamburger-backdrop"></div>
@@ -50,48 +65,77 @@
   <header id="header-edit">
     <img src="img/about-foto.jpg" class="header-img rellax" id="home-header" data-rellax-speed="-3" />
     <div class="header-text rellax" data-rellax-speed="1">
-      <h1>About me</h1>
+      <h1><span class="en">About me</span><span class="nl">Over mij</span></h1>
     </div>
     <button class="scrolldown" onclick="scrollToBottom()"></button>
     <div class="gradient"></div>
   </header>
   <main>
     <section class="text-box bottom-section">
-      <h2>So, who am I?</h2>
       <p>
-        I'm Douwe van Druenen, a multimedia designer in the broadest sense.
-        Born and raised in Helmond, The Netherlands, I recently completed
-        my studies in Communication & Multimedia Design (CMD) at Zuyd
-        University of Applied Sciences in Maastricht. My passion lies in
-        creating effective design and captivating art that tell compelling
-        stories. Through my work, I aim to blend creativity with
-        functionality, delivering engaging experiences across various
-        platforms. Whether it's graphic design, UX design, illustration,
-        animation or motion design, I strive to push the boundaries of visual
-        communication and bring ideas to life.
+        <span class="en">I'm Douwe van Druenen, a multimedia designer in the broadest sense. Born and raised in Helmond,
+          The Netherlands, I recently completed my studies in Communication and Multimedia Design (CMD) at Zuyd
+          University
+          of Applied Sciences in Maastricht. My passion lies in creating effective design and captivating art that tell
+          compelling stories. Through my work, I aim to blend creativity with functionality, delivering engaging
+          experiences across various platforms. Whether it's graphic design, UX design, illustration, animation or
+          motion design, I strive to push the boundaries of visual communication and bring ideas to life.</span>
+        <span class="nl">Ik ben Douwe van Druenen, een multimedia designer in de breedste zin. Ik ben geboren en getogen
+          in
+          Helmond en heb onlangs mijn studie Communication and Multimedia Design (CMD) aan de Hogeschool Zuyd
+          in Maastricht afgerond. Mijn passie ligt in het creëren van effectief ontwerp en pakkende kunst die sterke
+          verhalen vertellen. In mijn werk probeer ik creativiteit met functionaliteit te combineren, waarbij ik
+          pakkende ervaringen lever via verschillende platforms. Of het nu gaat om grafisch ontwerp, UX design,
+          illustratie, animatie of motion design, ik streef ernaar de grenzen van visuele communicatie op te zoeken en
+          ideeën tot leven te brengen.</span>
       </p>
-      <h2 class="title-spacing">Contact me</h2>
+      <h2 class="title-spacing"><span class="en">My skills</span><span class="nl">Mijn skills</span></h2>
+      <div class="tagbox">
+        <div class="tag"><span class="en">Graphic design</span><span class="nl">Grafisch ontwerp</span></div>
+        <div class="tag"><span class="en">Illustration</span><span class="nl">Illustratie</span></div>
+        <div class="tag">Storytelling</div>
+        <div class="tag">Motion design</div>
+        <div class="tag"><span class="en">Animation</span><span class="nl">Animatie</span></div>
+        <div class="tag">UX design</div>
+        <div class="tag"><span class="en">Photography</span><span class="nl">Fotografie</span></div>
+        <div class="tag"><span class="en">Video editing</span><span class="nl">Video bewerking</span></div>
+        <div class="tag">UI design</div>
+        <div class="tag">HTML/CSS</div>
+      </div>
+      <p><span class="en">For more information about my skills and experience, feel free to explore my portfolio or
+          download my CV below.</span><span class="nl">Voor meer informatie over mijn skills en werkervaring kun je
+          mijn portfolio verkennen of mijn CV hieronder downloaden.</span></p>
+      <span class="nl"><button class="home-button cv" onclick="window.open('docs/DouwevanDruenen-CV-NL.pdf', '_blank')">
+          Download CV (NL)
+        </button>
+        <button class="home-button cv" onclick="window.open('docs/DouwevanDruenen-CV-EN.pdf', '_blank')">
+          Download CV (EN)
+        </button></span>
+      <span class="en"><button class="home-button cv" onclick="window.open('docs/DouwevanDruenen-CV-EN.pdf', '_blank')">
+          Download CV (EN)
+        </button><button class="home-button cv" onclick="window.open('docs/DouwevanDruenen-CV-NL.pdf', '_blank')">
+          Download CV (NL)
+        </button>
+      </span>
+      <h2 class="title-spacing">Contact</h2>
       <p>
-        I'm always open to new opportunities and collaborations. If you'd like
-        to get in touch, feel free to reach out to me. You can contact me via
-        email or connect with me on LinkedIn and social media.
+        <span class="en">I'm always open to new opportunities and collaborations. If you'd like to get in touch, feel
+          free to reach out to me. You can contact me via email or connect with me on LinkedIn and social
+          media.</span>
+        <span class="nl">Ik sta altijd open voor nieuwe kansen en samenwerkingen. Als je een connectie met me wilt
+          maken,
+          neem gerust contact met me op. Je kunt me bereiken via e-mail of verbind met me op LinkedIn en sociale
+          media.</span>
       </p>
       <button class="home-button contact" onclick="window.open('mailto:douwevandruenen@gmail.com')">
         douwevandruenen@gmail.com
       </button>
-
-      <button class="home-button contact" onclick="
-            window.open(
-              'https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab',
-              '_blank',
-            )
-          ">
+      <button class="home-button contact"
+        onclick="window.open('https://www.linkedin.com/in/douwe-van-druenen-21a2b62ab', '_blank')">
         LinkedIn
       </button>
-      <button class="home-button contact" onclick="
-            window.open('https://www.instagram.com/dvdruenen.art/', '_blank')
-          ">
-        Instagram (digital art)
+      <button class="home-button contact" onclick="window.open('https://www.instagram.com/dvdruenen.art/', '_blank')">
+        <span class="en">Instagram (digital art)</span><span class="nl">Instagram (digitale kunst)</span>
       </button>
     </section>
     <div class="brown-bg brown-bg-about"></div>
@@ -109,6 +153,10 @@
     <img id="img-overlay-img" src="" alt="enlarged image" />
     <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
     <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
+  </div>
+  <div id="hover-preview" class="hover-preview" style="display:none;">
+    <video id="hover-preview-video" muted playsinline loop></video>
+    <img id="hover-preview-img" style="display:none;" alt="preview" />
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="js/script.js"></script>

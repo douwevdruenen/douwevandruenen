@@ -12,29 +12,48 @@
 </head>
 
 <body>
+  <script>
+    const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+    document.documentElement.setAttribute('data-lang', savedLang);
+    document.body.setAttribute('data-lang', savedLang);
+    document.addEventListener('DOMContentLoaded', function () {
+      const langBtn = document.getElementById('lang-toggle');
+      if (langBtn) {
+        langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+      }
+    });
+  </script>
   <nav>
     <div class="nav-backdrop"></div>
     <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
     <div class="nav-menu">
       <div class="dropdown">
-        <button class="dropbtn">Projects</button>
+        <button class="dropbtn"><span class="en">Projects</span><span class="nl">Projecten</span></button>
         <div class="dropdown-content">
-          <button class="nav-button" onclick="goToProject1()">
+          <button class="nav-button" onclick="goToProject6()" data-preview="video/royal-is-er-voor-jou-header.mp4">
+            Royal is er voor jou
+          </button>
+          <button class="nav-button" onclick="goToProject1()" data-preview="video/royal.mp4">
             Royal in Motion
           </button>
-          <button class="nav-button" onclick="goToProject2()">Had Je Maar</button>
-          <button class="nav-button" onclick="goToArt()">Digital Art</button>
-          <button class="nav-button" onclick="goToProject3()">
+          <button class="nav-button" onclick="goToArt()" data-preview="video/digital-art-transition.mp4"><span
+              class="en">Digital Art</span><span class="nl">Digitale
+              kunst</span></button>
+          <button class="nav-button" onclick="goToProject2()" data-preview="video/schaduw.gif">Had Je Maar</button>
+          <button class="nav-button" onclick="goToProject3()" data-preview="video/knip-collage.mp4">
             Knip Musical
           </button>
-          <button class="nav-button" onclick="goToProject4()">
+          <button class="nav-button" onclick="goToProject4()" data-preview="video/echoes-header.mp4">
             Echoes in the Sand
           </button>
-          <button class="nav-button" onclick="goToProject5()">
-            CBS Internship</button>
+          <button class="nav-button" onclick="goToProject5()" data-preview="video/cbs-transition.mp4">
+            <span class="en">CBS Internship</span><span class="nl">CBS Stage</span>
+          </button>
         </div>
       </div>
-      <button class="nav-button" onclick="goToAbout()">About me</button>
+      <button class="nav-button" onclick="goToAbout()"><span class="en">About me</span><span class="nl">Over
+          mij</span></button>
+      <button class="nav-button" id="lang-toggle" onclick="toggleLanguage()">NL</button>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="bar" id="bar1"></div>
@@ -53,78 +72,114 @@
   <main>
     <section class="text-box">
       <div class="tagbox">
-        <div class="tag">Animation</div>
+        <div class="tag"><span class="en">Animation</span><span class="nl">Animatie</span></div>
         <div class="tag">Storytelling</div>
-        <div class="tag">Sound Design</div>
+        <div class="tag">Sound design</div>
       </div>
       <p>
-        In my second year of Communication and Multimedia Design (CMD), I
-        followed an elective where I learned the fundamentals of 2D animation.
-        I experimented with a lot of different animation styles and I
-        eventually made a short animation. To further develop this skill in my
-        third year, I followed an external elective of Visual Communication
-        called 'Storytelling Fiction', where I spent half a year making an
-        animated short film.
+        <span class="en">In my second year of Communication and Multimedia Design (CMD), I followed an elective where I
+          learned the fundamentals of 2D animation. I experimented with a lot of different animation styles and I
+          eventually made a short animation. To further develop this skill in my third year, I followed an external
+          elective of Visual Communication called 'Storytelling Fiction', where I spent half a year making an animated
+          short film.</span>
+        <span class="nl">In mijn tweede jaar van Communication and Multimedia Design (CMD) volgde ik een keuzevak
+          waarbij
+          ik de basisprincipes van 2D-animatie leerde. Ik experimenteerde met veel verschillende animatiestijlen en
+          maakte uiteindelijk een korte animatie. Om deze vaardigheid in mijn derde jaar verder te ontwikkelen, volgde
+          ik een extern keuzevak van Visuele Communicatie genaamd 'Storytelling Fiction', waar ik een half jaar aan het
+          maken van een korte anmatiefilm besteedde.</span>
       </p>
-      <h2 class="title-spacing">Watch the full preview</h2>
+      <h2 class="title-spacing"><span class="en">Watch the full preview</span><span class="nl">Bekijk de volledige
+          preview</span></h2>
       <iframe src="https://www.youtube.com/embed/FsUIIHILcbQ?si=m2GvDYVjt_-H0cxE?rel=0" allow="fullscreen" rel="0">
       </iframe>
-      <h2 class="title-spacing">Scriptwriting</h2>
+      <h2 class="title-spacing"><span class="en">Scriptwriting</span><span class="nl">Scriptschrijven</span></h2>
       <p>
-        The script for the film was developed in the first half of the
-        elective, and I used it as a basis for the animation process in the
-        second half. The story is about a girl named Kaiya whose shadow comes
-        to life, reflecting her shame and regrets. The story is a metaphor for
-        the way we often try to hide our insecurities and mistakes, but they
-        always find a way to catch up with us. The shadow represents the parts
-        of ourselves that we try to suppress, but they are still a part of us
-        and can have a powerful influence on our lives. <br></br> The story starts
-        off with Kaiya coming home after another rough day at school. She avoids
-        talking about her feelings with her dad, closing him off. This is shown
-        visually by the door that separates them. This same way, there are multiple
-        scenes that use visual metaphors to show the emotional state of Kaiya. The
-        story then progresses to Kaiya's shadow coming to life, which is a very tense moment.
-        The world shifts to black and white, representing her internal conflict pulling colour away.
-        The story ends with Kaiya accepting her shadow and
-        learning to live with it, rather than trying to hide it away. <br></br> I went
-        through multiple iterations before I was satisfied with the story and
-        the way it was told. I wanted to create a story that was both visually
-        interesting and emotionally engaging, and I think the final script
-        achieved that.
+        <span class="en">The script for the film was developed in the first half of the elective, and I used it as a
+          basis for the animation process in the second half. The story is about a girl named Kaiya whose shadow comes
+          to life, reflecting her shame and regrets. The story is a metaphor for the way we often try to hide our
+          insecurities and mistakes, but they always find a way to catch up with us. The shadow represents the parts of
+          ourselves that we try to suppress, but they are still a part of us and can have a powerful influence on our
+          lives. <br></br> The story starts off with Kaiya coming home after another rough day at school. She avoids
+          talking about her feelings with her dad, closing him off. This is shown visually by the door that separates
+          them. This same way, there are multiple scenes that use visual metaphors to show the emotional state of Kaiya.
+          The story then progresses to Kaiya's shadow coming to life, which is a very tense moment. The world shifts to
+          black and white, representing her internal conflict pulling colour away. The story ends with Kaiya accepting
+          her shadow and learning to live with it, rather than trying to hide it away. <br></br> I went through multiple
+          iterations before I was satisfied with the story and the way it was told. I wanted to create a story that was
+          both visually interesting and emotionally engaging, and I think the final script achieved that.</span>
+        <span class="nl">Het script voor de film werd in de eerste helft van het keuzevak ontwikkeld, en ik gebruikte
+          het als basis voor het animatieproces in de tweede helft. Het verhaal gaat over een meid genaamd Kaiya wiens
+          schaduw tot leven komt en haar schaamte en spijt weerspiegelt. Het verhaal is een metafoor voor de manier
+          waarop we vaak onze onzekerheden en fouten proberen te verbergen, ookal vinden ze uiteindelijk een manier om
+          ons in
+          te halen. De schaduw vertegenwoordigt de delen van onszelf die we proberen te onderdrukken, maar ze maken nog
+          steeds deel uit van ons en kunnen een krachtige invloed op ons leven hebben. <br></br>Het verhaal begint
+          wanneer Kaiya thuiskomt na weer een moeilijke dag op school. Ze vermijdt het praten over haar gevoelens met
+          haar vader en
+          sluit hem uit. Dit wordt visueel weergegeven door de deur die hen scheidt. Op dezelfde manier zijn
+          er meerdere scènes die visuele metaforen gebruiken om de emotionele staat van Kaiya weer te geven. Het verhaal
+          gaat verder naar Kaiya's schaduw die tot leven komt, wat een spannend moment is. De wereld verschuift
+          naar zwart-wit, wat vertegenwoordigt dat haar interne conflict kleur uit de wereld trekt. Het verhaal eindigt
+          met
+          Kaiya die haar schaduw accepteert en leert ermee te leven, in plaats van te proberen het weg te stoppen.
+          <br></br> Ik ben door meerdere iteraties gegaan voordat ik tevreden was met het verhaal en de manier waarop
+          het werd verteld. Ik wilde een verhaal creëren dat zowel visueel interessant als emotioneel pakkend
+          was, en ik
+          denk dat het definitieve script dat bereikt heeft.</span>
       </p>
     </section>
     <div class="parallax parallax-hjm right">
       <div class="dark-bg2"></div>
       <div class="black-gradient grdnt-left"></div>
       <div class="art-info">
-        <h2>Animation process</h2>
+        <h2><span class="en">Animation process</span><span class="nl">Animatieproces</span></h2>
         <p>
-          I had decided early on I
-          wanted to adapt my script in animation, as I had a specific look in
-          mind that would best fit the story. After the scriptwriting process, me and my classmate, Myko Thomas, joined
-          forces. Together, we developed the artstyle to accomodate for our differing skillsets and preferences. We
-          wanted to create a style that was simple and minimalistic, but still had a lot of character and emotion. We
-          went through multiple iterations before we were satisfied with the final look. <br></br> With
-          the visual style established, we could finally start animating. We knew there wasn't enough
-          time to finish the entire story, so we decided to work on the first
-          couple scenes as a preview. I started off by creating the animatic, which is a rough version of the animation
-          that helps to establish the timing and pacing of the story. <br></br>After the animatic was finished, we
-          started working on the final animation.
+          <span class="en">I had decided early on I wanted to adapt my script in animation, as I had a specific look in
+            mind that would best fit the story. After the scriptwriting process, me and my classmate, Myko Thomas,
+            joined forces. Together, we developed the artstyle to accomodate for our differing skillsets and
+            preferences. We wanted to create a style that was simple and minimalistic, but still had a lot of character
+            and emotion. We went through multiple iterations before we were satisfied with the final look. <br></br>
+            With the visual style established, we could finally start animating. We knew there wasn't enough time to
+            finish the entire story, so we decided to work on the first couple scenes as a preview. I started off by
+            creating the animatic, which is a rough version of the animation that helps to establish the framing and
+            pacing of the story. <br></br>After the animatic was finished, we started working on the final
+            animation.</span>
+          <span class="nl">Ik had al vroeg besloten mijn script als animatie te verfilmen, omdat ik een specifieke
+            uitstraling in gedachte had die het beste bij het verhaal zou passen. Na het scriptschrijven kwamen mijn
+            klasgenoot Myko Thomas en ik samen en ontwikkelden we samen de stijl om rekening te houden met onze
+            verschillende vaardigheden en voorkeuren. We wilden een stijl creëren die eenvoudig en minimalistisch was,
+            maar toch veel karakter en emotie had. We hebben meerdere iteraties doorlopen voordat we tevreden waren met
+            het resultaat. <br></br> Met de visuele stijl vastgesteld, konden we eindelijk beginnen met
+            animeren. We wisten dat er niet genoeg tijd was om het hele verhaal af te maken, dus besloten we om de
+            eerste paar scènes als preview uit te werken. Ik ben begonnen met het maken van de animatic, wat een ruwe
+            versie van de animatie is die helpt bij het bepalen van de shots en de timing van het verhaal.
+            <br></br>Nadat de animatic klaar was, begonnen we aan de definitieve animatie.</span>
         </p>
       </div>
     </div>
     <section class="collage collage-spacing bottom-section">
-      <h2>Editing and sound design</h2>
-      <p>In between animating shots for the film, I had a recording session with my friend Denise Joosten,
-        who became the voice of Kaiya and her shadow. For the shadow,
-        I had her record lines in a whispering voice. These lines voice Kaiya's inner doubts and regrets.
-        I then layered these recordings on top of each other, making them more and more overwhelming as the shadow
-        starts to emerge,
-        <br></br> In the final stage, I started the editing process. I combined our hand-drawn animations
-        with the voice acting, some sounds Myko had recorded and some open-source sound effects to
-        enhance the story and the tension. After a lot of polishing, the final animation was completed.
-        I'm especially proud of the scene where the shadow first emerges.
-        Myko's animation combined with my editing and sound design forms a truly tense moment.
+      <h2><span class="en">Editing and sound design</span><span class="nl">Bewerking en sound design</span></h2>
+      <p><span class="en">In between animating shots for the film, I had a recording session with my friend Denise
+          Joosten, who became the voice of Kaiya and her shadow. For the shadow, I had her record lines in a whispering
+          voice. These lines voice Kaiya's inner doubts and regrets. I then layered these recordings on top of each
+          other, making them more and more overwhelming as the shadow starts to emerge.</span><span class="nl">Tussen
+          het animeren door had ik een opnamesessie met een vriendin van mij, Denise Joosten, die de
+          stem van Kaiya en haar schaduw werd. Voor de schaduw liet ik haar regels fluisterend
+          opnemen. Deze regels brengen Kaiya's innerlijke twijfels en spijt tot uiting. Ik stapelde deze opnamen
+          vervolgens op elkaar, waardoor ze steeds overweldigender werden naarmate de schaduw begint op te
+          duiken.</span>
+        <br></br> <span class="en">In the final stage, I started the editing process. I combined our hand-drawn
+          animations with the voice acting, some sounds Myko had recorded and some open-source sound effects to enhance
+          the story and the tension. After a lot of polishing, the final animation was completed. I'm especially proud
+          of the scene where the shadow first emerges. Myko's animation combined with my editing and sound design forms
+          a truly tense moment to end the preview with.</span><span class="nl">In de laatste fase begon ik met het
+          bewerkingsproces. Ik
+          combineerde onze handgetekende animaties met de stemmen, enkele geluiden die Myko had opgenomen en enkele
+          open-source geluidseffecten om het verhaal en de spanning te versterken. Na veel polijsten werd de definitieve
+          animatie voltooid. Ik ben vooral trots op de scène waarin de schaduw voor het eerst opduikt. Myko's animatie
+          in combinatie met mijn bewerking en sound design vormt een echt spannend moment om de preview mee af te
+          sluiten.</span>
       </p>
       <div class="extra-img-container">
         <button class="side-scroll scroll-left"></button>
@@ -152,6 +207,10 @@
     <img id="img-overlay-img" src="" alt="enlarged image" />
     <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
     <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
+  </div>
+  <div id="hover-preview" class="hover-preview" style="display:none;">
+    <video id="hover-preview-video" muted playsinline loop></video>
+    <img id="hover-preview-img" style="display:none;" alt="preview" />
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="js/script.js"></script>

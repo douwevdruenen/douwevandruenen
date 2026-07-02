@@ -12,32 +12,48 @@
 </head>
 
 <body>
+  <script>
+    const savedLang = localStorage.getItem('preferredLanguage') || 'nl';
+    document.documentElement.setAttribute('data-lang', savedLang);
+    document.body.setAttribute('data-lang', savedLang);
+    document.addEventListener('DOMContentLoaded', function () {
+      const langBtn = document.getElementById('lang-toggle');
+      if (langBtn) {
+        langBtn.textContent = savedLang === 'en' ? 'NL' : 'EN';
+      }
+    });
+  </script>
   <nav>
     <div class="nav-backdrop"></div>
     <img src="img/logo-met-naam.svg" alt="logo" id="nav-logo" onclick="goToHome()" />
     <div class="nav-menu">
       <div class="dropdown">
-        <button class="dropbtn">Projects</button>
+        <button class="dropbtn"><span class="en">Projects</span><span class="nl">Projecten</span></button>
         <div class="dropdown-content">
-          <button class="nav-button" onclick="goToProject1()">
+          <button class="nav-button" onclick="goToProject6()" data-preview="video/royal-is-er-voor-jou-header.mp4">
+            Royal is er voor jou
+          </button>
+          <button class="nav-button" onclick="goToProject1()" data-preview="video/royal.mp4">
             Royal in Motion
           </button>
-          <button class="nav-button" onclick="goToProject2()">
-            Had Je Maar
-          </button>
-          <button class="nav-button" onclick="goToArt()">Digital Art</button>
-          <button class="nav-button" onclick="goToProject3()">
+          <button class="nav-button" onclick="goToArt()" data-preview="video/digital-art-transition.mp4"><span
+              class="en">Digital Art</span><span class="nl">Digitale
+              kunst</span></button>
+          <button class="nav-button" onclick="goToProject2()" data-preview="video/schaduw.gif">Had Je Maar</button>
+          <button class="nav-button" onclick="goToProject3()" data-preview="video/knip-collage.mp4">
             Knip Musical
           </button>
-          <button class="nav-button" onclick="goToProject4()">
+          <button class="nav-button" onclick="goToProject4()" data-preview="video/echoes-header.mp4">
             Echoes in the Sand
           </button>
-          <button class="nav-button" onclick="goToProject5()">
-            CBS Internship
+          <button class="nav-button" onclick="goToProject5()" data-preview="video/cbs-transition.mp4">
+            <span class="en">CBS Internship</span><span class="nl">CBS Stage</span>
           </button>
         </div>
       </div>
-      <button class="nav-button" onclick="goToAbout()">About me</button>
+      <button class="nav-button" onclick="goToAbout()"><span class="en">About me</span><span class="nl">Over
+          mij</span></button>
+      <button class="nav-button" id="lang-toggle" onclick="toggleLanguage()">NL</button>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="bar" id="bar1"></div>
@@ -59,48 +75,67 @@
     <section class="text-box">
       <div class="tagbox">
         <div class="tag">Storytelling</div>
-        <div class="tag">Illustration</div>
+        <div class="tag"><span class="en">Illustration</span><span class="nl">Illustratie</span></div>
       </div>
       <p>
-        In my fourth year of CMD, I followed a minor called 'The Narrative'.
-        This minor revolved around storytelling, and how to use it in
-        different media. While working on my story, I studied different
-        structures of storytelling, and did artistic research to find the best
-        way to tell my story. I adapted my short story 'Echoes in the Sand'
-        into an illustrated book.
+        <span class="en">In my fourth year of CMD, I followed a minor called 'The Narrative'. This minor revolved around
+          storytelling, and how to use it in different media. While working on my story, I studied different structures
+          of storytelling, and did artistic research to find the best way to tell my story. I adapted my short story
+          'Echoes in the Sand' into an illustrated book.</span>
+        <span class="nl">In mijn vierde jaar van CMD volgde ik een minor genaamd 'The Narrative'. Deze minor draaide om
+          storytelling en hoe je verhalen in verschillende vormen van media kunt vertellen. Terwijl ik aan mijn verhaal
+          werkte,
+          bestudeerde ik verschillende verhaalstructuren en voerde ik artistiek onderzoek uit om de beste manier
+          te vinden om mijn verhaal te vertellen. Ik maakte uiteindelijk van mijn korte verhaal 'Echoes in the Sand' een
+          geïllustreerd boek.</span>
       </p>
-      <h2 class="title-spacing">The story</h2>
+      <h2 class="title-spacing"><span class="en">The story</span><span class="nl">Het verhaal</span></h2>
       <p>
-        Echoes in the Sand is a short story about a group of 300 travelers who
-        venture into the desert to reach the southern shore, where their new
-        home awaits. Neith, the main character, leads the group, expecting to
-        be crowned queen upon her arrival in the promised land. She vows to
-        protect her people and ensure their survival in the harsh desert, but
-        as they journey deeper through the unforgiving sands, Neith's
-        leadership is put to the test.<br /><br />Neith insists they follow
-        the course of a dried riverbed, believing it will lead them to water
-        and safety. However, the river twists and turns, lengthening their
-        journey and depleting their resources. As the group faces the
-        relentless heat and scarcity of water, tensions rise, and Neith must
-        make the impossible choice between her people's survival and her own
-        ambition. <br /><br />Echoes in the Sand is set in a fictional world
-        I've spent years building. This story is one of many planned to take
-        place in this world. The book gives an insight into the world's
-        history, telling the story of how one of the greatest kingdoms was
-        founded. The book features some texts written in Sandscript, the
-        script used in this part of the fictional world. The story is set in a
-        desert known as the Dry Sea of Sahra, located in the south.<br /><br />I
-        knew early on I wanted the story to feel like an ancient legend, a
-        story that is told within the world I have created. To achieve this, I
-        did a lot of research on how stories were told in ancient times. I
-        took inspitation from ancient Egyptian wall paintings, becoming the
-        basis for the art style of the book. I also looked at how stories were
-        often told in rhyme, and I decided to write my story in rhyme as well.
+        <span class="en">Echoes in the Sand is a short story about a group of 300 travelers who venture into the desert
+          to reach the southern shore, where their new home awaits. Neith, the main character, leads the group,
+          expecting to be crowned queen upon her arrival in the promised land. She vows to protect her people and ensure
+          their survival in the harsh desert, but as they journey deeper through the unforgiving sands, Neith's
+          leadership is put to the test.<br /><br />Neith insists they follow the course of a dried riverbed, believing
+          it will lead them to water and safety. However, the river twists and turns, lengthening their journey and
+          depleting their resources. As the group faces the relentless heat and scarcity of water, tensions rise, and
+          Neith must make the impossible choice between her people's survival and her own ambition. <br /><br />Echoes
+          in the Sand is set in a fictional world I've spent years building. This story is one of many planned to take
+          place in this world. The book gives an insight into the world's history, telling the story of how one of the
+          greatest kingdoms was founded. The book features some texts written in Sandscript, the script used in this
+          part of the fictional world. The story is set in a desert known as the Dry Sea of Sahra, located in the
+          south.<br /><br />I knew early on I wanted the story to feel like an ancient legend, a story that is told
+          within the world I have created. To achieve this, I did a lot of research on how stories were told in ancient
+          times. I took inspitation from ancient Egyptian wall paintings, becoming the basis for the art style of the
+          book. I also looked at how stories were often told in rhyme, and I decided to write my story in rhyme as
+          well.</span>
+        <span class="nl">Echoes in the Sand is een kort verhaal over een groep van 300 reizigers die de woestijn
+          intrekken om de zuidelijke kust te bereiken, waar hun nieuwe thuis wacht. Neith, het hoofdpersonage, leidt de
+          groep in de verwachting gekroond te worden bij aankomst in het beloofde land. Ze zweert haar volk te
+          beschermen en
+          hun overleven in de harde woestijn te garanderen, maar naarmate ze dieper de verradelijke woestijn intrekken,
+          wordt Neith's leiderschap op de proef gesteld.<br /><br />Neith staat erop dat ze het pad van een
+          uitgedroogde rivier volgen, in de overtuiging dat deze hen naar water en veiligheid zal leiden. De rivier
+          kronkelt en draait echter, wat hun reis verlengt en hun middelen uitput. Naarmate de groep de genadeloze
+          hitte en dorst te trotseren krijgt, nemen spanningen toe, en Neith moet de onmogelijke keuze maken
+          tussen het overleven van haar volk en haar eigen ambities. <br /><br />Echoes in the Sand speelt zich af in
+          een
+          fictionele wereld waaraan ik jarenlang heb gewerkt. Dit verhaal is één van vele verhalen op de planning in
+          deze wereld. Het
+          boek geeft inzicht in de geschiedenis van de wereld en vertelt het verhaal van hoe één van de grootste
+          koninkrijken werd gesticht. Het boek bevat enkele teksten geschreven in Sandscript, het schrift dat in dit
+          deel
+          van de fictionele wereld wordt gebruikt. Het verhaal speelt zich af in een woestijn bekend als de Dry Sea of
+          Sahra, gelegen in het zuiden.<br /><br />Ik wist al vroeg dat ik wilde dat het verhaal aanvoelde als een
+          oude legende, een verhaal dat in de wereld die ik heb gecreëerd wordt verteld. Om dit te bereiken, deed ik
+          veel onderzoek naar hoe verhalen in het verre verleden werden verteld. Ik haalde inspiratie uit oude
+          Egyptische
+          muurschilderingen, wat de basis vormde voor de illustraties van het boek. Ik ontdekte ook dat verhalen vaak in
+          rijm
+          werden verteld, waarna ik besloot mijn verhaal ook in rijm te schrijven.</span>
       </p>
     </section>
     <div class="parallax parallax-echoes right">
       <div class="art-info">
-        <!-- <h2>Title</h2> -->
         <p class="quote">
           "Thousands of years in the past, <br />Mortals first dared the
           desert vast.<br />A large group of humans and elvenkind,<br />The
@@ -109,34 +144,42 @@
       </div>
     </div>
     <section class="text-box">
-      <h2>Symbolism</h2>
+      <h2><span class="en">Symbolism</span><span class="nl">Symboliek</span></h2>
       <p>
-        The story has many symbolic elements to enhance its themes and
-        messages. The biggest example is the group of travelers. Each person
-        in the group represents a different aspect of Neith's personality, and
-        as the story progresses, they are slowly lost one by one, just as .
-        Neith loses pieces of herself. The first person she is forced to leave
-        behind is Nadia, whose name means 'hope'. Eakas is the most
-        antagonistic character, and represents Neith's doubts. After she
-        leaves him behind, no one in the group openly questions her leadership
-        anymore, and she becomes more and more isolated. When she finally
-        reaches the shore, she is a shell of her former self.
+        <span class="en">The story has many symbolic elements to enhance its themes and messages. The biggest example is
+          the group of travelers. Each person in the group represents a different aspect of Neith's personality, and as
+          the story progresses, they are slowly lost one by one, just as Neith loses pieces of herself. The first person
+          she is forced to leave behind is Nadia, whose name means 'hope'. Eakas is the most antagonistic character, and
+          represents Neith's doubts. After she leaves him behind, no one in the group openly questions her leadership
+          anymore, and she becomes more and more isolated. When she finally reaches the shore, she is a shell of her
+          former self.</span>
+        <span class="nl">Het verhaal bevat veel symbolische elementen om de thema's en boodschappen ervan te versterken.
+          Het grootste voorbeeld is de groep reizigers. Elk persoon in de groep vertegenwoordigt een ander aspect van
+          Neith's persoonlijkheid. Naarmate het verhaal vordert, gaan ze langzaam één voor één verloren, net als
+          Neith stukken van zichzelf verliest. De eerste persoon die ze achterlaat is Nadia, wiens naam 'hoop' betekent.
+          Eakas is het meest antagonistische karakter en vertegenwoordigt Neith's twijfels. Nadat zij hem achterlaat,
+          stelt niemand in de groep haar leiderschap meer openlijk in twijfel, en Neith wordt steeds meer geïsoleerd.
+          Wanneer ze uiteindelijk de kust bereikt, is ze slechts een omhulsel van haar voormalige zelf.</span>
       </p>
       <img class="extra-img" src="img/echoes-leopard.jpg" />
       <p>
-        Hakim, Neith's advisor, mentions she is blessed by the Goddess of the
-        Moon, a part of the culture she came from. However, after Hakim is
-        left behind, a leopard appears on a dune's crest, bathing in the light
-        of the rising sun. On the other side of the dune, they finally reach
-        the shore. The leopard is an incarnation of the God of the Sun,
-        representing Neith leaving her Goddess behind as well. It is mentioned
-        there are ten Gods, but the travellers arrive at the shore with a
-        total of nine. This unholy number reflects the dark reality of Neith
-        leaving her people to die.
-        <br /><br />
-        The last illustration in the book shows a crow looking back at the
-        desert. The crow's presence, who represents the God of Death, implies
-        the travellers left behind have met their fate.
+        <span class="en">Hakim, Neith's advisor, mentions she is blessed by the Goddess of the Moon, a part of the
+          culture she came from. However, after Hakim is left behind, a leopard appears on a dune's crest, bathing in
+          the light of the rising sun. On the other side of the dune, they finally reach the shore. The leopard is an
+          incarnation of the God of the Sun, representing Neith leaving her Goddess behind as well. It is mentioned
+          there are ten Gods, but the travellers arrive at the shore with a total of nine. This unholy number reflects
+          the dark reality of Neith leaving her people to die.
+          <br /><br /> The last illustration in the book shows a crow looking back at the desert. The crow's presence,
+          who represents the God of Death, implies the travellers left behind have met their fate.</span>
+        <span class="nl">Hakim, Neith's adviseur, vermeldt dat zij gezegend is door de Godin van de Maan, deel van de
+          cultuur waar zij vandaan komt. Nadat Hakim achterblijft, verschijnt er echter een luipaard op de top van een
+          duin, badend in het licht van de opkomende zon. Aan de andere kant van de duin bereiken ze eindelijk de kust.
+          De luipaard is een incarnatie van de God van de Zon, wat vertegenwoordigt dat Neith ook haar Godin achterlaat.
+          Er wordt genoemd dat er tien goden zijn, maar de reizigers bereiken de kust met negen. Dit onheilige
+          getal weerspiegelt de donkere realiteit van Neith die haar volk achterlaat om te sterven.
+          <br /><br /> De laatste illustratie in het boek toont een kraai die terugkijkt naar de woestijn. De
+          aanwezigheid van de kraai, die de God van de Dood vertegenwoordigt, impliceert dat de reizigers die
+          achterblijven hun noodlot hebben ontmoet.</span>
       </p>
     </section>
     <div class="parallax parallax-echoes-2 left">
@@ -175,6 +218,10 @@
     <img id="img-overlay-img" src="" alt="enlarged image" />
     <video id="img-overlay-video" style="display: none" autoplay loop muted></video>
     <iframe id="img-overlay-iframe" style="display: none" allowfullscreen></iframe>
+  </div>
+  <div id="hover-preview" class="hover-preview" style="display:none;">
+    <video id="hover-preview-video" muted playsinline loop></video>
+    <img id="hover-preview-img" style="display:none;" alt="preview" />
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="js/script.js"></script>
